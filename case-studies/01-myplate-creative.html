@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Start Simple with MyPlate · Dhwani Parekh</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="case-study.css" />
+<link rel="stylesheet" href="case-study-creative.css" />
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('dp-tweaks') || 'null');
+      if (!t) return;
+      if (t.dark) document.documentElement.classList.add('dark');
+      if (t.density) document.documentElement.setAttribute('data-density', t.density);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  body { background: var(--bg); }
+  /* Darken secondary/tertiary text tokens for a clearer, more legible read */
+  :root { --ink-2: oklch(0.32 0.006 250); --ink-3: oklch(0.46 0.006 250); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 56px); }
+
+  /* ── scratch banner ───────────────────────────── */
+  .scratch {
+    background: #14110e; color: #f3efe9;
+    padding: 26px clamp(24px,5vw,56px) 24px;
+  }
+  .scratch__in { max-width: 1040px; margin: 0 auto; }
+  .scratch__k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(0.72 0.11 50); margin: 0 0 10px; }
+  .scratch h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .scratch p { font-size: 14px; line-height: 1.55; color: #b9b2a8; margin: 0; max-width: 720px; }
+  .scratch ul { margin: 12px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .scratch li { font-family: var(--font-mono); font-size: 11.5px; color: #e7e1d8; border: 1px solid #38332c; border-radius: 999px; padding: 5px 11px; }
+
+  /* ── hero (kept as-is, faithful to live page) ───── */
+  .cc-hero { text-align: center; padding: 56px clamp(24px,5vw,56px) 28px; max-width: 980px; margin: 0 auto; }
+  .cc-hero__eyebrow { font-family: var(--font-sans); font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 22px; }
+  .cc-hero__title { font-size: clamp(36px, 4.6vw, 58px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 500; margin: 0 auto 16px; text-wrap: balance; animation: mpUp .7s cubic-bezier(.2,.7,.2,1) both; }
+  .cc-hero__sub { font-size: clamp(17px,1.5vw,21px); line-height: 1.5; color: var(--ink-3); max-width: 52ch; margin: 0 auto; text-wrap: balance; animation: mpUp .7s .1s cubic-bezier(.2,.7,.2,1) both; }
+  .cc-banner { max-width: 880px; margin: 32px auto 44px; aspect-ratio: 16/9; border-radius: 16px; background: var(--paper-2) center/cover no-repeat; animation: mpBannerIn 1.05s .22s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes mpUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+  @keyframes mpBannerIn { from { opacity: 0; transform: translateY(24px) scale(0.975); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce){ .cc-hero__title, .cc-hero__sub, .cc-banner { animation: none; } }
+
+  /* facts strip */
+  .cc-facts { max-width: 1040px; margin: 0 auto; padding: 26px clamp(24px,5vw,56px); display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cc-facts label { display:block; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 7px; }
+  .cc-facts p { margin: 0; font-size: 15.5px; line-height: 1.4; color: var(--ink); }
+  @media (max-width:720px){ .cc-facts { grid-template-columns: 1fr 1fr; } }
+
+  /* ── section rhythm (the skim spine) ───────────── */
+  .cc-sec { padding: 82px 0; border-top: 1px solid var(--line); }
+  .cc-sec:first-of-type { border-top: 0; }
+  .cc-sec__tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-4); display:block; margin-bottom: 14px; }
+  .cc-sec__lead { font-size: clamp(23px, 2.5vw, 31px); line-height: 1.18; letter-spacing: -0.025em; font-weight: 500; margin: 0; max-width: 24ch; text-wrap: balance; }
+  .cc-sec__lead--wide { max-width: 30ch; }
+  .cc-body { margin-top: 44px; }
+  .cc-note { font-size: 18px; color: var(--ink-3); line-height: 1.6; }
+
+  /* skim hint bar under hero */
+  .cc-skim { max-width: 1040px; margin: 0 auto; padding: 14px clamp(24px,5vw,56px); display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
+  .cc-skim span { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink-4); }
+  .cc-skim b { color: var(--ink-2); font-weight: 500; }
+
+  /* ── snapshot band (TL;DR + role merged) ───────── */
+  .cc-snap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .cc-snap__cell { padding: 24px 22px; border-right: 1px solid var(--line); }
+  .cc-snap__cell:last-child { border-right: 0; }
+  .cc-snap__l { font-family: var(--font-sans); font-size: 15px; letter-spacing: -0.01em; color: var(--ink); font-weight: 700; margin: 0 0 12px; }
+  .cc-snap__cell p { margin: 0; font-size: 18px; line-height: 1.55; color: var(--ink); }
+  .cc-snap__cell p + p { margin-top: 8px; color: var(--ink-2); font-size: 15.5px; }
+  .cc-snap mark { background: oklch(0.92 0.06 200 / 0.55); color: var(--ink); padding: 0 3px; border-radius: 3px; font-weight: 500; }
+  .cc-snap__stat { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .cc-snap__stat .big { font-size: 32px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); display: block; line-height: 1; margin-bottom: 9px; }
+  .cc-snap__stat .lbl { font-size: 13.5px; color: var(--ink-3); line-height: 1.5; display: block; }
+  .cc-bigstat { display: flex; align-items: baseline; gap: 26px; margin: 0 0 32px; padding: 26px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cc-bigstat__n { font-size: 60px; font-weight: 600; letter-spacing: -0.04em; color: var(--ink); line-height: 1; flex: 0 0 auto; }
+  .cc-bigstat__l { margin: 0; font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: 54ch; }
+  @media (max-width:640px){ .cc-bigstat { gap: 18px; } .cc-bigstat__n { font-size: 46px; } }
+  @media (max-width:880px){ .cc-snap { grid-template-columns: 1fr; } .cc-snap__cell { border-right: 0; border-bottom: 1px solid var(--line); } .cc-snap__cell:last-child { border-bottom: 0; } }
+
+  /* result band under the three snapshot blocks */
+  .cc-result { margin-top: 32px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper-2); padding: 24px 26px; }
+  .cc-result__l { font-family: var(--font-sans); font-size: 15px; letter-spacing: -0.01em; color: var(--ink); font-weight: 700; margin: 0 0 10px; }
+  .cc-result__sum { margin: 0; font-size: 18px; line-height: 1.55; color: var(--ink); font-weight: 500; }
+  .cc-result__head { margin-bottom: 22px; max-width: 70ch; }
+  .cc-result__metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; text-align: center; padding-top: 28px; border-top: 1px solid var(--line); }
+  .cc-result__metrics .m { font-size: 32px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); line-height: 1; display: block; }
+  .cc-result__metrics .m small { font-size: 16px; color: var(--ink-3); font-weight: 500; letter-spacing: 0; }
+  .cc-result__metrics .ml { font-size: 13px; color: var(--ink-3); margin-top: 7px; display: block; line-height: 1.35; }
+  @media (max-width:880px){ .cc-result { grid-template-columns: 1fr; gap: 20px; } .cc-result__metrics { grid-template-columns: 1fr 1fr; } }
+
+  /* ── 2x2 barrier grid ──────────────────────────── */
+  .cc-grid2 { display:grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border:1px solid var(--line); border-radius: 12px; overflow:hidden; }
+  .cc-grid2 div { background: var(--bg); padding: 18px 20px; font-size: 17px; line-height: 1.45; color: var(--ink); display:flex; gap:12px; }
+  .cc-grid2 .n { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); flex: 0 0 auto; padding-top: 2px; }
+  @media (max-width:640px){ .cc-grid2 { grid-template-columns: 1fr; } }
+
+  /* inline stat row */
+  .cc-stats { display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0 0 36px; }
+  .cc-stats div { display:flex; flex-direction: column; align-items: center; text-align: center; }
+  .cc-stats .n { font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
+  .cc-stats .l { font-size: 14px; color: var(--ink-3); margin-top: 6px; }
+
+  /* ── research accordion w/ visible takeaways ───── */
+  .acc { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+  .acc__row { border: 1px solid var(--line); border-radius: 12px; background: var(--bg); transition: border-color .15s var(--ease), box-shadow .15s var(--ease); }
+  .acc__row:hover { border-color: var(--line-2); }
+  .acc__row.open { border-color: var(--line-2); box-shadow: 0 12px 32px -20px rgba(0,0,0,0.3); }
+  .acc__btn { width:100%; display:grid; grid-template-columns: 30px 1fr auto; align-items: baseline; gap: 16px; background:none; border:0; text-align:left; padding: 20px 22px; cursor:pointer; }
+  .acc__n { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); }
+  .acc__main { min-width: 0; }
+  .acc__h { font-size: 17.5px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); margin: 0; }
+  .acc__take { font-size: 16.5px; color: var(--ink-2); line-height: 1.45; margin: 5px 0 14px; }
+  .acc__ic { font-size: 18px; color: var(--ink-4); transition: transform .2s var(--ease); line-height: 1; }
+  .acc__row.open .acc__ic { transform: rotate(45deg); }
+  .acc__panel { max-height: 0; overflow: hidden; transition: max-height .38s var(--ease); }
+  .acc__row.open .acc__panel { max-height: 2400px; }
+  .acc__detail { padding: 10px 22px 34px 22px; font-size: 17px; line-height: 1.72; color: var(--ink-2); }
+  .acc__detail ul { margin: 26px 0 0; padding-left: 18px; }
+  .acc__detail li { margin-bottom: 15px; }
+  .acc__chips { display:flex; gap: 32px; flex-wrap: wrap; margin-top: 38px; margin-bottom: 30px; justify-content: center; text-align: center; }
+  .acc__chips b { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
+  .acc__chips span { font-size: 13px; color: var(--ink-3); display:block; }
+  .acc__fig { margin-top: 36px; }
+  .acc__fig img { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); display: block; box-shadow: var(--img-shadow); }
+  .acc__fig figcaption { font-size: 13.5px; line-height: 1.5; color: var(--ink-3); margin-top: 10px; }
+  .acc__fig--sm img { max-width: 540px; margin-left: auto; margin-right: auto; }
+  .acc__fig--sm figcaption { text-align: center; }
+  /* terracotta sentiment bar */
+  .sbar { margin-top: 36px; }
+  .sbar__track { display: flex; gap: 3px; height: 46px; }
+  .sbar__seg { display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: #fff; border-radius: 5px; min-width: 0; }
+  .sbar__seg--neg { background: oklch(0.45 0.16 40); }
+  .sbar__seg--pos { background: oklch(0.64 0.13 45); }
+  .sbar__seg--neu { background: oklch(0.9 0.04 60); color: var(--ink); }
+  .sbar__legend { display: flex; gap: 20px; margin-top: 12px; flex-wrap: wrap; }
+  .sbar__legend span { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-3); }
+  .sbar__sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .sbar__sw--neg { background: oklch(0.45 0.16 40); }
+  .sbar__sw--pos { background: oklch(0.64 0.13 45); }
+  .sbar__sw--neu { background: oklch(0.9 0.04 60); }
+
+  /* key findings compact 3-up */
+  .cc-find { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 4px; }
+  .cc-find__card { background: var(--paper-2); border: 1px solid var(--line); border-radius: 12px; padding: 22px 22px 24px; }
+  .cc-find__num { font-family: var(--font-mono); font-size: 12px; color: var(--bg); background: var(--ink); width: 26px; height: 26px; border-radius: 7px; display:flex; align-items:center; justify-content:center; margin-bottom: 16px; }
+  .cc-find__card .h { font-size: 17.5px; font-weight: 600; color: var(--ink); margin: 0 0 8px; display:block; }
+  .cc-find__card p { margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--ink-2); }
+  @media (max-width:720px){ .cc-find { grid-template-columns: 1fr; gap: 16px; } }
+
+  /* ── design: split rail + tabbed screens ───────── */
+  .dec { display:grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 420px); gap: clamp(32px, 4vw, 64px); padding: 64px 0; border-top: 1px solid var(--line); align-items: start; }
+  .dec:first-of-type { border-top: 0; padding-top: 72px; }
+  .dec__eye { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); margin-bottom: 8px; }
+  .dec__h { font-size: 24px; font-weight: 500; letter-spacing: -0.025em; margin: 0 0 22px; }
+  .dec__block { margin-bottom: 38px; }
+  .dec__block .l { font-family: var(--font-sans); font-size: 14.5px; letter-spacing: -0.01em; color: var(--ink); font-weight: 700; margin: 0 0 7px; }
+  .dec__block p { margin: 0; font-size: 18px; line-height: 1.55; color: var(--ink); }
+  .dec__block--out p { color: var(--ink-2); }
+  .dec__steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
+  .dec__steps li { position: relative; padding-left: 30px; margin-bottom: 11px; font-size: 17px; line-height: 1.5; color: var(--ink); counter-increment: s; }
+  .dec__steps li::before { content: counter(s,decimal-leading-zero); position:absolute; left:0; top:1px; font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); }
+  .dec__steps b { font-weight: 600; }
+
+  .scr { position: sticky; top: 24px; }
+  .scr--flow { position: static; }
+  .scr__count { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); margin: 0 0 12px; }
+  .scr__tabs { display:flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+  .scr__tab { font-size: 14px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--bg); color: var(--ink-3); cursor: pointer; transition: all .15s var(--ease); }
+  .scr__tab.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .scr__stage { background: var(--paper-2); border: 1px solid var(--line); border-radius: 18px; display:flex; align-items:flex-start; justify-content:center; padding: 28px; }
+  .scr__stage > img { width: 290px; height: auto; border-radius: 10px; filter: var(--img-drop); display:block; }
+  .scr__cap { font-size: 14.5px; line-height: 1.5; color: var(--ink-3); margin: 14px 2px 0; min-height: 40px; }
+  .scr__vidframe { width: 290px; background: transparent; line-height: 0; position: relative; }
+  .scr__vidframe::before { content: ""; position: absolute; left: 5.8%; right: 5.8%; top: 1.2%; bottom: 1.2%; background: #fff; border-radius: 44px; z-index: 0; }
+  .scr__vidframe video { position: relative; z-index: 1; width: 100%; height: auto; display: block; mix-blend-mode: multiply; clip-path: inset(0 0 0.6% 0); }
+  @media (max-width: 720px){
+    .scr__vidframe video { mix-blend-mode: normal; clip-path: none; border-radius: 38px; }
+    .scr__vidframe::before { display: none; }
+  }
+  /* before strip — original screens at the top of Design */
+  .ba { margin: 4px 0 64px; }
+  .ba__label { font-family: var(--font-sans); font-size: 17px; letter-spacing: -0.015em; color: var(--ink); font-weight: 700; margin: 0 0 8px; }
+  .ba__intro { font-size: 16px; color: var(--ink-3); line-height: 1.55; margin: 0 0 30px; }
+  .ba__row { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
+  .ba__cell { width: 200px; margin: 0; }
+  .ba__cell img { width: 100%; border-radius: 16px; display: block; box-shadow: var(--img-shadow); }
+  .ba__absence { width: 100%; aspect-ratio: 874 / 1778; border: 1px dashed var(--line-2); border-radius: 16px; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 12px; }
+  .ba__absence b { font-size: 26px; color: var(--ink-4); font-weight: 400; line-height: 1; }
+  .ba__absence span { font-size: 11.5px; color: var(--ink-3); line-height: 1.35; }
+  .ba__cap { font-size: 13.5px; color: var(--ink-3); margin-top: 10px; line-height: 1.45; }
+  @media (max-width:640px){ .ba__row { gap: 18px; } .ba__cell { width: 160px; } }
+  @media (max-width:1080px){ .dec { grid-template-columns: 1fr; } .scr { position: static; } }
+
+  /* ── results: targets table + validation chips ─── */
+  .tgt { width:100%; border:1px solid var(--line); border-radius: 12px; overflow:hidden; }
+  .tgt__row { display:grid; grid-template-columns: 1.7fr 0.9fr 1.1fr 0.9fr; gap: 0; border-bottom: 1px solid var(--line); }
+  .tgt__row:last-child { border-bottom: 0; }
+  .tgt__row--head { background: var(--paper-2); }
+  .tgt__row--head span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-4); padding: 12px 18px; }
+  .tgt__c { padding: 16px 18px; border-left: 1px solid var(--line); }
+  .tgt__c:first-child { border-left: 0; }
+  .tgt__metric { font-size: 16px; font-weight: 500; color: var(--ink); }
+  .tgt__sub { display:block; font-size: 13.5px; color: var(--ink-3); margin-top: 4px; line-height: 1.4; }
+  .tgt__val { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
+  .tgt__val--base { color: var(--ink-3); }
+  .tgt__val--hit { color: var(--ink); }
+  .tgt__c--hit { background: var(--paper-2); }
+  .tgt__row--head .tgt__c--hit, .tgt__row--head span.tgt__c--hit { background: oklch(0.92 0 0); }
+  .tgt__val--target { color: var(--ink); }
+  .tgt__tag { display:block; font-size: 12px; color: var(--ink-4); margin-top: 3px; }
+  .tgt__tag--hit { color: var(--ink-2); font-weight: 500; }
+  @media (max-width:640px){
+    .tgt__row { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    .tgt__val { font-size: 17px; }
+    .tgt__c { padding: 12px 10px; }
+    .tgt__row--head span { padding: 10px; font-size: 10px; }
+    .tgt__metric { font-size: 14px; }
+    .tgt__sub { display: none; }
+  }
+
+  .val { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 44px; }
+  .val div { border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 20px; }
+  .val .pill { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; display:inline-block; margin-bottom: 12px; }
+  .val .pill--v { background: oklch(0.92 0.06 150 / 0.5); color: oklch(0.42 0.1 150); }
+  .val .pill--f { background: oklch(0.93 0.07 70 / 0.5); color: oklch(0.46 0.11 60); }
+  .val .h { font-size: 16.5px; font-weight: 600; color: var(--ink); margin: 0 0 7px; line-height: 1.3; }
+  .val p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+  @media (max-width:720px){ .val { grid-template-columns: 1fr; } }
+
+  /* reflection two-col */
+  .cc-ref { display:grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 44px; }
+  .cc-ref .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-4); margin: 0 0 12px; }
+  .cc-ref ul { margin: 0; padding-left: 18px; }
+  .cc-ref li { font-size: 17px; line-height: 1.55; color: var(--ink-2); margin-bottom: 9px; }
+  @media (max-width:640px){ .cc-ref { grid-template-columns: 1fr; gap: 24px; } }
+
+  /* ── shell + left-rail TOC ───────────────── */
+  .cc-shell { max-width: 1240px; margin: 60px auto 0; padding: 0 clamp(24px,5vw,56px); display: grid; grid-template-columns: 188px minmax(0,1fr); gap: clamp(40px,5vw,72px); align-items: start; }
+  .cc-toc { position: sticky; top: 28px; }
+  .cc-toc__label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-4); margin: 0 0 14px; }
+  .cc-toc__nav { display: flex; flex-direction: column; border-left: 1px solid var(--line); }
+  .cc-toc__link { display: flex; gap: 10px; align-items: baseline; font-size: 14.5px; color: var(--ink-3); padding: 9px 0 9px 16px; margin-left: -1px; border-left: 2px solid transparent; transition: color .15s var(--ease), border-color .15s var(--ease); text-decoration: none; }
+  .cc-toc__link:hover { color: var(--accent); }
+  .cc-toc__link.active { color: var(--ink); border-left-color: var(--ink); font-weight: 500; }
+  .cc-toc__n { font-family: var(--font-mono); font-size: 11px; color: var(--ink-4); flex: 0 0 auto; }
+  .cc-toc__link.active .cc-toc__n { color: var(--ink); }
+  .cc-content { min-width: 0; }
+  .cc-content .cc-sec { scroll-margin-top: 28px; }
+  @media (max-width: 900px) { .cc-shell { grid-template-columns: 1fr; } .cc-toc { display: none; } }
+
+  /* key-findings divider label */
+  .cc-find__label { font-family: var(--font-sans); font-size: 19px; letter-spacing: -0.015em; color: var(--ink); font-weight: 700; margin: 58px 0 10px; padding-top: 40px; border-top: 1px solid var(--line); }
+
+  mark.k { background: oklch(0.92 0.06 200 / 0.55); color: var(--ink); padding: 0 3px; border-radius: 3px; font-weight: 500; }
+</style>
+<style>
+/* creative accent: stats/metrics + label titles */
+.cc-bigstat__n, .cc-stats .n, .cc-result__metrics .m,
+.snap2__metrics .m, .cc-snap__stat .n,
+.cc-facts label, .cc-snap__l, .cc-result__l {
+  color: #c1440e;
+}
+.tgt__val--base { color: #c0392b !important; }
+.tgt__val--hit { color: #2c7a4b !important; }
+.tgt__val--target { color: var(--ink) !important; }
+.dec__steps { margin-bottom: 40px; }
+.cc-find__num { background: none !important; color: var(--ink-4) !important; width: auto !important; height: auto !important; border-radius: 0 !important; display: block !important; text-align: left !important; justify-content: flex-start !important; margin-right: auto !important; }
+.cc-find__label, .ba__label, .dec__block .l { color: #c1440e; }
+.cc-hero__title, .cc-sec__lead, .dec__h, .acc__h, .cc-find__card .h { font-family: "Archivo", system-ui, sans-serif !important; }
+.cc-ref .h { font-family: var(--font-sans) !important; font-size: 14.5px !important; letter-spacing: -0.01em !important; text-transform: none !important; font-weight: 700 !important; color: #c1440e !important; }
+.scr__tab.on { background: #c1440e !important; border-color: #c1440e !important; color: #fff !important; }
+.snap2__metrics .m, .acc__chips b { color: #c1440e !important; }
+.acc__take b { color: var(--ink) !important; }
+.cc-result__metrics .m small, .snap2__metrics .m small { color: var(--ink-3) !important; }
+</style>
+</head>
+<body class="cs-page">
+
+<nav class="nav" data-screen-label="Nav">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-mark" aria-label="Dhwani Parekh, home">
+      <img class="nav-logo" src="../logo-transparent.png" alt="" />
+      <span>Dhwani Parekh</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about" class="hide-sm">About</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="../resume/Resume.html">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="cc-hero">
+  <h1 class="cc-hero__title">Start Simple with MyPlate</h1>
+  <p class="cc-hero__sub">Designing a simpler, more motivating nutrition experience for everyday habit building.</p>
+</div>
+<div class="wrap">
+  <div class="cc-banner" style="background-image:url(assets/myplate-hero-banner.png);"></div>
+</div>
+
+<div class="cc-facts">
+  <div><label>Team</label><p>Team of 5</p></div>
+  <div><label>Duration</label><p>10 weeks</p></div>
+  <div><label>Tools</label><p>Figma · FigJam · <br />OpinionX · Maze</p></div>
+  <div><label>My role</label><p>Feature redesign · Research · Prototyping</p></div>
+</div>
+
+<div class="cc-skim">
+  <span><b>~5 min read</b></span><span>·</span>
+  <span>6 sections</span><span>·</span>
+  <span>Read the bold lines for the 60-second version</span>
+</div>
+
+<div class="cc-shell">
+  <aside class="cc-toc" aria-label="Contents">
+    <p class="cc-toc__label">Contents</p>
+    <nav class="cc-toc__nav">
+      <a class="cc-toc__link active" href="#s-snapshot"><span class="cc-toc__n">01</span><span>Snapshot</span></a>
+      <a class="cc-toc__link" href="#s-problem"><span class="cc-toc__n">02</span><span>Problem</span></a>
+      <a class="cc-toc__link" href="#s-research"><span class="cc-toc__n">03</span><span>Research</span></a>
+      <a class="cc-toc__link" href="#s-design"><span class="cc-toc__n">04</span><span>Design</span></a>
+      <a class="cc-toc__link" href="#s-results"><span class="cc-toc__n">05</span><span>Results</span></a>
+      <a class="cc-toc__link" href="#s-reflection"><span class="cc-toc__n">06</span><span>Reflection</span></a>
+    </nav>
+  </aside>
+  <div class="cc-content">
+
+  <!-- 01 SNAPSHOT -->
+  <style>
+    .snap2 { display: grid; grid-template-columns: 1.12fr 1fr; gap: clamp(26px,3.2vw,48px); align-items: start; }
+    .snap2__main { display: flex; flex-direction: column; }
+    .snap2__row { padding: 20px 0; border-top: 1px solid var(--line); }
+    .snap2__row:first-child { padding-top: 0; border-top: 0; }
+    .snap2__p { margin: 0; font-size: 18px; line-height: 1.55; color: var(--ink); }
+    .snap2__p b { font-weight: 600; }
+    .snap2__p--muted { font-size: 16px; color: var(--ink-2); }
+    .snap2__aside { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 28px; }
+    .snap2__screen { background: linear-gradient(165deg, var(--paper-2), var(--bg)); border: 1px solid var(--line); border-radius: 16px; height: 320px; display: flex; align-items: center; justify-content: center; padding: 20px; overflow: hidden; }
+    .snap2__screen img { max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 10px; box-shadow: var(--img-shadow); display: block; }
+    .snap2__cap { font-size: 12px; color: var(--ink-4); text-align: center; margin: -4px 0 0; }
+    .snap2__metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin-top: 10px; }
+    .snap2__metrics > div { background: var(--bg); padding: 15px 16px; }
+    .snap2__metrics .m { font-size: 26px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); line-height: 1; display: block; }
+    .snap2__metrics .m small { font-size: 14px; color: var(--ink-3); font-weight: 500; }
+    .snap2__metrics .ml { font-size: 12px; color: var(--ink-3); margin-top: 6px; display: block; line-height: 1.35; }
+    @media (max-width: 880px){ .snap2 { grid-template-columns: 1fr; } .snap2__aside { position: static; } }
+  </style>
+  <section class="cc-sec" id="s-snapshot">
+    <span class="cc-sec__tag">01 · Snapshot</span>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">A research-grounded redesign that makes healthy eating simpler and easier to act on.</h2>
+    <div class="cc-body">
+      <div class="snap2">
+        <div class="snap2__main">
+          <div class="snap2__row">
+            <p class="cc-snap__l">Challenge</p>
+            <p class="snap2__p">The USDA's MyPlate app set out to build healthier eating habits, but usability testing showed its core actions were confusing and hard to complete: two in five people couldn't finish the basics.</p>
+          </div>
+          <div class="snap2__row">
+            <p class="cc-snap__l">Solution</p>
+            <p class="snap2__p">A redesign around three research-backed bets: <b>flexible food logging</b>, <b>personalized goals</b>, and a <b>multi-level progress dashboard</b>, making healthy eating simpler, more personal, and easier to act on.</p>
+          </div>
+          <div class="snap2__row">
+            <p class="cc-snap__l">My role</p>
+            <p class="snap2__p snap2__p--muted">Led the end-to-end redesign on a team of five: feature design, a 38-person MaxDiff study, prototyping, and the concept test that validated it.</p>
+          </div>
+        </div>
+        <div class="snap2__aside">
+          <div class="snap2__screen"><img src="assets/meal-based-logging.png" alt="Redesigned meal logging" /></div>
+          <p class="snap2__cap">Redesigned meal logging</p>
+          <div class="snap2__metrics">
+            <div><span class="m">6/6</span><span class="ml">understood every redesigned screen</span></div>
+            <div><span class="m">5.0<small>/7</small></span><span class="ml">avg. perceived ease (SEQ)</span></div>
+            <div><span class="m">77.5</span><span class="ml">SUS: “good,” up from 74.5</span></div>
+            <div><span class="m">2</span><span class="ml">problems to fix next round</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-result" style="margin-top:28px;">
+        <p class="cc-result__l">The honest challenge</p>
+        <p class="cc-result__sum">Our testers skewed younger and more tech-fluent than MyPlate's federally-tied user base. The friction we fixed was real, but the numbers only earn full trust after a second round with older, lower-income users.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PROBLEM -->
+  <section class="cc-sec" id="s-problem">
+    <span class="cc-sec__tag">02 · Problem</span>
+    <h2 class="cc-sec__lead">Healthy eating shouldn't feel this complicated.</h2>
+    <div class="cc-body">
+      <p class="cc-note" style="margin-bottom:28px;">The content was credible, USDA-backed and free, but the experience didn't support everyday behavior change. App-store reviews and our own testing pointed at the same thing: friction showed up everywhere users actually needed to act.</p>
+      <div class="cc-bigstat">
+        <span class="cc-bigstat__n">40%</span>
+        <p class="cc-bigstat__l">of participants failed to complete essential tasks in round-one usability testing, limiting the app’s ability to support consistent habits.</p>
+      </div>
+      <div class="cc-grid2">
+        <div><span class="n">01</span>Key actions were hidden, so users had to hunt for them.</div>
+        <div><span class="n">02</span>No simple way to log what they actually ate.</div>
+        <div><span class="n">03</span>Generic targets that didn't feel like their own.</div>
+        <div><span class="n">04</span>No sense of whether they were making progress.</div>
+      </div>
+      <p class="cc-note" style="margin-top:36px;font-weight:500;color:var(--ink);">
+
+For a habit-building app, it wasn't helping anyone build habits.</p>
+    </div>
+  </section>
+
+  <!-- 03 RESEARCH -->
+  <section class="cc-sec" id="s-research">
+    <span class="cc-sec__tag">03 · Research</span>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">Five methods, all chasing one thing: what stops people from using this app to eat healthier?</h2>
+    <div class="cc-body">
+      <p class="cc-note" style="margin-bottom:24px;">We triangulated market expectations, user sentiment, and real behavior so the redesign would follow evidence rather than assumptions. Each method answered its own question; together they converged on the same three gaps.</p>
+      <div class="cc-stats">
+        <div><span class="n">5</span><span class="l">methods triangulated</span></div>
+        <div><span class="n">38</span><span class="l">survey participants</span></div>
+        <div><span class="n">4</span><span class="l">competitors benchmarked</span></div>
+      </div>
+
+      <div class="cc-find__label">The five methods</div>
+      <p class="cc-note" style="margin:0 0 18px;">Each method answered its own question. Click any one to see what we did and what we found.</p>
+      <div class="acc" id="acc">
+        <div class="acc__row">
+          <button class="acc__btn">
+            <span class="acc__n">01</span>
+            <span class="acc__main">
+              <p class="acc__h">Competitive analysis</p>
+              <p class="acc__take">Missing logging, personalization, and modern onboarding versus every competitor.</p>
+            </span>
+            <span class="acc__ic">+</span>
+          </button>
+          <div class="acc__panel"><div class="acc__inner"><div class="acc__detail">
+
+Benchmarked MyPlate against MyFitnessPal, Lifesum, Yazio, and Cronometer across logging, personalization, habit tracking, progress, and onboarding.
+Strengths: free, ad-free, USDA-backed.
+Gaps: no food logging, no personalization, dated progress views, no modern onboarding.
+Implication: add flexible logging, personalized goals, clear progress feedback.
+<figure class="acc__fig acc__fig--sm"><img src="assets/competitive-analysis.png" alt="Feature-by-feature comparison across five nutrition apps" /><figcaption>Feature-by-feature comparison across five nutrition apps.</figcaption></figure></div></div></div>
+        </div>
+
+        <div class="acc__row">
+          <button class="acc__btn">
+            <span class="acc__n">02</span>
+            <span class="acc__main">
+              <p class="acc__h">Sentiment analysis</p>
+              <p class="acc__take"><b>68% of reviews were negative.</b> “Outdated,” “cluttered,” “confusing to navigate.”</p>
+            </span>
+            <span class="acc__ic">+</span>
+          </button>
+          <div class="acc__panel"><div class="acc__inner"><div class="acc__detail">
+            We analyzed app-store reviews and online discussion to gauge how people felt about MyPlate in the wild.
+            <div class="sbar">
+              <div class="sbar__track">
+                <div class="sbar__seg sbar__seg--neg" style="width:68%"><span>68%</span></div>
+                <div class="sbar__seg sbar__seg--pos" style="width:22%"><span>22%</span></div>
+                <div class="sbar__seg sbar__seg--neu" style="width:10%"><span>10%</span></div>
+              </div>
+              <div class="sbar__legend">
+                <span><i class="sbar__sw sbar__sw--neg"></i>Negative</span>
+                <span><i class="sbar__sw sbar__sw--pos"></i>Positive</span>
+                <span><i class="sbar__sw sbar__sw--neu"></i>Neutral</span>
+              </div>
+            </div>
+            <ul style="margin-top:16px;"><li>Users trusted the USDA-backed content, but many found the app hard to use day-to-day.</li></ul>
+          </div></div></div>
+        </div>
+
+        <div class="acc__row">
+          <button class="acc__btn">
+            <span class="acc__n">03</span>
+            <span class="acc__main">
+              <p class="acc__h">Usability testing (5 users)</p>
+              <p class="acc__take"><b>SUS 74.5, a “fair” score.</b> Generic goals and unclear navigation broke the flow.</p>
+            </span>
+            <span class="acc__ic">+</span>
+          </button>
+          <div class="acc__panel"><div class="acc__inner"><div class="acc__detail">
+            We ran moderated sessions with five U.S. participants across three core tasks: understanding current eating habits through a quiz, reviewing progress over time, and setting a protein goal. For each task we tracked completion and time on task, then collected a System Usability Scale (SUS) score for the experience overall.
+            <div class="acc__chips">
+              <span><b>74.5</b><span>SUS, a “fair” score</span></span>
+              <span><b>3/5</b><span>passed the habits quiz</span></span>
+              <span><b>~6.5m</b><span>spent on the quiz task</span></span>
+            </div>
+            <ul style="margin-top:14px;">
+              <li>The habits quiz was the clear weak point: only 3 of 5 interpreted and completed it correctly, and several struggled to navigate the flow.</li>
+              <li>Users could reach progress and goal-setting, but the path there was not always obvious, and some needed help to get there.</li>
+              <li>Goal-setting offered no guidance on which option fit a given person, so participants felt unsure of the choices they made.</li>
+            </ul>
+            <p style="margin-top:14px;font-style:italic;color:var(--ink-3);">“It doesn't feel like it accounts for my being vegetarian.”</p>
+            <p style="margin-top:12px;">That SUS of 74.5 set the baseline this redesign is measured against, and the failure points it exposed became the problems the redesign had to solve.</p>
+          </div></div></div>
+        </div>
+
+        <div class="acc__row">
+          <button class="acc__btn">
+            <span class="acc__n">04</span>
+            <span class="acc__main">
+              <p class="acc__h">MaxDiff survey (38)</p>
+              <p class="acc__take">Logging, personalized goals, and guidance win. <b>Gamification and social lose.</b></p>
+            </span>
+            <span class="acc__ic">+</span>
+          </button>
+          <div class="acc__panel"><div class="acc__inner"><div class="acc__detail">
+            Forced-choice trade-offs (OpinionX) ranked a feature pool drawn from the earlier methods.
+            <ul>
+              <li><b>Top:</b> evidence-based guidance, personalized goals, custom food entry, flexible logging.</li>
+              <li><b>Bottom:</b> badges/streaks, social sharing.</li>
+              <li><b>Implication:</b> focus on logging, goals, and guidance, not gamification.</li>
+            </ul>
+            <figure class="acc__fig acc__fig--sm"><img src="assets/best-worst-rank-chart.png" alt="MaxDiff best-worst feature ranking" /><figcaption>Most and least important features by Best/Worst score (38 participants).</figcaption></figure>
+          </div></div></div>
+        </div>
+
+        <div class="acc__row">
+          <button class="acc__btn">
+            <span class="acc__n">05</span>
+            <span class="acc__main">
+              <p class="acc__h">Priority matrix</p>
+              <p class="acc__take">Build first: logging, goals, progress. Skip the social feed and public sharing.</p>
+            </span>
+            <span class="acc__ic">+</span>
+          </button>
+          <div class="acc__panel"><div class="acc__inner"><div class="acc__detail">
+            Plotted MaxDiff value against build effort.
+            <ul>
+              <li><b>Build first / next:</b> barcode scanner, personalized goals, custom foods, progress dashboard.</li>
+              <li><b>Skip:</b> social feed, public sharing.</li>
+            </ul>
+            <figure class="acc__fig acc__fig--sm"><img src="assets/priority-matrix.png" alt="Value vs effort priority matrix" /><figcaption>Value-vs-effort matrix used to sequence the build.</figcaption></figure>
+          </div></div></div>
+        </div>
+      </div>
+
+      <div class="cc-find__label">Key findings</div>
+      <p class="cc-note" style="margin:0 0 20px;">Across all five methods, three findings defined what the redesign had to deliver:</p>
+      <div class="cc-find">
+        <div class="cc-find__card"><span class="cc-find__num">01</span><p class="h">Generic goals fell flat</p><p>Users wanted goals that fit their own routines and preferences, not one-size-fits-all targets.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">02</span><p class="h">No way to log meals</p><p>Users needed a quick, flexible way to track what they ate. The original app had none.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">03</span><p class="h">Progress was invisible</p><p>Users needed clear feedback to see whether they were staying on track.</p></div>
+      </div>
+      <p class="cc-note" style="margin-top:36px;font-weight:500;color:var(--ink);">
+
+These three findings became the three design decisions below.</p>
+    </div>
+  </section>
+
+  <!-- 04 DESIGN -->
+  <section class="cc-sec" id="s-design">
+    <span class="cc-sec__tag">04 · Design</span>
+    <h2 class="cc-sec__lead">Three barriers became three design decisions.</h2>
+
+    <div class="cc-body">
+      <div class="ba">
+        <div class="ba__label">Before · where MyPlate started</div>
+        <p class="ba__intro">Three gaps research surfaced. Each one is answered by a decision below.</p>
+        <div class="ba__row">
+          <figure class="ba__cell">
+            <div class="ba__absence"><b>∅</b><span>No logging existed</span></div>
+            <figcaption class="ba__cap">Logging: no way to record a meal at all.</figcaption>
+          </figure>
+          <figure class="ba__cell">
+            <img src="assets/original-goal-setup.png" alt="Original MyPlate goal setup" />
+            <figcaption class="ba__cap">Goals: a generic list, no guidance on what fit you.</figcaption>
+          </figure>
+          <figure class="ba__cell">
+            <img src="assets/original-progress.png" alt="Original MyPlate progress" />
+            <figcaption class="ba__cap">Progress: a weekly summary only.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- decision 1 -->
+      <article class="dec">
+        <div>
+          <div class="dec__eye">Decision · 01</div>
+          <h3 class="dec__h">Flexible food logging</h3>
+          <div class="dec__block"><p class="l">Insight</p><p>Users needed simple ways to log what they actually ate.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>A flexible logging experience that reduces friction at the moment people most often abandon a nutrition app: adding what they just ate.</p></div>
+          <div class="dec__block"><p class="l">Solution</p><p>Four entry points feed one lightweight logging flow, so any eating pattern has a fast path in: pick a meal, scan a food with the camera, search a database of common items, or add a custom entry for anything off-list. Users start by choosing the meal (breakfast, lunch, dinner, or a snack), then add to it however is quickest.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>One flow now supports packaged foods, homemade meals, and culturally diverse diets, removing the friction that kept people from logging at all and meeting users where their habits already are.</p></div>
+        </div>
+        <div class="scr scr--flow" data-deck="d1">
+          <p class="scr__count">4 ways to log</p>
+          <div class="scr__tabs">
+            <button class="scr__tab on" data-i="0">Meal</button>
+            <button class="scr__tab" data-i="1">Camera</button>
+            <button class="scr__tab" data-i="2">Search</button>
+            <button class="scr__tab" data-i="3">Custom</button>
+          </div>
+          <div class="scr__stage"><img data-img src="assets/meal-based-logging.png" alt="Meal-based logging" /></div>
+          <p class="scr__cap" data-cap>Start by picking the meal: breakfast, lunch, dinner, or snacks.</p>
+        </div>
+      </article>
+
+      <!-- decision 2 -->
+      <article class="dec">
+        <div>
+          <div class="dec__eye">Decision · 02</div>
+          <h3 class="dec__h">Personalized goals</h3>
+          <div class="dec__block"><p class="l">Insight</p><p>Generic goals don't motivate behavior change.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>A guided, three-step goal flow built around personal motivation rather than a generic list of presets.</p></div>
+          <div class="dec__block"><p class="l">Solution</p><p>Instead of dropping users onto a list of numeric targets, the setup walks them through three decisions: what they want, where to focus, and how they'd like to track it:</p></div>
+          <ol class="dec__steps">
+            <li><b>Choose a primary goal</b>, based on personal motivation.</li>
+            <li><b>Select food groups</b>, focus on what matters most.</li>
+            <li><b>Choose a tracking method</b>: meals, servings, days, or yes/no.</li>
+          </ol>
+          <div class="dec__block dec__block--out" style="margin-top:16px;"><p class="l">Outcome</p><p>Helps users create more relevant goals and makes it easier to get started.</p></div>
+        </div>
+        <div class="scr scr--flow">
+          <p class="scr__count">Prototype walkthrough</p>
+          <div class="scr__stage"><div class="scr__vidframe"><video id="walkthroughVid" src="assets/personalized-goals.mp4?v=2" poster="assets/daily-dashboard.png" muted loop autoplay playsinline webkit-playsinline preload="auto" controls></video></div></div>
+          <p class="scr__cap">A three-step flow built around what motivates each user.</p>
+        </div>
+      </article>
+
+      <!-- decision 3 -->
+      <article class="dec">
+        <div>
+          <div class="dec__eye">Decision · 03</div>
+          <h3 class="dec__h">Progress dashboard</h3>
+          <div class="dec__block"><p class="l">Insight</p><p>Users can't improve what they can't see.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>A multi-level progress system across daily, weekly, and monthly views.</p></div>
+          <div class="dec__block"><p class="l">Solution</p><p>Three layered views answer different questions: a <b>daily</b> view for immediate course-correction within the same day, a <b>weekly</b> view that surfaces patterns and consistency, and a <b>monthly</b> view that shows cumulative improvement over time, so feedback is available at whatever horizon the user cares about.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>Progress became something users could see and act on, not just data they logged, and the app shifted from a passive record into an active feedback loop.</p></div>
+        </div>
+        <div class="scr" data-deck="d3">
+          <p class="scr__count">3 progress views</p>
+          <div class="scr__tabs">
+            <button class="scr__tab on" data-i="0">Daily</button>
+            <button class="scr__tab" data-i="1">Weekly</button>
+            <button class="scr__tab" data-i="2">Monthly</button>
+          </div>
+          <div class="scr__stage"><img data-img src="assets/daily-dashboard.png" alt="Daily progress" /></div>
+          <p class="scr__cap" data-cap>Immediate feedback: see how today's intake tracks to goals.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 05 RESULTS (testing + impact merged) -->
+  <section class="cc-sec" id="s-results">
+    <span class="cc-sec__tag">05 · Results</span>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">Concept testing validated the core bet, and surfaced the two fixes that lead the next round.</h2>
+    <div class="cc-body">
+      <p class="cc-note" style="margin-bottom:22px;">Concept-tested the three flows with 6 participants (first-click, comprehension, SEQ/SUS). Each row pairs the round-one baseline with what the concept test <b>actually achieved</b> and the target still ahead. <b>Targets are the next bar to clear, not results already banked.</b></p>
+
+      <div class="tgt">
+        <div class="tgt__row tgt__row--head">
+          <span>Metric</span><span>Baseline (measured)</span><span class="tgt__c--hit">Achieved · concept test (n=6)</span><span>Target</span>
+        </div>
+        <div class="tgt__row">
+          <div class="tgt__c"><span class="tgt__metric">System Usability Score</span><span class="tgt__sub">68 is the industry average; the redesign reached 77.5, with 80+ as the next target.</span></div>
+          <div class="tgt__c"><span class="tgt__val tgt__val--base">74.5</span><span class="tgt__tag">Above avg.</span></div>
+          <div class="tgt__c tgt__c--hit"><span class="tgt__val tgt__val--hit">77.5</span><span class="tgt__tag tgt__tag--hit">✓ “good”</span></div>
+          <div class="tgt__c"><span class="tgt__val tgt__val--target">≥ 80</span><span class="tgt__tag">Excellent</span></div>
+        </div>
+        <div class="tgt__row">
+          <div class="tgt__c"><span class="tgt__metric">Core-task completion</span><span class="tgt__sub">Close the 40% failure rate that defined the problem.</span></div>
+          <div class="tgt__c"><span class="tgt__val tgt__val--base">60%</span><span class="tgt__tag">3 of 5</span></div>
+          <div class="tgt__c tgt__c--hit"><span class="tgt__val tgt__val--hit">83%</span><span class="tgt__tag tgt__tag--hit">✓ 5 of 6 first-click</span></div>
+          <div class="tgt__c"><span class="tgt__val tgt__val--target">≥ 90%</span><span class="tgt__tag">Goal</span></div>
+        </div>
+        <div class="tgt__row">
+          <div class="tgt__c"><span class="tgt__metric">Goal-setup ease</span><span class="tgt__sub">Guided flow replaces a generic list of options.</span></div>
+          <div class="tgt__c"><span class="tgt__val tgt__val--base">Low</span><span class="tgt__tag">Unsure which goal fit</span></div>
+          <div class="tgt__c tgt__c--hit"><span class="tgt__val tgt__val--hit">5.0</span><span class="tgt__tag tgt__tag--hit">~ 1 step to fix</span></div>
+          <div class="tgt__c"><span class="tgt__val tgt__val--target">SEQ ≥ 5.5</span><span class="tgt__tag">/ 7</span></div>
+        </div>
+      </div>
+
+      <div class="val">
+        <div>
+          <span class="pill pill--v">Validated</span>
+          <p class="h">Entry point found on instinct</p>
+          <p>5 of 6 went straight to the meal selector to record a meal.</p>
+        </div>
+        <div>
+          <span class="pill pill--f">Iterate</span>
+          <p class="h">Tracking-method step needs work</p>
+          <p>The “how to track” step confused 2 of 6. Next: reorder and relabel; allow multiple goals.</p>
+        </div>
+        <div>
+          <span class="pill pill--v">Validated</span>
+          <p class="h">Progress read <em>and</em> acted on</p>
+          <p>Clearest flow (5.3/7); people named a next step. Next: add reference ranges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 REFLECTION -->
+  <section class="cc-sec" id="s-reflection">
+    <span class="cc-sec__tag">06 · Reflection</span>
+    <h2 class="cc-sec__lead">Research is only as honest as its sample.</h2>
+    <div class="cc-body">
+      <p class="cc-note">Our sample skewed younger and more tech-fluent than MyPlate's real audience, which spans a far wider range of ages and incomes. The redesign solves the friction we saw, but before calling any flow ready, I'd run a second round that deliberately broadens the sample. Only then is it validated for the whole audience, not just the part we reached.</p>
+      <div class="cc-ref">
+        <div>
+          <p class="h">What I learned</p>
+          <ul>
+            <li>Motivation has to be designed in, not bolted on.</li>
+            <li>Flexible inputs beat strict ones.</li>
+            <li>A clean method doesn't fix an uneven sample.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="h">My next steps</p>
+          <ul>
+            <li>Re-test with a broader, representative sample.</li>
+            <li>Adaptive goal recommendations.</li>
+            <li>Habit-based notifications at decision moments.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+</div>
+
+<nav class="morecs" aria-label="More case studies">
+  <p class="morecs__label">More case studies</p>
+  <div class="morecs__grid">
+    <a class="morecs__card" href="04-cerave-creative.html">
+      <span class="morecs__eyebrow">Information Architecture · UX Research</span>
+      <span class="morecs__title">CeraVe</span>
+      <span class="morecs__desc">Clearer paths through a large skincare ecosystem</span>
+      <span class="morecs__cta">Read case study <span class="arr">→</span></span>
+    </a>
+    <a class="morecs__card" href="05-tandem-creative.html">
+      <span class="morecs__eyebrow">Responsible AI · Product Design</span>
+      <span class="morecs__title">Tandem</span>
+      <span class="morecs__desc">AI for parent–teacher alignment</span>
+      <span class="morecs__cta">Read case study <span class="arr">→</span></span>
+    </a>
+  </div>
+</nav>
+
+<div style="height:96px;"></div>
+
+<footer class="footer container" id="contact" data-screen-label="Contact">
+  <svg class="footer-logo reveal" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <line x1="15" y1="27" x2="17.8" y2="4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+    <circle cx="8.5" cy="21.5" r="5.7" fill="currentColor" />
+    <circle cx="25" cy="8" r="5.5" fill="currentColor" />
+  </svg>
+  <h2 class="footer-cta reveal" style="font-weight: 500">
+    Have a project worth doing well? Let's <a href="mailto:dparekh2@depaul.edu">talk</a>.
+  </h2>
+  <div class="footer-links reveal">
+    <button type="button" class="footer-link footer-copy" data-copy-email="dparekh2@depaul.edu" aria-label="Copy email address dparekh2@depaul.edu">
+      <span class="copy-addr">→ dparekh2@depaul.edu</span>
+      <span class="copy-hint">Copy</span>
+    </button>
+    <a class="footer-link" href="https://www.linkedin.com/in/dhwani-parekh-8b126821/" target="_blank" rel="noopener">→ LinkedIn</a>
+    <a class="footer-link" href="../resume/Resume.html">→ Resume (PDF)</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© Dhwani Parekh</span>
+    <span></span>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path d="M12 5l-7 7m7-7l7 7m-7-7v14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+<script>
+  // Back-to-top button: show after scrolling, smooth-scroll to top on click.
+  (function () {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    var onScroll = function () { btn.classList.toggle('is-visible', window.scrollY > 480); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  })();
+
+  // Accordion — click the header to open; click anywhere on an open row to close.
+  document.querySelectorAll('.acc__row').forEach(function (row) {
+    row.addEventListener('click', function () {
+      var isOpen = row.classList.contains('open');
+      document.querySelectorAll('.acc__row.open').forEach(function (r) { r.classList.remove('open'); });
+      if (!isOpen) row.classList.add('open');
+    });
+  });
+
+  // Tabbed screen viewers
+  var DECKS = {
+    d1: [
+      { src: 'assets/meal-based-logging.png', cap: 'Start by picking the meal: breakfast, lunch, dinner, or snacks.' },
+      { src: 'assets/camera-scan.webp', cap: 'Scan food with the camera to speed up logging.' },
+      { src: 'assets/search-ingredient-selection.png', cap: 'Search a database of common foods and add them in a tap.' },
+      { src: 'assets/custom-food-entry.png', cap: 'Add foods not in the system with basic nutrition info.' }
+    ],
+    d3: [
+      { src: 'assets/daily-dashboard.png', cap: 'Immediate feedback: see how today\u2019s intake tracks to goals.' },
+      { src: 'assets/weekly-dashboard.png', cap: 'Surfaces patterns and consistency over the week.' },
+      { src: 'assets/monthly-dashboard.png', cap: 'Shows long-term progress and cumulative improvement.' }
+    ]
+  };
+  document.querySelectorAll('.scr[data-deck]').forEach(function (scr) {
+    var data = DECKS[scr.getAttribute('data-deck')];
+    var img = scr.querySelector('[data-img]');
+    var cap = scr.querySelector('[data-cap]');
+    scr.querySelectorAll('.scr__tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var i = +tab.getAttribute('data-i');
+        scr.querySelectorAll('.scr__tab').forEach(function (t) { t.classList.remove('on'); });
+        tab.classList.add('on');
+        img.src = data[i].src;
+        cap.textContent = data[i].cap;
+      });
+    });
+  });
+
+  // Chroma-key the goal-flow video: drop near-white pixels to transparent (WebGL).
+  (function () {
+    document.querySelectorAll('.scr__keycanvas').forEach(function (canvas) {
+      var src = canvas.getAttribute('data-keysrc');
+      var video = document.createElement('video');
+      video.src = src; video.muted = true; video.loop = true; video.playsInline = true;
+      video.setAttribute('playsinline', ''); video.setAttribute('muted', '');
+      var gl, tex, disposed = false;
+      function compile(t, s) { var x = gl.createShader(t); gl.shaderSource(x, s); gl.compileShader(x); return x; }
+      function init() {
+        gl = canvas.getContext('webgl2', { premultipliedAlpha: false, alpha: true });
+        if (!gl) return false;
+        var vs = '#version 300 es\nin vec2 a; out vec2 v; void main(){ v=a*0.5+0.5; v.y=1.0-v.y; gl_Position=vec4(a,0,1); }';
+        var fs = '#version 300 es\nprecision highp float; in vec2 v; uniform sampler2D u; out vec4 o; void main(){ vec4 c=texture(u,v); float m=min(c.r,min(c.g,c.b)); float a=1.0-smoothstep(0.92,1.0,m); if(v.y<0.006||v.y>0.994) a=0.0; o=vec4(c.rgb,a); }';
+        var p = gl.createProgram();
+        gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+        gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+        gl.linkProgram(p); gl.useProgram(p);
+        var buf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+        var a = gl.getAttribLocation(p, 'a');
+        gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
+        tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        return true;
+      }
+      function draw() {
+        if (disposed || video.readyState < 2) return;
+        if (canvas.width !== video.videoWidth) { canvas.width = video.videoWidth; canvas.height = video.videoHeight; gl.viewport(0, 0, canvas.width, canvas.height); }
+        gl.bindTexture(gl.TEXTURE_2D, tex);
+        try { gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video); } catch (e) { return; }
+        gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      }
+      function loop() { if (disposed) return; draw(); requestAnimationFrame(loop); }
+      if (!init()) {
+        var vEl = document.createElement('video');
+        vEl.src = src; vEl.muted = true; vEl.loop = true; vEl.autoplay = true; vEl.setAttribute('playsinline', '');
+        vEl.style.width = '100%'; vEl.style.display = 'block';
+        canvas.replaceWith(vEl); return;
+      }
+      video.addEventListener('loadeddata', function () { canvas.width = video.videoWidth; canvas.height = video.videoHeight; });
+      var start = function () { video.play().catch(function () {}); loop(); };
+      if (video.readyState >= 2) start(); else video.addEventListener('canplay', start, { once: true });
+    });
+  })();
+
+  // TOC scroll-spy + smooth anchor scroll
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.cc-toc__link'));
+    if (!links.length) return;
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var secs = Array.prototype.slice.call(document.querySelectorAll('.cc-content .cc-sec'));
+    if (!secs.length) return;
+    var OFFSET = 28, LINE = 120, ticking = false;
+    function setActive(id) {
+      links.forEach(function (l) { l.classList.toggle('active', map[id] === l); });
+    }
+    function update() {
+      ticking = false;
+      var current = secs[0].id;
+      for (var i = 0; i < secs.length; i++) {
+        if (secs[i].getBoundingClientRect().top <= LINE) current = secs[i].id;
+      }
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        current = secs[secs.length - 1].id;
+      }
+      setActive(current);
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = a.getAttribute('href').slice(1), el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+        window.scrollTo({ top: top, behavior: reduce ? 'auto' : 'smooth' });
+        setActive(id);
+        if (history.replaceState) history.replaceState(null, '', '#' + id);
+      });
+    });
+    update();
+  })();
+</script>
+
+<script src="../copy-email.js"></script>
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+<script src="zoom.js"></script>
+<script src="../nav.js"></script>
+<script>
+(function(){
+  var v = document.getElementById('walkthroughVid');
+  if(!v) return;
+  function tryPlay(){
+    var p = v.play();
+    if(p && p.catch){ p.catch(function(){ v.setAttribute('controls',''); }); }
+  }
+  v.addEventListener('error', function(){ v.setAttribute('controls',''); }, {once:true});
+  if(v.readyState >= 2){ tryPlay(); } else { v.addEventListener('loadeddata', tryPlay, {once:true}); }
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
+})();
+</script>
+
+</body>
+</html>

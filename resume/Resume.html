@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dhwani Parekh — Resume</title>
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  html { background: #f2f2f2; }
+  doc-page {
+    /* ATS-safe: system sans, pure black on white, single column, real text */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    font-size: 10pt;
+    line-height: 1.32;
+  }
+  doc-page * { color: #000 !important; }
+
+  /* Name + contact */
+  .r-name {
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0 0 2px;
+    text-transform: uppercase;
+  }
+  .r-role {
+    font-size: 11pt;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .r-contact {
+    font-size: 9.5pt;
+    margin: 0 0 4px;
+  }
+  .r-contact a { color: #000; text-decoration: none; }
+
+  /* Section headings — plain, uppercase, ruled: highly scannable + ATS-parseable */
+  h2.r-sec {
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin: 12px 0 6px;
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid #000;
+  }
+
+  p.r-summary { margin: 0; }
+
+  /* Entry (project / job / education) */
+  .r-entry { margin: 0 0 9px; break-inside: avoid; }
+  .r-entry:last-child { margin-bottom: 0; }
+  .r-entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .r-entry-title { font-size: 10.5pt; font-weight: 700; margin: 0; }
+  .r-entry-meta { font-size: 9.5pt; font-weight: 700; white-space: nowrap; }
+  .r-entry-sub { font-size: 9.5pt; font-style: italic; margin: 1px 0 5px; }
+
+  ul.r-bullets { margin: 4px 0 0; padding-left: 18px; }
+  ul.r-bullets li { margin: 0 0 2px; padding-left: 2px; }
+  ul.r-bullets li::marker { content: "– "; }
+
+  /* Skills / tools — plain wrapped text, not chips (ATS reads text, not styled tags) */
+  .r-skillrow { margin: 0 0 3px; }
+  .r-skillrow:last-child { margin-bottom: 0; }
+  .r-skilllabel { font-weight: 700; }
+
+  .r-download {
+    position: fixed;
+    top: 20px; right: 20px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    background: #000;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  }
+  .r-download:hover { opacity: .85; }
+  @media print { .r-download { display: none; } }
+
+  /* Mobile: let the fixed Letter sheet reflow to viewport width on screen.
+     Print keeps true 8.5×11in geometry (screen-only query). */
+  @media screen and (max-width: 640px) {
+    doc-page {
+      --doc-page-w: 100% !important;
+      --doc-page-margin: 24px !important;
+      min-width: 0 !important;
+      padding: 16px 10px !important;
+    }
+    .r-download {
+      top: 12px; right: 12px;
+      padding: 8px 12px; font-size: 12px;
+    }
+    .r-entry-head { flex-wrap: wrap; gap: 2px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="r-download" onclick="window.print()">Download PDF ↓</button>
+
+<doc-page size="letter" orientation="portrait" margin="0.5in">
+
+  <p class="r-name">Dhwani Parekh</p>
+  <p class="r-role">Product Designer</p>
+  <p class="r-contact">Fremont, CA &nbsp;|&nbsp; +1 (209) 328-9155 &nbsp;|&nbsp; dparekh2@depaul.edu &nbsp;|&nbsp; dhwaniparekh.com &nbsp;|&nbsp; linkedin.com/in/dhwani-parekh-8b126821</p>
+
+  <h2 class="r-sec">Summary</h2>
+  <p class="r-summary">Product Designer who designs end-to-end experiences for web, mobile, and AI-powered products, from user flows and wireframes to high-fidelity UI, interaction patterns, and design systems. Turns complex problems into clear, scalable product experiences grounded in user needs and validated through testing.</p>
+
+  <h2 class="r-sec">Skills</h2>
+  <div class="r-skillrow">Product Design, UX/UI Design, Interaction Design, Visual Design, User Flows, Wireframing, Prototyping, High-Fidelity UI, Design Systems, Component Libraries, Responsive Design, Information Architecture, Accessibility, WCAG</div>
+  <div class="r-skillrow"><span class="r-skilllabel">Tools: </span>Figma, Framer, Adobe Photoshop, Adobe Illustrator, Miro, HTML, CSS</div>
+
+  <h2 class="r-sec">Product Design Experience</h2>
+
+  <div class="r-entry">
+    <div class="r-entry-head">
+      <p class="r-entry-title">MyPlate: Mobile Nutrition App Redesign</p>
+      <span class="r-entry-meta">Academic Team Project</span>
+    </div>
+    <p class="r-entry-sub">Product Designer</p>
+    <ul class="r-bullets">
+      <li>Designed end-to-end mobile experiences for food logging, personalized goals, and a multi-level progress dashboard, spanning user flows, wireframes, and high-fidelity UI.</li>
+      <li>Built reusable UI components and interaction patterns for logging, goal-setting, and data visualization to keep the redesigned screens consistent and scalable.</li>
+      <li>Iterated the UI against usability feedback, raising overall ease-of-use (SUS 74.5 → 77.5) and reaching a strong 5.0/7 average ease rating across redesigned flows.</li>
+    </ul>
+  </div>
+
+  <div class="r-entry">
+    <div class="r-entry-head">
+      <p class="r-entry-title">Tandem: Responsible AI Communication Copilot</p>
+      <span class="r-entry-meta">Academic Team Project</span>
+    </div>
+    <p class="r-entry-sub">Product Designer</p>
+    <ul class="r-bullets">
+      <li>Designed an AI-powered copilot that turns teachers' classroom observations into clear, supportive parent messages, defining the core flows, screens, and UI states.</li>
+      <li>Designed interaction patterns and guardrail UX, including editable AI suggestions, tone controls, and safeguards that keep messaging plain-language and non-diagnostic.</li>
+      <li>Prototyped and refined the experience through iterative design reviews and think-aloud testing with a practicing teacher.</li>
+    </ul>
+  </div>
+
+  <div class="r-entry">
+    <div class="r-entry-head">
+      <p class="r-entry-title">CeraVe: E-Commerce Product Discovery Redesign</p>
+      <span class="r-entry-meta">Independent Project</span>
+    </div>
+    <p class="r-entry-sub">Lead Product Designer</p>
+    <ul class="r-bullets">
+      <li>Redesigned product discovery and navigation across a large skincare e-commerce experience, restructuring how products, ingredients, and decision-support tools are surfaced.</li>
+      <li>Designed a clearer information architecture, navigation system, and discovery flows, then translated them into wireframes and UI.</li>
+      <li>Validated the redesign with users, making previously unfindable ingredient information discoverable (0% → 70%) and raising task success to at least 70% on 6 of 8 core flows.</li>
+    </ul>
+  </div>
+
+  <h2 class="r-sec">Education</h2>
+  <div class="r-entry">
+    <div class="r-entry-head">
+      <p class="r-entry-title">DePaul University, Chicago, IL</p>
+      <span class="r-entry-meta">Expected 2027</span>
+    </div>
+    <p class="r-entry-sub">M.S. in Human-Computer Interaction</p>
+  </div>
+  <div class="r-entry">
+    <div class="r-entry-head">
+      <p class="r-entry-title">L. S. Raheja School of Art, Mumbai, India</p>
+      <span class="r-entry-meta"></span>
+    </div>
+    <p class="r-entry-sub">B.F.A. in Fine Arts</p>
+  </div>
+
+</doc-page>
+
+<script src="doc-page.js"></script>
+</body>
+</html>

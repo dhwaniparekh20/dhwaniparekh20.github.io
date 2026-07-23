@@ -1,0 +1,56 @@
+/* ═══ Creative case-study theme — matches Homepage-Creative-Demo (warm paper + terracotta, Archivo) ═══ */
+:root {
+  --bg: #f6f4ef; --bg-elev: #fbfaf7;
+  --paper: #f6f4ef; --paper-2: #f0ede6; --paper-3: #e8e3d9;
+  --ink: #1a1613; --ink-2: #4a443c; --ink-3: #6b6459; --ink-4: #8f8779; --ink-5: #a49b8d;
+  --line: #e2dcd2; --line-2: #d3cabb; --line-strong: #d3cabb;
+  --accent: #c1440e;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Archivo", system-ui, sans-serif;
+}
+body { background: var(--bg); font-family: var(--font-sans); }
+.cs-hero__title, .cs-chapter__h, .cs-decision__h, h1, h2, h3, h4 {
+  font-family: "Archivo", system-ui, sans-serif;
+}
+.cs-hero__title, .cs-chapter__h, .cs-decision__h { font-weight: 700; letter-spacing: -0.03em; }
+/* accent moments — mirror the homepage (numbers, eyebrows, active nav) */
+.cs-chapter__num,
+.cs-decision__eyebrow,
+.cs-feature__eyebrow,
+.cs-hero__eyebrow,
+.cs-toc__link--active,
+.cs-toc__link--active .cs-toc__num,
+.cs-impact__stat .n,
+.cs-tldr-problem__n,
+.cs-glance__n { color: var(--accent); }
+.cs-tldr-stat__n { color: var(--accent); }
+.cs-tldr-stat--hero .cs-tldr-stat__n { color: var(--paper); }
+.nav-links a:hover { color: var(--accent); }
+.morecs__card:hover .morecs__cta { color: var(--accent); }
+/* footer accents — match homepage */
+:root { --cta-accent: #c1440e; }
+.footer-cta a { color: var(--accent); border-bottom-color: var(--accent) !important; }
+.footer-link:hover, .footer-copy:hover .copy-addr { color: var(--accent); }
+.footer-copy:hover .copy-hint { color: var(--accent); border-color: var(--accent); }
+/* TOC hover + more accent moments per section */
+.cs-toc__link:hover,
+.cs-toc__link:hover .cs-toc__num,
+.cs-bottom-toc__list > li button:hover { color: var(--accent); }
+.cs-method__n,
+.cs-step__n,
+.cs-numbered-list__n,
+.cs-selected__n,
+.cs-tldr-problem__n,
+.cs-design-list li::before,
+.cs-sub__label,
+.cs-decision__label { color: var(--accent); }
+.cs-prose strong { color: var(--accent); }
+.cs-pullquote em, .cs-problem-statement em, .cs-chapter__h em { color: var(--accent); }
+
+/* nav logo — match homepage (transparent, no frame) */
+.nav-logo { border-radius: 0; border: 0; background: none; }
+/* accent moments for the cc- based case-study layout */
+.cc-toc__link:hover, .cc-toc__link:hover .cc-toc__n,
+.cc-toc__link.active, .cc-toc__link.active .cc-toc__n,
+.cc-bigstat__n, .cc-stats .n, .cc-find__num, .cc-find__label,
+.acc__n, .cc-hero__eyebrow, .cc-sec__tag, .cc-snap__l, .cc-result__l { color: var(--accent); }
