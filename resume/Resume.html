@@ -113,12 +113,20 @@
     }
     .r-entry-head { flex-wrap: wrap; gap: 2px 12px; }
   }
+  /* Screen-only: scale the whole sheet to fit narrow viewports so the resume
+     reads as a page, not a stretched desktop layout. Print is untouched. */
+  #sheet-scaler { transform-origin: top left; margin: 0 auto; }
+  @media screen and (max-width: 900px) {
+    #sheet-scaler { transform: scale(var(--sheet-scale, 1)); }
+  }
+  @media print { #sheet-scaler { transform: none !important; height: auto !important; width: auto !important; } }
 </style>
 </head>
 <body>
 
 <button class="r-download" onclick="window.print()">Download PDF ↓</button>
 
+<div id="sheet-scaler">
 <doc-page size="letter" orientation="portrait" margin="0.6in">
 
   <p class="r-name">Dhwani Parekh</p>
@@ -193,6 +201,7 @@
   </div>
 
 </doc-page>
+</div>
 
 <script src="doc-page.js"></script>
 <script>
@@ -252,6 +261,30 @@
     page.style.fontSize = saved;
     saved = null;
   }
+  /* Fit the fixed-width sheet into narrow viewports (screen only). */
+  (function(){
+    var wrap = document.getElementById('sheet-scaler');
+    if(!wrap) return;
+    var MIN_SCALE = 0.5;
+    function scale(){
+      wrap.style.height = '';
+      wrap.style.width = '';
+      document.documentElement.style.setProperty('--sheet-scale', '1');
+      if(window.innerWidth > 900) return;
+      /* offsetWidth/Height ignore transforms, so measure before scaling. */
+      var w = wrap.offsetWidth, h = wrap.offsetHeight;
+      if(!w) return;
+      var s = Math.max(MIN_SCALE, Math.min(1, (window.innerWidth - 16) / w));
+      document.documentElement.style.setProperty('--sheet-scale', s);
+      wrap.style.width = (w * s) + 'px';
+      wrap.style.height = (h * s) + 'px';
+    }
+    window.addEventListener('resize', scale);
+    window.addEventListener('load', scale);
+    if(window.customElements) customElements.whenDefined('doc-page').then(function(){ setTimeout(scale, 0); });
+    setTimeout(scale, 60);
+  })();
+
   window.addEventListener('beforeprint', fit);
   window.addEventListener('afterprint', restore);
   if(window.matchMedia){

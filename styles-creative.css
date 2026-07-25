@@ -1771,3 +1771,8 @@ body { font-family: var(--font-sans) !important; }
   .hero-feat-grid .hero-keywords{flex-wrap:nowrap;gap:7px}
   .hero-feat-grid .hero-keywords li{padding:6px 12px 6px 10px;gap:6px;letter-spacing:0.04em}
 }
+
+/* Mobile-only: the footer CTA bottoms out at the clamp minimum on phones */
+@media screen and (max-width: 600px){
+  .footer-cta{font-size:30px}
+}
