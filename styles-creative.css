@@ -1761,3 +1761,13 @@ body { font-family: var(--font-sans) !important; }
 .work-card:hover .tandem-tcard { transform: scale(1.035); }
 .work-list--split .work-card-media img { border: 1px solid var(--line); }
 .nav-logo { border-radius: 0; border: 0; background: none; }
+
+/* Desktop hero: tighter top padding so the hero fits one screen */
+@media screen and (min-width: 1200px){
+  .hero{padding-top:80px}
+  .hero-feat-img{width:95%;margin-left:auto}
+  .hero-feat-grid{grid-template-columns:1.45fr 1fr;gap:clamp(32px,3vw,48px)}
+  .hero-feat-grid .hero-sub{max-width:none}
+  .hero-feat-grid .hero-keywords{flex-wrap:nowrap;gap:7px}
+  .hero-feat-grid .hero-keywords li{padding:6px 12px 6px 10px;gap:6px;letter-spacing:0.04em}
+}
