@@ -115,18 +115,28 @@
   }
   /* Screen-only: scale the whole sheet to fit narrow viewports so the resume
      reads as a page, not a stretched desktop layout. Print is untouched. */
-  #sheet-scaler { transform-origin: top left; margin: 0 auto; }
+  /* Two-element scale: the FRAME reserves space and clips, the SCALER carries
+     the transform at the sheet's natural size. Never both on one element. */
+  #sheet-scaler { transform-origin: top left; }
   @media screen and (max-width: 900px) {
+    body { overflow-x: hidden; }
+    #sheet-frame { width: 100%; overflow: hidden; }
     #sheet-scaler { transform: scale(var(--sheet-scale, 1)); }
+    /* Let the contact line wrap on screen so the sheet's measured width is the
+       paper width, not the width of one long unbroken line. Print keeps nowrap. */
+    .r-contact { white-space: normal; }
   }
-  @media print { #sheet-scaler { transform: none !important; height: auto !important; width: auto !important; } }
+  @media print {
+    #sheet-frame { overflow: visible !important; height: auto !important; }
+    #sheet-scaler { transform: none !important; width: auto !important; margin: 0 !important; }
+  }
 </style>
 </head>
 <body>
 
 <button class="r-download" onclick="window.print()">Download PDF ↓</button>
 
-<div id="sheet-scaler">
+<div id="sheet-frame"><div id="sheet-scaler">
 <doc-page size="letter" orientation="portrait" margin="0.6in">
 
   <p class="r-name">Dhwani Parekh</p>
@@ -201,7 +211,7 @@
   </div>
 
 </doc-page>
-</div>
+</div></div>
 
 <script src="doc-page.js"></script>
 <script>
@@ -264,20 +274,24 @@
   /* Fit the fixed-width sheet into narrow viewports (screen only). */
   (function(){
     var wrap = document.getElementById('sheet-scaler');
-    if(!wrap) return;
-    var MIN_SCALE = 0.5;
+    var frame = document.getElementById('sheet-frame');
+    if(!wrap || !frame) return;
     function scale(){
-      wrap.style.height = '';
       wrap.style.width = '';
+      wrap.style.marginLeft = '';
+      frame.style.height = '';
       document.documentElement.style.setProperty('--sheet-scale', '1');
       if(window.innerWidth > 900) return;
-      /* offsetWidth/Height ignore transforms, so measure before scaling. */
-      var w = wrap.offsetWidth, h = wrap.offsetHeight;
-      if(!w) return;
-      var s = Math.max(MIN_SCALE, Math.min(1, (window.innerWidth - 16) / w));
+      /* Measure the SHEET, not the wrapper: the wrapper is a block element and
+         reports the viewport width while doc-page overflows it. offsetWidth /
+         offsetHeight ignore transforms, so these are unscaled dimensions. */
+      var w = page.offsetWidth, h = page.offsetHeight;
+      if(!w || !h) return;
+      var s = Math.min(1, (window.innerWidth - 12) / w);
       document.documentElement.style.setProperty('--sheet-scale', s);
-      wrap.style.width = (w * s) + 'px';
-      wrap.style.height = (h * s) + 'px';
+      wrap.style.width = w + 'px';                       /* natural size */
+      wrap.style.marginLeft = Math.max(0, (window.innerWidth - w * s) / 2) + 'px';
+      frame.style.height = (h * s) + 'px';               /* scaled footprint */
     }
     window.addEventListener('resize', scale);
     window.addEventListener('load', scale);
