@@ -13,9 +13,9 @@ Three case studies, written long-form:
 
 | Case study | Focus |
 | --- | --- |
-| [Start Simple with MyPlate](case-studies/01-myplate-creative.html) | Redesigning goal-setting and food logging for a federal nutrition app |
-| [CeraVe](case-studies/04-cerave-creative.html) | Information architecture and tree testing across a large product catalog |
-| [Tandem](case-studies/05-tandem-creative.html) | An AI-assisted communication tool for special-education teams |
+| [Start Simple with MyPlate](case-studies/myplate.html) | Redesigning goal-setting and food logging for a federal nutrition app |
+| [CeraVe](case-studies/cerave.html) | Information architecture and tree testing across a large product catalog |
+| [Tandem](case-studies/tandem.html) | An AI-assisted communication tool for special-education teams |
 
 ## Structure
 

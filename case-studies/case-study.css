@@ -2280,3 +2280,9 @@
 .morecs__cta .arr { transition: transform .15s var(--ease-out); }
 .morecs__card:hover .morecs__cta .arr { transform: translateX(4px); }
 @media (max-width: 720px){ .morecs__grid { grid-template-columns: 1fr; } }
+
+.cs-back-line{display:flex;max-width:980px;margin:24px auto 0;padding:0 clamp(24px,5vw,56px)}
+.cs-hero-back{display:flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:13px;font-weight:500;color:var(--ink-3);text-decoration:none;letter-spacing:0.02em;transition:color .15s var(--ease,ease),transform .15s var(--ease,ease)}
+.cs-hero-back:hover{color:#c1440e}
+.cs-hero-back svg{width:15px;height:15px;transition:transform .15s var(--ease,ease)}
+.cs-hero-back:hover svg{transform:translateX(-3px)}

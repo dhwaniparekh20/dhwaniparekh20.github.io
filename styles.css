@@ -1715,3 +1715,7 @@ details[open] .cs-method-toggle {
   .cs-image-grid { grid-template-columns: 1fr; }
   .cs-numbers { grid-template-columns: 1fr; gap: 32px; padding: 32px 0; }
 }
+
+@media screen and (max-width: 600px){
+  .footer-cta{font-size:30px}
+}
