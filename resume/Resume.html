@@ -8,134 +8,67 @@
   doc-page:not(:defined){visibility:hidden}
   html { background: #f2f2f2; }
   doc-page {
-    /* ATS-safe: system sans, pure black on white, single column, real text */
     font-family: Arial, Helvetica, sans-serif;
     color: #000;
     font-size: 11pt;
     line-height: 1.21;
   }
   doc-page * { color: #000 !important; }
-
-  /* Name + contact */
-  .r-name {
-    font-size: 1.91em;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin: 0 0 2px;
-    text-transform: uppercase;
-  }
-  .r-role {
-    font-size: 1em;
-    font-weight: 700;
-    margin: 0 0 6px;
-  }
-  .r-contact {
-    font-size: 0.86em;
-    white-space: nowrap;
-    margin: 0 0 4px;
-  }
+  .r-name { font-size: 1.91em; font-weight: 700; letter-spacing: 0.5px; margin: 0 0 2px; text-transform: uppercase; }
+  .r-role { font-size: 1em; font-weight: 700; margin: 0 0 6px; }
+  .r-contact { font-size: 0.86em; white-space: nowrap; margin: 0 0 4px; }
   .r-contact a { color: #000; text-decoration: none; }
-
-  /* Section headings — plain, uppercase, ruled: highly scannable + ATS-parseable */
-  h2.r-sec {
-    font-size: 1.36em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    margin: 6px 0 3px;
-    padding-bottom: 3px;
-    border-bottom: 1.5px solid #000;
-  }
-
+  h2.r-sec { font-size: 1.36em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin: 6px 0 3px; padding-bottom: 3px; border-bottom: 1.5px solid #000; }
   p.r-summary { margin: 0; }
-
-  /* Entry (project / job / education) */
-  .r-entry { margin: 0 0 4px; break-inside: avoid; }
+  .r-entry { margin: 0 0 3px; break-inside: avoid; }
   .r-entry:last-child { margin-bottom: 0; }
-  .r-entry-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-  }
+  .r-entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .r-entry-title { font-size: 1.18em; font-weight: 700; margin: 0; }
   .r-entry-meta { font-size: 0.91em; font-weight: 700; white-space: nowrap; }
-  .r-entry-sub { font-size: 1em; font-style: italic; margin: 1px 0 3px; }
-
+  .r-entry-sub { font-size: 1em; font-style: italic; margin: 0 0 2px; }
   ul.r-bullets { margin: 2px 0 0; padding-left: 18px; }
   ul.r-bullets li { margin: 0 0 1px; padding-left: 2px; }
   ul.r-bullets li::marker { content: "– "; }
-
-  /* Skills / tools — plain wrapped text, not chips (ATS reads text, not styled tags) */
   .r-skillrow { margin: 0 0 3px; }
   .r-skillrow:last-child { margin-bottom: 0; }
   .r-skilllabel { font-weight: 700; }
-
-  .r-download {
-    position: fixed;
-    top: 20px; right: 20px;
-    z-index: 10;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-    background: #000;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0,0,0,.18);
-  }
+  .r-download { position: fixed; top: 20px; right: 20px; z-index: 10; display: inline-flex; align-items: center; gap: 8px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 700; color: #fff; background: #000; border: none; border-radius: 6px; padding: 10px 16px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
   .r-download:hover { opacity: .85; }
   @media print {
     .r-download { display: none; }
-    /* The sheet's screen desk padding would otherwise spill past the page
-       box and emit a blank trailing sheet. */
     doc-page { padding: 0 !important; }
     html, body { margin: 0 !important; padding: 0 !important; }
   }
-
-  /* Mobile: let the fixed Letter sheet reflow to viewport width on screen.
-     Print keeps true 8.5×11in geometry (screen-only query). */
   @media screen and (max-width: 640px) {
-    doc-page {
-      --doc-page-w: 100% !important;
-      --doc-page-margin: 24px !important;
-      min-width: 0 !important;
-      padding: 16px 10px !important;
-    }
-    .r-download {
-      top: 12px; right: 12px;
-      padding: 8px 12px; font-size: 12px;
-    }
+    .r-download { top: 12px; right: 12px; padding: 8px 12px; font-size: 12px; }
     .r-entry-head { flex-wrap: wrap; gap: 2px 12px; }
+    .r-entry-title { font-size: 1.7em; }
   }
-  /* Screen-only: scale the whole sheet to fit narrow viewports so the resume
-     reads as a page, not a stretched desktop layout. Print is untouched. */
-  /* Two-element scale: the FRAME reserves space and clips, the SCALER carries
-     the transform at the sheet's natural size. Never both on one element. */
   #sheet-scaler { transform-origin: top left; }
   @media screen and (max-width: 900px) {
     body { overflow-x: hidden; }
     #sheet-frame { width: 100%; overflow: hidden; }
     #sheet-scaler { transform: scale(var(--sheet-scale, 1)); }
-    /* Let the contact line wrap on screen so the sheet's measured width is the
-       paper width, not the width of one long unbroken line. Print keeps nowrap. */
     .r-contact { white-space: normal; }
   }
   @media print {
     #sheet-frame { overflow: visible !important; height: auto !important; }
     #sheet-scaler { transform: none !important; width: auto !important; margin: 0 !important; }
   }
+  /* Mobile print-clone: hide everything except the freshly built, unscaled
+     clone while printing; the clone itself needs no positioning since it
+     prints in normal document flow at its natural size. */
+  #print-clone-host { display: none; }
+  @media print {
+    body.printing-clone > *:not(#print-clone-host) { display: none !important; }
+    body.printing-clone #print-clone-host { display: block !important; }
+  }
 </style>
 <script src="../analytics.js"></script>
 </head>
 <body>
 
-<button class="r-download" onclick="window.print()">Download PDF ↓</button>
+<button class="r-download" onclick="window.__resumeDownload()">Download PDF ↓</button>
 
 <div id="sheet-frame"><div id="sheet-scaler">
 <doc-page size="letter" orientation="portrait" margin="0.6in">
@@ -145,12 +78,13 @@
   <p class="r-contact">Fremont, CA | (209) 328-9155 | dparekh2@depaul.edu | dhwaniparekh.com | linkedin.com/in/dhwani-parekh-8b126821</p>
 
   <h2 class="r-sec">Summary</h2>
-  <p class="r-summary">Product Designer working end-to-end across web, mobile, and AI-powered products: user flows, wireframes, high-fidelity UI, interaction patterns, and design systems, validated through testing.</p>
+  <p class="r-summary">Product Designer designing end-to-end web, mobile, and AI-powered experiences through user research, interaction design, prototyping, and usability testing.</p>
 
   <h2 class="r-sec">Skills</h2>
-  <div class="r-skillrow">Product Design, Design Systems, UX/UI Design, Interaction Design, Visual Design, User Flows, Wireframing, Prototyping, High-Fidelity UI, Responsive Design, Information Architecture, Accessibility (WCAG)</div>
+  <div class="r-skillrow">User Research, Usability Testing, Competitive Analysis, Journey Mapping, Design Thinking, Product Design, Design Systems, UX/UI Design, Interaction Design, Visual Design, User Flows, Wireframing, Prototyping, High-Fidelity UI, Responsive Design, Information Architecture, Accessibility (WCAG)</div>
   <h2 class="r-sec">Technology</h2>
   <div class="r-skillrow"><span class="r-skilllabel">Design: </span>Figma, Framer, Miro, OpinionX, Maze, Adobe Photoshop, Adobe Illustrator</div>
+  <div class="r-skillrow"><span class="r-skilllabel">AI Tools: </span>ChatGPT, Claude, Figma Make, Lovable</div>
   <div class="r-skillrow"><span class="r-skilllabel">Front-end: </span>HTML, CSS, React</div>
 
   <h2 class="r-sec">Product Design Experience</h2>
@@ -158,12 +92,12 @@
   <div class="r-entry">
     <div class="r-entry-head">
       <p class="r-entry-title">MyPlate: Mobile Nutrition App Redesign</p>
-      <span class="r-entry-meta">DePaul University | Team of 4</span>
     </div>
-    <p class="r-entry-sub">Product Designer</p>
+    <p class="r-entry-sub">Product Designer | 2025</p>
+    <p class="r-entry-sub" style="font-style:normal">Redesigned a mobile nutrition app to improve food logging, personalized goals, and long-term engagement.</p>
     <ul class="r-bullets">
       <li>Designed end-to-end mobile experiences for food logging, personalized goals, and a multi-level progress dashboard, spanning user flows, wireframes, and high-fidelity UI.</li>
-      <li>Built reusable UI components and interaction patterns to keep screens consistent and scalable.</li>
+      <li>Built reusable UI components and interaction patterns to improve consistency and speed up future feature development.</li>
       <li>Iterated against usability feedback, raising ease-of-use (SUS 74.5 → 77.5) and reaching 5.0/7 average ease across redesigned flows.</li>
     </ul>
   </div>
@@ -171,25 +105,25 @@
   <div class="r-entry">
     <div class="r-entry-head">
       <p class="r-entry-title">Tandem: Responsible AI Communication Copilot</p>
-      <span class="r-entry-meta">DePaul University | Team of 4</span>
     </div>
-    <p class="r-entry-sub">Product Designer</p>
+    <p class="r-entry-sub">Product Designer | 2025</p>
+    <p class="r-entry-sub" style="font-style:normal">Designed an AI copilot that helps teachers turn classroom observations into supportive, plain-language parent messages.</p>
     <ul class="r-bullets">
-      <li>Designed an AI copilot that turns teachers' classroom observations into clear, supportive parent messages, defining the core flows, screens, and UI states.</li>
-      <li>Designed guardrail UX: editable AI suggestions, tone controls, and safeguards that keep messaging plain-language and non-diagnostic.</li>
-      <li>Prototyped and refined through design reviews and think-aloud testing with a practicing teacher.</li>
+      <li>Defined the end-to-end experience, including core user flows, screens, and AI interaction states for teacher-parent communication.</li>
+      <li>Designed guardrail UX: editable AI suggestions, tone controls, and safeguards that keep messaging plain-language and non-diagnostic, reducing risk for the product and its users.</li>
+      <li>Prototyped and refined through design reviews and iterative think-aloud testing with a practicing teacher, reducing ambiguity in AI-generated messages and increasing her confidence in sending them as-is.</li>
     </ul>
   </div>
 
   <div class="r-entry">
     <div class="r-entry-head">
       <p class="r-entry-title">CeraVe: E-Commerce Product Discovery Redesign</p>
-      <span class="r-entry-meta">Independent Project</span>
     </div>
-    <p class="r-entry-sub">Lead Product Designer</p>
+    <p class="r-entry-sub">Product Designer | 2026</p>
+    <p class="r-entry-sub" style="font-style:normal">Redesigned a skincare e-commerce platform to improve product discovery and ingredient transparency.</p>
     <ul class="r-bullets">
-      <li>Redesigned product discovery and navigation for a large skincare e-commerce experience, restructuring how products, ingredients, and decision-support tools surface.</li>
-      <li>Designed a clearer information architecture and navigation system, then translated it into wireframes and UI.</li>
+      <li>Reorganized product discovery and navigation, improving how products, ingredients, and decision-support tools were surfaced.</li>
+      <li>Simplified navigation and information architecture to reduce search effort and improve product discovery.</li>
       <li>Validated with users: made unfindable ingredient information discoverable (0% → 70%) and raised task success to 70%+ on 6 of 8 core flows.</li>
     </ul>
   </div>
@@ -198,7 +132,7 @@
   <div class="r-entry">
     <div class="r-entry-head">
       <p class="r-entry-title">DePaul University, Chicago, IL</p>
-      <span class="r-entry-meta">Expected November 2026</span>
+      <span class="r-entry-meta">2026</span>
     </div>
     <p class="r-entry-sub">M.S. in Human-Computer Interaction &nbsp;|&nbsp; GPA 4.0/4.0</p>
     <p class="r-entry-sub" style="font-style:normal">Coursework: Prototyping and Implementation, UX Design with AI, Information Architecture, Usability Evaluation</p>
@@ -216,20 +150,10 @@
 
 <script src="doc-page.js"></script>
 <script>
-/* Keep the document to a single printed sheet.
-   Budget = paper height - the doc-page header/footer spacers that carry the
-   page margin and repeat on every printed page (2 x the margin attribute).
-   Chrome/Safari honor the component's `@page { margin: 0 }`. Browser print
-   headers/footers are deliberately NOT reserved for: resumes should be printed
-   with that option off (ATS parsers read page headers/footers unreliably), and
-   reserving for it forced the type below spec. BREATHING_IN keeps the page from
-   filling edge to edge. If a browser imposes its own margins anyway, the loop
-   steps down to MIN_PT rather than spilling. Restored after print. */
 (function(){
   var page = document.querySelector('doc-page');
   if(!page) return;
-  var BREATHING_IN = 0.35, MIN_PT = 10, START_PT = 11, saved = null;
-
+  var BREATHING_IN = 0.35, MIN_PT = 9, START_PT = 11, MIN_LH = 1.0, START_LH = 1.21, saved = null, savedLH = null;
   function pxPerIn(){
     var probe = document.createElement('div');
     probe.style.cssText = 'position:absolute;visibility:hidden;width:1in';
@@ -255,24 +179,40 @@
   function contentH(){
     var kids = [].filter.call(page.children, function(n){ return n.nodeType === 1; });
     if(!kids.length) return 0;
-    return kids[kids.length-1].getBoundingClientRect().bottom - kids[0].getBoundingClientRect().top;
+    var raw = kids[kids.length-1].getBoundingClientRect().bottom - kids[0].getBoundingClientRect().top;
+    /* On mobile, #sheet-scaler carries a CSS transform:scale() for on-screen
+       display, so getBoundingClientRect() returns the SCALED-DOWN size while
+       budgetPx() is always computed unscaled. Without normalizing, fit() sees
+       artificially small content on mobile, exits its shrink loop immediately
+       at full 11pt, and that undersized-but-wrong fit then carries into the
+       print pass (which does not re-run fit()) — the actual one-page overflow
+       on mobile. Desktop never applies this transform (scale stays 1), so
+       this is a no-op there. */
+    var scale = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sheet-scale')) || 1;
+    return raw / scale;
   }
   function fit(){
     if(saved !== null) return;
     saved = page.style.fontSize;
-    var ppi = pxPerIn(), budget = budgetPx(ppi), pt = START_PT;
+    savedLH = page.style.lineHeight;
+    var ppi = pxPerIn(), budget = budgetPx(ppi), pt = START_PT, lh = START_LH, guard = 0;
     page.style.fontSize = pt + 'pt';
-    while(contentH() > budget && pt > MIN_PT){
-      pt = Math.round((pt - 0.2) * 10) / 10;
+    page.style.lineHeight = String(lh);
+    while(contentH() > budget && (pt > MIN_PT || lh > MIN_LH) && guard < 60){
+      if(pt > MIN_PT) pt = Math.round((pt - 0.2) * 10) / 10;
+      else lh = Math.round((lh - 0.02) * 100) / 100;
       page.style.fontSize = pt + 'pt';
+      page.style.lineHeight = String(lh);
+      guard++;
     }
   }
   function restore(){
     if(saved === null) return;
     page.style.fontSize = saved;
+    page.style.lineHeight = savedLH;
     saved = null;
   }
-  /* Fit the fixed-width sheet into narrow viewports (screen only). */
+  var reflowScale = null;
   (function(){
     var wrap = document.getElementById('sheet-scaler');
     var frame = document.getElementById('sheet-frame');
@@ -283,23 +223,37 @@
       frame.style.height = '';
       document.documentElement.style.setProperty('--sheet-scale', '1');
       if(window.innerWidth > 900) return;
-      /* Measure the SHEET, not the wrapper: the wrapper is a block element and
-         reports the viewport width while doc-page overflows it. offsetWidth /
-         offsetHeight ignore transforms, so these are unscaled dimensions. */
       var w = page.offsetWidth, h = page.offsetHeight;
       if(!w || !h) return;
       var s = Math.min(1, (window.innerWidth - 12) / w);
       document.documentElement.style.setProperty('--sheet-scale', s);
-      wrap.style.width = w + 'px';                       /* natural size */
+      wrap.style.width = w + 'px';
       wrap.style.marginLeft = Math.max(0, (window.innerWidth - w * s) / 2) + 'px';
-      frame.style.height = (h * s) + 'px';               /* scaled footprint */
+      frame.style.height = (h * s) + 'px';
     }
     window.addEventListener('resize', scale);
     window.addEventListener('load', scale);
     if(window.customElements) customElements.whenDefined('doc-page').then(function(){ setTimeout(scale, 0); });
     setTimeout(scale, 60);
+    reflowScale = scale;
   })();
-
+  var fitted = false;
+  function fitOnLoad(){
+    if(fitted) return;
+    fitted = true;
+    saved = null;
+    fit();
+    /* fit() changes font-size/line-height, which changes the sheet's true
+       natural height. scale() above may have already locked #sheet-frame's
+       on-screen height using the PRE-fit (taller) content, since it runs on
+       its own independent timers. Re-run it now that fit() is final, so the
+       visible frame actually matches the fitted content instead of clipping
+       everything after whatever height was captured first — this was why
+       mobile only showed up through CeraVe and cut off Education. */
+    if(reflowScale) reflowScale();
+  }
+  if(window.customElements) customElements.whenDefined('doc-page').then(function(){ setTimeout(fitOnLoad, 0); });
+  else setTimeout(fitOnLoad, 80);
   window.addEventListener('beforeprint', fit);
   window.addEventListener('afterprint', restore);
   if(window.matchMedia){
@@ -307,6 +261,46 @@
     var onChange = function(e){ e.matches ? fit() : restore(); };
     mq.addEventListener ? mq.addEventListener('change', onChange) : mq.addListener(onChange);
   }
+
+  /* Desktop: unchanged, plain window.print(). Mobile: instead of fighting the
+     on-screen scale transform's state/timing (source of every prior mobile
+     print bug: clipped pages, stale heights, zoom flashes, popup blockers),
+     build a fresh, unscaled CLONE of the sheet, fit IT to one page in
+     isolation, print only the clone, then remove it. The live scaled page on
+     screen is never touched by any of this. */
+  window.__resumeDownload = function(){
+    var isMobile = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    if(!isMobile){ window.print(); return; }
+    var old = document.getElementById('print-clone-host');
+    if(old) old.remove();
+    var host = document.createElement('div');
+    host.id = 'print-clone-host';
+    var clone = page.cloneNode(true);
+    clone.removeAttribute('style');
+    host.appendChild(clone);
+    document.body.appendChild(host);
+    document.body.classList.add('printing-clone');
+    var ppi = pxPerIn(), budget = budgetPx(ppi), pt = START_PT, lh = START_LH, guard = 0;
+    function cloneH(){
+      var kids = [].filter.call(clone.children, function(n){ return n.nodeType === 1; });
+      if(!kids.length) return 0;
+      return kids[kids.length-1].getBoundingClientRect().bottom - kids[0].getBoundingClientRect().top;
+    }
+    clone.style.fontSize = pt + 'pt';
+    clone.style.lineHeight = String(lh);
+    while(cloneH() > budget && (pt > MIN_PT || lh > MIN_LH) && guard < 60){
+      if(pt > MIN_PT) pt = Math.round((pt - 0.2) * 10) / 10;
+      else lh = Math.round((lh - 0.02) * 100) / 100;
+      clone.style.fontSize = pt + 'pt';
+      clone.style.lineHeight = String(lh);
+      guard++;
+    }
+    window.print();
+    setTimeout(function(){
+      host.remove();
+      document.body.classList.remove('printing-clone');
+    }, 500);
+  };
 })();
 </script>
 </body>
