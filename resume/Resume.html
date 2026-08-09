@@ -281,6 +281,7 @@
     document.body.appendChild(host);
     document.body.classList.add('printing-clone');
     var ppi = pxPerIn(), budget = budgetPx(ppi), pt = START_PT, lh = START_LH, guard = 0;
+    var CLONE_MIN_PT = 8, CLONE_MIN_LH = 0.92;
     function cloneH(){
       var kids = [].filter.call(clone.children, function(n){ return n.nodeType === 1; });
       if(!kids.length) return 0;
@@ -288,8 +289,8 @@
     }
     clone.style.fontSize = pt + 'pt';
     clone.style.lineHeight = String(lh);
-    while(cloneH() > budget && (pt > MIN_PT || lh > MIN_LH) && guard < 60){
-      if(pt > MIN_PT) pt = Math.round((pt - 0.2) * 10) / 10;
+    while(cloneH() > budget && (pt > CLONE_MIN_PT || lh > CLONE_MIN_LH) && guard < 80){
+      if(pt > CLONE_MIN_PT) pt = Math.round((pt - 0.2) * 10) / 10;
       else lh = Math.round((lh - 0.02) * 100) / 100;
       clone.style.fontSize = pt + 'pt';
       clone.style.lineHeight = String(lh);
