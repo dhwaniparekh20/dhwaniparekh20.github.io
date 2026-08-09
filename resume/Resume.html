@@ -56,12 +56,18 @@
     #sheet-scaler { transform: none !important; width: auto !important; margin: 0 !important; }
   }
   /* Mobile print-clone: hide everything except the freshly built, unscaled
-     clone while printing; the clone itself needs no positioning since it
-     prints in normal document flow at its natural size. */
-  #print-clone-host { display: none; }
+     clone while printing. IMPORTANT: the host must stay laid out (not
+     display:none) at all times, including before printing — fitOnLoad's
+     measurement loop calls getBoundingClientRect() on it, which returns all
+     zeros for a display:none subtree, so the fit loop always saw "0 > budget"
+     as false and exited immediately without ever shrinking anything. That
+     silent no-op fit is why the mobile PDF kept coming out at two pages
+     regardless of the floor values. Position off-screen instead so it's
+     invisible but genuinely laid out and measurable. */
+  #print-clone-host { position: fixed; left: -99999px; top: 0; width: 8.5in; }
   @media print {
     body.printing-clone > *:not(#print-clone-host) { display: none !important; }
-    body.printing-clone #print-clone-host { display: block !important; }
+    body.printing-clone #print-clone-host { position: static !important; left: auto !important; width: auto !important; }
   }
 </style>
 <script src="../analytics.js"></script>
