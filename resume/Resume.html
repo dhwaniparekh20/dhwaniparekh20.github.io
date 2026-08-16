@@ -15,6 +15,7 @@
   }
   doc-page * { color: #000 !important; }
   .r-name { font-size: 1.91em; font-weight: 700; letter-spacing: 0.5px; margin: 0 0 2px; text-transform: uppercase; }
+  h1.r-name { font-family: inherit; }
   .r-role { font-size: 1em; font-weight: 700; margin: 0 0 6px; }
   .r-contact { font-size: 0.86em; white-space: nowrap; margin: 0 0 4px; }
   .r-contact a { color: #000; text-decoration: none; }
@@ -80,11 +81,12 @@
 <body>
 
 <button class="r-download" onclick="window.__resumeDownload()">Download PDF ↓</button>
+<a href="../index.html" style="position:fixed;top:20px;left:20px;z-index:10;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#000;text-decoration:none;">← Back to portfolio</a>
 
 <div id="sheet-frame"><div id="sheet-scaler">
 <doc-page size="letter" orientation="portrait" margin="0.6in">
 
-  <p class="r-name">Dhwani Parekh</p>
+  <h1 class="r-name">Dhwani Parekh</h1>
   <p class="r-role">Product Designer</p>
   <p class="r-contact">Fremont, CA | (209) 328-9155 | dparekh2@depaul.edu | dhwaniparekh.com | linkedin.com/in/dhwani-parekh-8b126821</p>
 
