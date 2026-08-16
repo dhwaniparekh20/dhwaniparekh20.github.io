@@ -191,7 +191,7 @@ button { font: inherit; color: inherit; }
 }
 .hero-keywords {
   margin-top: 32px;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  display: flex; flex-wrap: wrap; gap: 8px;
   width: max-content; max-width: 100%;
   list-style: none; padding: 0;
 }
