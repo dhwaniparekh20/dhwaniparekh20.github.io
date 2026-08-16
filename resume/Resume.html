@@ -39,6 +39,7 @@
   .r-download:hover { opacity: .85; }
   @media print {
     .r-download { display: none; }
+    .r-back-link { display: none; }
     doc-page { padding: 0 !important; }
     html, body { margin: 0 !important; padding: 0 !important; }
   }
@@ -73,6 +74,7 @@
   #print-clone-host { position: fixed; left: -99999px; top: 0; width: 8.5in; }
   @media print {
     body.printing-clone > *:not(#print-clone-host) { display: none !important; }
+    body.printing-clone .r-back-link { display: none !important; }
     body.printing-clone #print-clone-host { position: static !important; left: auto !important; width: auto !important; }
   }
 </style>
@@ -81,7 +83,7 @@
 <body>
 
 <button class="r-download" onclick="window.__resumeDownload()">Download PDF ↓</button>
-<a href="../index.html" style="position:fixed;top:20px;left:20px;z-index:10;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#000;text-decoration:none;">← Back to portfolio</a>
+<a href="../index.html" class="r-back-link" style="position:fixed;top:20px;left:20px;z-index:10;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#000;text-decoration:none;">← Back to portfolio</a>
 
 <div id="sheet-frame"><div id="sheet-scaler">
 <doc-page size="letter" orientation="portrait" margin="0.6in">
