@@ -18,6 +18,8 @@
   .r-role { font-size: 1em; font-weight: 700; margin: 0 0 6px; }
   .r-contact { font-size: 0.86em; white-space: nowrap; margin: 0 0 4px; }
   .r-contact a { color: #000; text-decoration: none; }
+  .r-entry-title a { color: #000 !important; text-decoration: underline; text-underline-offset: 2px; }
+  .r-entry-title a:hover { color: #b5502a !important; }
   h2.r-sec { font-size: 1.36em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin: 6px 0 3px; padding-bottom: 3px; border-bottom: 1.5px solid #000; }
   p.r-summary { margin: 0; }
   .r-entry { margin: 0 0 3px; break-inside: avoid; }
@@ -50,6 +52,9 @@
     #sheet-frame { width: 100%; overflow: hidden; }
     #sheet-scaler { transform: scale(var(--sheet-scale, 1)); }
     .r-contact { white-space: normal; }
+  }
+  @media screen and (max-width: 640px) {
+    doc-page { line-height: 1.55 !important; }
   }
   @media print {
     #sheet-frame { overflow: visible !important; height: auto !important; }
@@ -84,7 +89,7 @@
   <p class="r-contact">Fremont, CA | (209) 328-9155 | dparekh2@depaul.edu | dhwaniparekh.com | linkedin.com/in/dhwani-parekh-8b126821</p>
 
   <h2 class="r-sec">Summary</h2>
-  <p class="r-summary">Product Designer designing end-to-end web, mobile, and AI-powered experiences through user research, interaction design, prototyping, and usability testing.</p>
+  <p class="r-summary">Product Designer with experience designing end-to-end web, mobile, and AI-powered products that simplify complex user problems. Skilled in leading product discovery through user research, sentiment analysis, and usability testing, translating insights into intuitive product experiences, and validating solutions through rapid prototyping and iterative design. A systems thinker with a background in Human-Computer Interaction who enjoys building thoughtful digital products that create measurable user impact.</p>
 
   <h2 class="r-sec">Skills</h2>
   <div class="r-skillrow">User Research, Usability Testing, Competitive Analysis, Journey Mapping, Design Thinking, Product Design, Design Systems, UX/UI Design, Interaction Design, Visual Design, User Flows, Wireframing, Prototyping, High-Fidelity UI, Responsive Design, Information Architecture, Accessibility (WCAG)</div>
@@ -97,7 +102,20 @@
 
   <div class="r-entry">
     <div class="r-entry-head">
-      <p class="r-entry-title">MyPlate: Mobile Nutrition App Redesign</p>
+      <p class="r-entry-title"><a href="../case-studies/cerave.html">CeraVe: E-Commerce Product Discovery Redesign</a></p>
+    </div>
+    <p class="r-entry-sub">Product Designer | 2026</p>
+    <p class="r-entry-sub" style="font-style:normal">Redesigned a skincare e-commerce platform to improve product discovery and ingredient transparency.</p>
+    <ul class="r-bullets">
+      <li>Reorganized product discovery and navigation, improving how products, ingredients, and decision-support tools were surfaced.</li>
+      <li>Simplified navigation and information architecture to reduce search effort and improve product discovery.</li>
+      <li>Validated with users: made unfindable ingredient information discoverable (0% → 70%) and raised task success to 70%+ on 6 of 8 core flows.</li>
+    </ul>
+  </div>
+
+  <div class="r-entry">
+    <div class="r-entry-head">
+      <p class="r-entry-title"><a href="../case-studies/myplate.html">MyPlate: Mobile Nutrition App Redesign</a></p>
     </div>
     <p class="r-entry-sub">Product Designer | 2025</p>
     <p class="r-entry-sub" style="font-style:normal">Redesigned a mobile nutrition app to improve food logging, personalized goals, and long-term engagement.</p>
@@ -110,7 +128,7 @@
 
   <div class="r-entry">
     <div class="r-entry-head">
-      <p class="r-entry-title">Tandem: Responsible AI Communication Copilot</p>
+      <p class="r-entry-title"><a href="../case-studies/tandem.html">Tandem: Responsible AI Communication Copilot</a></p>
     </div>
     <p class="r-entry-sub">Product Designer | 2025</p>
     <p class="r-entry-sub" style="font-style:normal">Designed an AI copilot that helps teachers turn classroom observations into supportive, plain-language parent messages.</p>
@@ -118,19 +136,6 @@
       <li>Defined the end-to-end experience, including core user flows, screens, and AI interaction states for teacher-parent communication.</li>
       <li>Designed guardrail UX: editable AI suggestions, tone controls, and safeguards that keep messaging plain-language and non-diagnostic, reducing risk for the product and its users.</li>
       <li>Prototyped and refined through design reviews and iterative think-aloud testing with a practicing teacher, reducing ambiguity in AI-generated messages and increasing her confidence in sending them as-is.</li>
-    </ul>
-  </div>
-
-  <div class="r-entry">
-    <div class="r-entry-head">
-      <p class="r-entry-title">CeraVe: E-Commerce Product Discovery Redesign</p>
-    </div>
-    <p class="r-entry-sub">Product Designer | 2026</p>
-    <p class="r-entry-sub" style="font-style:normal">Redesigned a skincare e-commerce platform to improve product discovery and ingredient transparency.</p>
-    <ul class="r-bullets">
-      <li>Reorganized product discovery and navigation, improving how products, ingredients, and decision-support tools were surfaced.</li>
-      <li>Simplified navigation and information architecture to reduce search effort and improve product discovery.</li>
-      <li>Validated with users: made unfindable ingredient information discoverable (0% → 70%) and raised task success to 70%+ on 6 of 8 core flows.</li>
     </ul>
   </div>
 
