@@ -104,9 +104,10 @@
       <span>Dhwani Parekh</span>
     </a>
     <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about" class="hide-sm">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#work" data-nav-section="work">Work</a>
+      <a href="#about" class="hide-sm" data-nav-section="about">About</a>
+      <a href="#research" class="hide-sm" data-nav-section="research">Research</a>
+      <a href="#contact" data-nav-section="contact">Contact</a>
       <a href="resume/Resume.html">Resume</a>
     </div>
   </div>
@@ -320,6 +321,39 @@
     </div>
   </section>
 
+  <!-- ─── Research & Writing ──────────────────────────────────── -->
+  <section class="section container" id="research" data-screen-label="Research">
+    <div class="sec-head reveal">
+      <div>
+        <h2 class="sec-head-title">Research &amp; Writing.</h2>
+      </div>
+      <p class="sec-head-aside" style="max-width: 320px">Exploring complex problems through research, synthesis, and clear communication. My work spans accessibility, digital literacy, online trust, and human behavior.</p>
+    </div>
+    <div class="research-list">
+      <a href="research/beyond-barriers.html" class="research-card reveal">
+        <p class="research-card-cat">01 · Accessibility Research</p>
+        <h3 class="research-card-title">Beyond Barriers</h3>
+        <div class="work-card-tags"><span class="work-card-tag">Accessibility Research</span><span class="work-card-tag">Qualitative Research</span></div>
+        <p class="research-card-desc">Exploring how last-mile navigation challenges affect blind and low-vision users.</p>
+        <p class="work-card-cta" style="padding-top:20px">Read the research <span class="arrow">→</span></p>
+      </a>
+      <a href="research/digital-literacy.html" class="research-card reveal">
+        <p class="research-card-cat">02 · Behavioral Research</p>
+        <h3 class="research-card-title">Digital Literacy</h3>
+        <div class="work-card-tags"><span class="work-card-tag">Behavioral Research</span><span class="work-card-tag">Research Synthesis</span></div>
+        <p class="research-card-desc">Understanding how people decide what information to trust online.</p>
+        <p class="work-card-cta" style="padding-top:20px">Read the research <span class="arrow">→</span></p>
+      </a>
+      <a href="research/social-engineering.html" class="research-card reveal">
+        <p class="research-card-cat">03 · Literature Review</p>
+        <h3 class="research-card-title">Understanding Social Engineering</h3>
+        <div class="work-card-tags"><span class="work-card-tag">Literature Review</span><span class="work-card-tag">Research Writing</span></div>
+        <p class="research-card-desc">Exploring why online manipulation works and how technology can better support human decision-making.</p>
+        <p class="work-card-cta" style="padding-top:20px">Read the research <span class="arrow">→</span></p>
+      </a>
+    </div>
+  </section>
+
 </main>
 
 <!-- ─── Footer / Contact ────────────────────────────────── -->
@@ -413,6 +447,37 @@
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var links = document.querySelectorAll('.nav-links a[data-nav-section]');
+    if (!links.length) return;
+    var sections = [];
+    links.forEach(function (a) {
+      var id = a.getAttribute('data-nav-section');
+      var el = document.getElementById(id);
+      if (el) sections.push({ el: el, link: a });
+    });
+    if (!sections.length) return;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var line = window.innerHeight * 0.35;
+      var atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 4);
+      var current = null;
+      sections.forEach(function (s, i) {
+        var isLast = i === sections.length - 1;
+        if (s.el.getBoundingClientRect().top <= line || (isLast && atBottom)) current = s;
+      });
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      if (current) current.link.classList.add('is-active');
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
   })();
 </script>
 

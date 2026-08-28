@@ -539,13 +539,14 @@
 <nav class="nav" data-screen-label="Nav">
   <div class="container nav-inner">
     <a href="../index.html" class="nav-mark" aria-label="Dhwani Parekh, home">
-      <img class="nav-logo" src="../logo-transparent.png" alt="" />
+      <img class="nav-logo" src="../logo-transparent.png" alt="" width="28" height="28" />
       <span>Dhwani Parekh</span>
     </a>
     <div class="nav-links">
-      <a href="../index.html#work">Work</a>
+      <a href="../index.html#work" data-nav-section="work" data-nav-default>Work</a>
       <a href="../index.html#about" class="hide-sm">About</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../index.html#research" class="hide-sm">Research</a>
+      <a href="../index.html#contact" data-nav-section="contact">Contact</a>
       <a href="../resume/Resume.html">Resume</a>
     </div>
   </div>
@@ -1265,5 +1266,29 @@
 <script src="zoom.js"></script>
 <script src="../nav.js"></script>
 
+<script>
+  (function () {
+    var links = document.querySelectorAll('.nav-links a[data-nav-section]');
+    var contactLink = document.querySelector('.nav-links a[data-nav-section="contact"]');
+    var defaultLink = document.querySelector('.nav-links a[data-nav-default]');
+    var footer = document.getElementById('contact');
+    if (!links.length || !defaultLink) return;
+    function setActive(link) {
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      if (link) link.classList.add('is-active');
+    }
+    setActive(defaultLink);
+    if (!footer || !contactLink) return;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      setActive(footer.getBoundingClientRect().top <= window.innerHeight * 0.5 ? contactLink : defaultLink);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
+</script>
 </body>
 </html>

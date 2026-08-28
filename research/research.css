@@ -1,0 +1,40 @@
+/* Research article pages — shares tokens from styles-creative.css (loaded before this) */
+.ra-back-line { max-width: var(--maxw); margin: 0 auto; padding: 24px var(--pad-page-x) 0; }
+.ra-back { color: var(--ink-3); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
+.ra-back:hover { color: var(--accent); }
+.ra-back svg { width: 16px; height: 16px; }
+.ra-hero { max-width: var(--maxw-prose); margin: 0 auto; padding: 48px var(--pad-page-x) 24px; text-align: center; }
+.ra-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.ra-tag { font-size: 11px; color: var(--ink-3); border: .5px solid var(--line-2); padding: 5px 12px; border-radius: var(--radius-pill); letter-spacing: 0.02em; text-transform: uppercase; font-family: var(--font-mono); }
+.ra-title { font-size: clamp(32px, 5vw, 52px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 16px; }
+.ra-sub { font-size: 18px; color: var(--ink-2); line-height: 1.55; max-width: 640px; margin: 0 auto; }
+.ra-body { max-width: var(--maxw-prose); margin: 0 auto; padding: 40px var(--pad-page-x) 120px; }
+.ra-section { padding: 40px 0; border-top: .5px solid var(--line); }
+.ra-section:first-child { border-top: none; padding-top: 0; }
+.ra-section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); font-family: var(--font-mono); font-weight: 500; margin: 0 0 18px; }
+.ra-section p { font-size: 18px; line-height: 1.7; color: var(--ink-2); margin: 0 0 18px; text-wrap: pretty; }
+.ra-section p:last-child { margin-bottom: 0; }
+.ra-section .ra-q { font-size: 22px; color: var(--ink); font-weight: 500; line-height: 1.4; }
+.ra-findings { display: flex; flex-direction: column; gap: 28px; }
+.ra-finding h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin: 0 0 8px; letter-spacing: -0.01em; }
+.ra-finding p { margin: 0; }
+.ra-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.ra-list li { font-size: 17px; line-height: 1.6; color: var(--ink-2); padding-left: 22px; position: relative; }
+.ra-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.ra-takeaway { background: var(--bg-elev); border: .5px solid var(--line); border-radius: var(--radius-card); padding: 32px clamp(24px, 4vw, 40px); }
+.ra-takeaway h2 { color: var(--accent); }
+@media (max-width: 640px) { .ra-title { font-size: 34px; } .ra-sub, .ra-section p, .ra-list li { font-size: 16px; } }
+/* ── cross-links to other research articles (end of article) ── */
+.morecs { max-width: var(--maxw-prose); margin: 0 auto; padding: 72px var(--pad-page-x) 8px; border-top: 1px solid var(--line); }
+.morecs__label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 22px; }
+.morecs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.morecs__card { display: flex; flex-direction: column; gap: 7px; padding: 26px 28px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; background: var(--bg); transition: border-color .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease); }
+.morecs__card:hover { border-color: var(--line-2); transform: translateY(-2px); box-shadow: 0 16px 40px -24px rgba(15,30,55,0.20); }
+.morecs__eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); }
+.morecs__title { font-family: var(--font-sans); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); line-height: 1.15; }
+.morecs__desc { font-size: 14.5px; line-height: 1.5; color: var(--ink-3); margin: 0; flex: 1; }
+.morecs__cta { margin-top: 16px; font-size: 14px; font-weight: 500; color: var(--ink-3); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.morecs__card:hover .morecs__cta { color: var(--accent); }
+.morecs__cta .arr { transition: transform .15s var(--ease); }
+.morecs__card:hover .morecs__cta .arr { transform: translateX(4px); }
+@media (max-width: 720px){ .morecs__grid { grid-template-columns: 1fr; } }

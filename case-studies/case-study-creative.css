@@ -26,6 +26,7 @@ body { background: var(--bg); font-family: var(--font-sans); }
 .cs-tldr-stat__n { color: var(--accent); }
 .cs-tldr-stat--hero .cs-tldr-stat__n { color: var(--paper); }
 .nav-links a:hover { color: var(--accent); }
+.nav-links a.is-active { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .morecs__card:hover .morecs__cta { color: var(--accent); }
 /* footer accents — match homepage */
 :root { --cta-accent: #c1440e; }
