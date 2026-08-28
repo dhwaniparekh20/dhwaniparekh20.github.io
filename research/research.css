@@ -2,6 +2,8 @@
 .ra-back-line { max-width: var(--maxw); margin: 0 auto; padding: 24px var(--pad-page-x) 0; }
 .ra-back { color: var(--ink-3); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
 .ra-back:hover { color: var(--accent); }
+.footer-cta a { color: var(--accent); border-bottom-color: var(--accent) !important; }
+.footer-link:hover, .footer-copy:hover .copy-addr { color: var(--accent); }
 .ra-back svg { width: 16px; height: 16px; }
 .ra-hero { max-width: var(--maxw-prose); margin: 0 auto; padding: 48px var(--pad-page-x) 24px; text-align: center; }
 .ra-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
