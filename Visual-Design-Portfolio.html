@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon.png" />
+<title>Dhwani Parekh · Visual Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles-creative.css">
+<script>(function(){try{var t=JSON.parse(localStorage.getItem('dp-tweaks')||'null');if(!t)return;if(t.dark)document.documentElement.classList.add('dark');if(t.density)document.documentElement.setAttribute('data-density',t.density);document.documentElement.style.setProperty('--accent','#c1440e');document.documentElement.style.setProperty('--cta-accent','#c1440e');}catch(e){}})();</script>
+<script src="analytics.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{color:color-mix(in srgb, var(--accent) 78%, black)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+
+  header{padding:26px 0;border-bottom:.5px solid var(--line);position:sticky;top:0;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(8px);z-index:10}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-weight:600;font-size:15px;letter-spacing:-0.01em}
+  .back{font-family:var(--font-mono);font-size:12px;color:var(--ink-3);letter-spacing:.04em}
+  .back:hover{color:var(--accent)}
+
+  .hero{padding:72px 0 56px}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  h1.title{font-size:clamp(34px,4.6vw,52px);line-height:1.06;letter-spacing:-0.03em;font-weight:600;max-width:16ch;margin-bottom:22px}
+  .lede{font-size:18px;line-height:1.55;color:var(--ink-2);max-width:640px;margin-bottom:16px}
+  .ai-note{font-size:14px;line-height:1.6;color:var(--ink-3);max-width:640px;border-left:2px solid var(--line);padding-left:16px}
+
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;margin:64px 0 26px}
+  .sec-head h2{font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-0.02em;line-height:1.1}
+  .sec-head .count{font-family:var(--font-mono);font-size:12px;color:var(--ink-3);letter-spacing:.04em}
+
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:start}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+  .adult-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:24px;margin-bottom:8px}
+  .adult-feature{grid-column:1;grid-row:1/3}
+  .card{border-radius:var(--radius-card);overflow:hidden;background:var(--bg-elev);border:.5px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.03),0 16px 32px -22px rgba(0,0,0,.14)}
+  .card-media{aspect-ratio:2/3;overflow:hidden;position:relative;background:#f0ede6;display:flex;align-items:center;justify-content:center}
+  .card-media img{width:100%;height:100%;object-fit:contain;display:block}
+  .card-body{padding:14px 16px 16px}
+  .card-title{font-size:14.5px;font-weight:600;letter-spacing:-0.01em;margin-bottom:2px}
+  .card-sub{font-size:12.5px;color:var(--ink-3)}
+  .featured-tag{position:absolute;top:12px;left:12px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.5);padding:5px 10px;border-radius:var(--radius-pill);backdrop-filter:blur(3px)}
+
+  .cs-section{margin-top:110px;padding-top:56px;border-top:.5px solid var(--line)}
+  .cs-eyebrow{font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+  .cs-title{font-size:clamp(28px,3.4vw,40px);font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;max-width:20ch}
+  .cs-sub{font-size:16px;color:var(--ink-2);max-width:680px;line-height:1.55;margin-bottom:48px}
+
+  .cs-row{display:grid;grid-template-columns:0.9fr 1.1fr;gap:44px;align-items:center;margin-bottom:56px}
+  .cs-row.rev{grid-template-columns:1.1fr 0.9fr}
+  .cs-row.rev .cs-row-media{order:2}
+  .cs-figure{border-radius:var(--radius-card);overflow:hidden;border:.5px solid var(--line)}
+  .cs-figure img{width:100%;display:block}
+  .cs-step-num{font-family:var(--font-mono);font-size:12px;color:var(--ink-3);letter-spacing:.08em;margin-bottom:10px}
+  .cs-row h3{font-size:19px;font-weight:600;margin-bottom:10px;letter-spacing:-0.01em}
+  .cs-row p{font-size:14.5px;line-height:1.62;color:var(--ink-2)}
+  .cs-row .meta-list{margin-top:14px;display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:var(--ink-2)}
+  .cs-row .meta-list b{color:var(--ink);font-weight:600}
+
+  .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .thumb{aspect-ratio:2/3;border-radius:10px;overflow:hidden;border:.5px solid var(--line);background:#0e0e0e;position:relative}
+  .thumb-lab{position:absolute;left:0;right:0;bottom:0;padding:5px 6px;font-family:var(--font-mono);font-size:8.5px;line-height:1.2;color:#eee9dd;background:rgba(0,0,0,.6);text-align:center}
+  .thumb-img{position:absolute;inset:0;background:url('uploads/Triplets.jpeg') no-repeat;filter:grayscale(1) contrast(1.05)}
+
+  .directions{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:20px}
+  .dir-card{border-radius:var(--radius-card);overflow:hidden;border:.5px solid var(--line);background:#0e0e0e}
+  .dir-media{aspect-ratio:2/3;position:relative;overflow:hidden}
+  .dir-cap{padding:16px 18px 20px;background:var(--bg-elev)}
+  .dir-cap .dir-lab{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .dir-cap h4{font-size:14.5px;font-weight:600;margin-bottom:6px}
+  .dir-cap p{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+  .dir-chosen{outline:2px solid var(--accent);outline-offset:-2px}
+  .chosen-flag{position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:var(--radius-pill);z-index:2}
+
+  /* Direction 1: painting-led atmospheric */
+  .d1-img{position:absolute;inset:0;background:url('uploads/the-last-arrangement.png') 50% 58.8% / 152% no-repeat}
+  .d1-overlay{position:absolute;left:0;right:0;bottom:0;padding:28px 20px 22px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.75))}
+  .d1-overlay .t{font-family:Georgia,serif;font-style:italic;font-size:22px;color:#f3ece2;letter-spacing:.01em;line-height:1.15}
+  .d1-overlay .a{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;color:#c9bfab;margin-top:10px;text-transform:uppercase}
+
+  /* Direction 2: type-led contemporary */
+  .d2{position:absolute;inset:0;background:#f4efe6;display:flex;flex-direction:column;justify-content:space-between;padding:26px 20px}
+  .d2-title{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1a1a1a;text-transform:uppercase}
+  .d2-crop{width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:url('uploads/the-last-arrangement.png') center 40% / 160% no-repeat}
+  .d2-auth{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#555}
+
+  /* Direction 3: cropped detail-led suspenseful */
+  .d3-img{position:absolute;inset:0;background:url('uploads/the-last-arrangement.png') 50% 67.6% / 307% no-repeat;filter:contrast(1.15) saturate(0.85)}
+  .d3-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,.15),rgba(0,0,0,.75))}
+  .d3-title{position:absolute;top:24px;left:20px;right:20px;font-family:Georgia,serif;font-weight:700;font-size:26px;color:#fff;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+  .d3-auth{position:absolute;bottom:18px;left:20px;font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;color:#e8e3da;text-transform:uppercase}
+
+  .quote{border-left:2px solid var(--accent);padding:16px 22px;margin:20px 0 0;font-size:15px;line-height:1.6;color:var(--ink-2);font-style:italic;max-width:680px}
+
+  .mech-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  .mech-card{border-radius:var(--radius-card);overflow:hidden;border:.5px solid var(--line)}
+  .mech-card img{width:100%;display:block}
+  .mech-label{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+
+  .typo-strip{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+  .typo-chip{border:.5px solid var(--line);border-radius:12px;padding:16px 20px;background:var(--bg-elev)}
+  .typo-chip .tname{font-size:11px;font-family:var(--font-mono);color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+
+  .art-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;align-items:start}
+  .art-card{border-radius:14px;overflow:hidden;border:.5px solid var(--line);background:var(--bg-elev)}
+  .art-media{width:100%;display:block}
+  .art-cap{padding:12px 14px 15px;font-size:12.5px;line-height:1.4;color:var(--ink-3)}
+
+  .adult-stack{display:flex;flex-direction:column;gap:24px}
+  footer{margin-top:120px;padding:56px 0 64px;border-top:.5px solid var(--line)}
+  footer p{font-size:14px;color:var(--ink-3)}
+
+  @media (max-width:900px){
+    .grid4,.grid3,.directions,.mech-row{grid-template-columns:repeat(2,1fr)}
+    .art-grid{grid-template-columns:repeat(2,1fr)}
+    .art-grid>.art-card{grid-column:span 1!important}
+    .adult-grid{grid-template-columns:1fr;grid-template-rows:auto}
+    .adult-feature{grid-column:1;grid-row:auto}
+    .cs-row,.cs-row.rev{grid-template-columns:1fr}
+    .cs-row.rev .cs-row-media{order:0}
+    .thumbs{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:520px){
+    .grid4,.grid3{grid-template-columns:1fr}
+    .art-grid{grid-template-columns:1fr}
+    .art-grid>.art-card{grid-column:span 1!important}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" data-screen-label="Nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-mark" aria-label="Dhwani Parekh, home">
+      <img class="nav-logo" src="logo-transparent.png" alt="" width="28" height="28" />
+      <span>Dhwani Parekh</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#work" data-nav-section="work">Product Design</a>
+      <a href="Visual-Design-Portfolio.html" class="is-active">Visual Design</a>
+      <a href="index.html#about" class="hide-sm" data-nav-section="about">About</a>
+      <a href="index.html#contact" data-nav-section="contact">Contact</a>
+      <a href="resume/Resume.html">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Visual Design</div>
+    <h1 class="title">Visual Design</h1>
+    <p class="lede">A selection of my original oil paintings, created using traditional media. Before transitioning into product design, I spent <b>13 years as a professional fine artist</b>, developing and exhibiting original bodies of work, selling <b>200+ artworks</b>, and completing <b>50+ commissioned pieces</b> for private collectors. This body of work reflects my foundation in composition, color, form, observation, visual storytelling, and attention to detail.</p>
+  </section>
+
+  <!-- ============ FULL CASE STUDY ============ -->
+
+  <section class="cs-section" style="margin-top:20px;padding-top:0;border-top:none">
+    <div class="art-grid">
+      <div class="art-card" style="grid-column:span 4"><img class="art-media" src="uploads/Opulence.jpg" alt="Silver teapot and apples"><div class="art-cap">Opulence, oil on panel</div></div>
+      <div class="art-card" style="grid-column:span 2"><img class="art-media" src="uploads/Triplets.jpeg" alt="Pink roses in a vase"><div class="art-cap">Triplets, oil on canvas</div></div>
+      <div class="art-card" style="grid-column:span 2"><img class="art-media" src="uploads/Midnight Bloom.jpg" alt="Calla lilies and tulips"><div class="art-cap">Lilies and tulips, oil on panel</div></div>
+      <div class="art-card" style="grid-column:span 2"><img class="art-media" src="uploads/Unusual Arrangement.jpg" alt="Still life with sunflowers"><div class="art-cap">The unusual arrangement, oil on canvas</div></div>
+      <div class="art-card" style="grid-column:span 2"><img class="art-media" src="uploads/Lilypads (1).JPG" alt="Water lily pond"><div class="art-cap">Water lilies, oil on canvas</div></div>
+      <div class="art-card" style="grid-column:span 3"><img class="art-media" src="uploads/Transiton.jpg" alt="Copper kettle and onions"><div class="art-cap">Transition, oil on panel</div></div>
+      <div class="art-card" style="grid-column:span 3"><img class="art-media" src="uploads/Symphony in White-a9d50d66.jpg" alt="White and peach roses in a blue and white bowl"><div class="art-cap">Symphony in White, oil on canvas</div></div>
+      <div class="art-card" style="grid-column:span 2"><img class="art-media" src="uploads/Yellow Roses-f974f07f.jpg" alt="Yellow roses on the bush"><div class="art-cap">Yellow Roses, oil on canvas</div></div>
+      <div class="art-card" style="grid-column:span 4"><img class="art-media" src="uploads/Roses, Lisianthus and Fern Shoots-072b78e4.jpg" alt="White roses and purple lisianthus in a glass vase"><div class="art-cap">Roses, Lisianthus and Fern Shoots, oil on canvas</div></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer container" id="contact" data-screen-label="Contact">
+  <svg class="footer-logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <line x1="15" y1="27" x2="17.8" y2="4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+    <circle cx="8.5" cy="21.5" r="5.7" fill="currentColor" />
+    <circle cx="25" cy="8" r="5.5" fill="currentColor" />
+  </svg>
+  <h2 class="footer-cta" style="font-weight: 500">
+    Have a project worth doing well? Let's <a href="mailto:dparekh2@depaul.edu">talk</a>.
+  </h2>
+  <div class="footer-links">
+    <button type="button" class="footer-link footer-copy" data-copy-email="dparekh2@depaul.edu" aria-label="Copy email address dparekh2@depaul.edu">
+      <span class="copy-addr">→ dparekh2@depaul.edu</span>
+      <span class="copy-hint">Copy</span>
+    </button>
+    <a class="footer-link" href="https://www.linkedin.com/in/dhwani-parekh-8b126821/" target="_blank" rel="noopener">→ LinkedIn</a>
+    <a class="footer-link" href="resume/Resume.html">→ Resume</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© Dhwani Parekh</span>
+    <span></span>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path d="M12 5l-7 7m7-7l7 7m-7-7v14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+<script src="copy-email.js"></script>
+<script src="nav.js"></script>
+<script>
+  (function () {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    var onScroll = function () { btn.classList.toggle('is-visible', window.scrollY > 480); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  })();
+</script>
+</body>
+</html>
