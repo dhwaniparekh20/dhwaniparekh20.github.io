@@ -13,7 +13,13 @@
 <script>(function(){try{var t=JSON.parse(localStorage.getItem('dp-tweaks')||'null');if(!t)return;if(t.dark)document.documentElement.classList.add('dark');if(t.density)document.documentElement.setAttribute('data-density',t.density);document.documentElement.style.setProperty('--accent','#c1440e');document.documentElement.style.setProperty('--cta-accent','#c1440e');}catch(e){}})();</script>
 <script src="analytics.js"></script>
 <style>
+  :root{--accent:#c1440e;--cta-accent:#c1440e}
   *{box-sizing:border-box;margin:0;padding:0}
+  .cs-back-line{display:flex;max-width:1080px;margin:24px auto 0;padding:0 clamp(20px,5vw,56px)}
+  .cs-hero-back{display:flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:13px;font-weight:500;color:var(--ink-3);text-decoration:none;letter-spacing:0.02em;transition:color .15s var(--ease,ease)}
+  .cs-hero-back:hover{color:#c1440e}
+  .cs-hero-back svg{width:15px;height:15px;transition:transform .15s var(--ease,ease)}
+  .cs-hero-back:hover svg{transform:translateX(-3px)}
   body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
   img{display:block;max-width:100%;height:auto}
   a{color:var(--accent);text-decoration:none}
@@ -151,6 +157,8 @@
     </div>
   </div>
 </nav>
+
+<div class="cs-back-line"><a class="cs-hero-back" href="index.html"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 6 10l6 6"/></svg>Back to home</a></div>
 
 <div class="wrap">
   <section class="hero">
