@@ -92,6 +92,8 @@
   :root[data-hero="featured"] .hero-marquee { display: none; }
   :root[data-hero="marquee"] .hero-feat { display: none; }
   :root[data-hero="marquee"] .hero-quiet .hero-meta { display: none; }
+  .hero-feat-grid{grid-template-columns:1fr!important;justify-items:center!important;text-align:center!important}
+  .hero-feat-img{width:88px!important;height:88px!important;border-radius:50%!important;margin:0 0 24px!important;aspect-ratio:1/1!important}
 </style>
 <script src="analytics.js"></script>
 </head>
@@ -134,13 +136,14 @@
     </div>
 
     <!-- featured variant -->
-    <div class="hero-feat" style="display:none">
-      <div class="hero-feat-grid">
+    <div class="hero-feat" style="display:none;padding-top:56px">
+      <div class="hero-feat-grid" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:0">
+        <div class="hero-feat-img" style="width:120px;height:120px;border-radius:50%;overflow:hidden;margin-bottom:40px"><img src="uploads/headshot-hero.png" alt="Dhwani Parekh" style="width:100%;height:100%;object-fit:cover;object-position:center 8%;transform:scale(1.25);display:block;filter:saturate(0.9) hue-rotate(-8deg);" /></div>
         <div>
           <h1 class="hero-display" style="font-weight: 600; font-size: 80px">Dhwani Parekh</h1>
           <div class="hero-role" style="font-size: 16px">Product Designer</div>
           <p class="hero-sub">I blend UX research, systems thinking, and AI-enhanced design to create thoughtful digital products.</p>
-          <ul class="hero-keywords" aria-label="Focus areas">
+          <ul class="hero-keywords" aria-label="Focus areas" style="justify-content:center">
             <li>Product Design</li>
             <li>AI Products</li>
             <li>UX Research</li>
@@ -148,7 +151,6 @@
           </ul>
           <p class="hero-sub" style="margin-top:10px;font-size:16px">Designed products across education, healthcare, nutrition, and e-commerce.</p>
         </div>
-        <div class="hero-feat-img"><img src="uploads/headshot-hero.png" alt="Dhwani Parekh" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.9) hue-rotate(-8deg);" /></div>
       </div>
     </div>
   </section>
