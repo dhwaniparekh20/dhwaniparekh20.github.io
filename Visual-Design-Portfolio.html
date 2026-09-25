@@ -55,6 +55,22 @@
   .featured-tag{position:absolute;top:12px;left:12px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.5);padding:5px 10px;border-radius:var(--radius-pill);backdrop-filter:blur(3px)}
 
   .cs-section{margin-top:110px;padding-top:56px;border-top:.5px solid var(--line)}
+  .vd-part{padding-top:56px;margin-top:clamp(72px,9vw,120px);border-top:.5px solid var(--line)}
+  #graphic{margin-top:8px}
+  .vd-part-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+  .vd-num{font-family:var(--font-mono);font-size:13px;color:var(--accent);letter-spacing:.08em}
+  .vd-part-head h2{font-size:clamp(24px,2.6vw,32px);font-weight:500;letter-spacing:-0.02em;line-height:1.1}
+  .vd-cred{font-family:var(--font-mono);font-size:13px;color:var(--ink-3);letter-spacing:.02em;margin-bottom:32px}
+  .gd-list{display:flex;flex-direction:column;gap:clamp(64px,8vw,104px)}
+  .gd-proj{display:flex;flex-direction:column;gap:14px}
+  .gd-media{border-radius:14px;overflow:hidden;border:.5px solid var(--line);background:var(--bg-elev)}
+  .gd-placeholder{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:13px;color:var(--ink-3);border-style:dashed}
+  .gd-meta h3{font-size:19px;font-weight:500;letter-spacing:-0.01em}
+  .gd-meta{display:flex;flex-direction:column;gap:8px;max-width:680px}
+  .gd-tagline{font-size:17px;color:var(--ink);line-height:1.45}
+  .gd-desc{font-size:15.5px;color:var(--ink-2);line-height:1.6;text-wrap:pretty}
+  .gd-tags{font-family:var(--font-mono);font-size:12.5px;color:var(--accent);letter-spacing:.02em;margin-top:4px}
+  .gd-note{font-size:13px;color:var(--ink-3);font-style:italic}
   .cs-eyebrow{font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
   .cs-title{font-size:clamp(28px,3.4vw,40px);font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;max-width:20ch}
   .cs-sub{font-size:16px;color:var(--ink-2);max-width:680px;line-height:1.55;margin-bottom:48px}
@@ -164,12 +180,40 @@
   <section class="hero">
     <div class="eyebrow">Visual Design</div>
     <h1 class="title">Visual Design</h1>
-    <p class="lede">A selection of my original oil paintings, created using traditional media. Before transitioning into product design, I spent <b>13 years as a professional fine artist</b>, developing and exhibiting original bodies of work, selling <b>200+ artworks</b>, and completing <b>50+ commissioned pieces</b> for private collectors. This body of work reflects my foundation in composition, color, form, observation, visual storytelling, and attention to detail.</p>
+    <p class="lede">My visual practice spans graphic design, digital experiences, and fine art. With a foundation in painting and years of professional art practice, I bring a strong understanding of composition, color, hierarchy, and visual storytelling to digital design.</p>
   </section>
 
-  <!-- ============ FULL CASE STUDY ============ -->
+  <section class="vd-part" id="graphic">
+    <div class="vd-part-head"><span class="vd-num">01</span><h2>Graphic &amp; Digital Design</h2></div>
+    <p class="cs-sub">Selected campaign concepts, digital graphics, and visual systems created for product and brand experiences.</p>
+    <div class="gd-list">
+      <article class="gd-proj">
+        <div class="gd-media" style="padding:clamp(12px,2vw,24px);background:#fff"><img src="uploads/myplate-brand-campaign.png" alt="MyPlate Start Simple campaign: eight digital ads and social graphics showing food logging, balanced plate, progress tracking, and custom food entry" style="width:100%;height:auto;display:block"></div>
+        <div class="gd-meta">
+          <h3>MyPlate — Visual Campaign &amp; Digital Design</h3>
+          <p class="gd-tagline">Making healthy choices feel simple, positive, and achievable.</p>
+          <p class="gd-desc">A visual campaign extending my MyPlate product redesign into digital marketing. The system combines colorful food photography, bold typography, product UI, and the existing MyPlate identity to communicate food logging, personalized goals, and progress in an approachable way.</p>
+          <p class="gd-tags">Campaign Design · Social Media · App Marketing</p>
+          <p class="gd-note">Conceptual campaign extension. Not commissioned by or affiliated with the USDA.</p>
+        </div>
+      </article>
+      <article class="gd-proj">
+        <div class="gd-media" style="padding:clamp(12px,2vw,24px);background:#fff"><img src="uploads/flux-brand-campaign.png" alt="Flux brand campaign: street poster, social graphic, mobile app screen, branded notebook and water bottle, and a coworking ad" style="width:100%;height:auto;display:block"></div>
+        <div class="gd-meta">
+          <h3>Flux — Brand Identity &amp; Campaign</h3>
+          <p class="gd-tagline">A bold identity for spaces designed around creativity and connection.</p>
+          <p class="gd-desc">Flux is a conceptual coworking brand built around the idea that our surroundings can influence how we create, work, and connect. Vibrant color, oversized typography, organic forms, and architectural photography create an energetic identity that moves across digital and physical spaces.</p>
+          <p class="gd-tags">Brand Identity · Campaign Design · Environmental Graphics · Digital Design</p>
+          <p class="gd-note">Concept Project</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-  <section class="cs-section" style="margin-top:20px;padding-top:0;border-top:none">
+  <section class="vd-part" id="fine-art">
+    <div class="vd-part-head"><span class="vd-num">02</span><h2>Fine Art</h2></div>
+    <p class="cs-sub" style="margin-bottom:14px">Selected paintings from my professional fine-art practice, exploring light, atmosphere, color, and everyday environments.</p>
+    <p class="vd-cred">13 years of professional practice · 200+ original works sold · 50+ commissions</p>
     <div class="art-grid">
       <div class="art-card" style="grid-column:span 4"><img class="art-media" src="uploads/Opulence.jpg" alt="Silver teapot and apples"><div class="art-cap">Opulence, oil on panel</div></div>
       <div class="art-card" style="grid-column:span 2"><img class="art-media" src="uploads/Triplets.jpeg" alt="Pink roses in a vase"><div class="art-cap">Triplets, oil on canvas</div></div>
