@@ -70,7 +70,7 @@ html,body{overflow-x:clip}
 .bto-top.show{opacity:1;pointer-events:auto;transform:none}
 .bto-top:hover{background:var(--b-rose);color:var(--ink)}
 
-.bfoot .bbottom{justify-content:space-between;align-items:flex-end;flex-wrap:wrap}
+.bfoot .bbottom{justify-content:flex-end;align-items:flex-end;flex-wrap:wrap}
 .bfoot .bclassic{font-size:14px;color:rgba(244,239,228,.85);text-decoration:none}
 .bfoot .bclassic:hover{color:var(--b-rose)}
 
