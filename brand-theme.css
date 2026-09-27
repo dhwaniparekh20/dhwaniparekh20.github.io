@@ -117,3 +117,4 @@ body .acc__h{font-size:20px!important;line-height:1.2!important}
 body .rc h3,body .research h3,body article h3{font-size:22px!important;line-height:1.15!important}
 }
 @media(max-width:640px){body .cc-body p.acc__h,body .cc-body .acc__h{font-size:20px!important;line-height:1.2!important}}
+@media(max-width:640px){.bfoot .bbottom{justify-content:flex-start!important;align-items:flex-start!important}.bfoot .bbottom span{text-align:left!important}.foot{justify-content:flex-start!important;align-items:flex-start!important}.foot .wordmark{display:none}.foot span,.foot .foot-copy{text-align:left!important}}
