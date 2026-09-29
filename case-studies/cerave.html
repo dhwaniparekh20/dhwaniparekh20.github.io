@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" href="../favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../styles.css" />
 <link rel="stylesheet" href="case-study.css" />
 <link rel="stylesheet" href="case-study-creative.css" />
@@ -525,7 +525,7 @@
 }
 .cc-find__num { background: none !important; color: var(--ink-4) !important; width: auto !important; height: auto !important; border-radius: 0 !important; display: block !important; text-align: left !important; justify-content: flex-start !important; margin-right: auto !important; }
 .cc-find__label, .ba__label, .dec__block .l { color: #9e2f5a; }
-.cc-hero__title, .cc-sec__lead, .journey__lead, .jflow__h, .dec__h, .acc__h, .cc-find__card .h { font-family: "Archivo", system-ui, sans-serif !important; }
+.dec__h, .acc__h, .cc-find__card .h { font-family: "Inter", system-ui, sans-serif !important; letter-spacing: -0.01em !important; }
 .cc-ref .h { font-family: var(--font-sans) !important; font-size: 14.5px !important; letter-spacing: -0.01em !important; text-transform: none !important; font-weight: 700 !important; color: #9e2f5a !important; }
 .scr__tab.on { background: #9e2f5a !important; border-color: #9e2f5a !important; color: #fff !important; }
 .snap2__metrics .m, .acc__chips b { color: #9e2f5a !important; }
@@ -598,10 +598,61 @@
 .mp-kw{white-space:nowrap;font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:1.28em;line-height:1;font-weight:400}
 .bhero .cc-hero__title .mp-it{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400}
 .bhero .cc-hero__title .mp-it{color:#e7a93b!important}
-.bhero .mp-kw1{color:#e7a93b!important}.bhero .mp-kw2{color:#e37fa3!important}.bhero .mp-kw3{color:#f4efe4!important}
+.bhero .mp-kw1{color:#e7a93b!important}.bhero .mp-kw2{color:#e37fa3!important}.bhero .mp-kw3{color:#e7a93b!important}
 #s-design .scr__stage{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}
 #s-design .detail__shot{box-shadow:none!important;border:0!important}
 </style>
+<style id="mp-short-metrics">
+.mp-band{max-width:1040px;margin:clamp(28px,4vw,48px) auto 0;padding:0 clamp(24px,5vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mp-band__item{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px;display:grid;gap:6px;align-content:start}
+.mp-band__l{margin:0;font:500 12px var(--b-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:#9e2f5a}
+.mp-band__v{margin:0;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:"Instrument Serif",Georgia,serif;line-height:1}
+.mp-band__from{font-size:clamp(28px,3vw,38px);color:var(--ink-3);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(122,114,104,.6)}
+.mp-band__arr{font-family:var(--font-sans);font-size:22px;color:var(--ink-3)}
+.mp-band__to{font-size:clamp(52px,6vw,76px);color:#1e3a26}
+.mp-band__s{margin:0;font-size:15px;color:var(--ink-2);line-height:1.4}
+.mp-bars{display:grid;gap:14px;margin-bottom:28px}
+.mp-bars__row{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.mp-bars__m{margin:0 0 4px;font-size:18.5px;font-weight:600;color:var(--ink);line-height:1.25}
+.mp-bars__sub{margin:0;font-size:15px;color:var(--ink-3);line-height:1.45}
+.mp-bars__chart{display:grid;gap:10px}
+.mp-bars__line{display:grid;grid-template-columns:52px minmax(0,1fr) 56px;gap:12px;align-items:center}
+.mp-bars__k{font:500 11px var(--b-mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.mp-bars__track{position:relative;height:14px;border-radius:999px;background:var(--paper-2,#f4efe4)}
+.mp-bars__fill{height:100%;border-radius:999px}
+.mp-bars__fill.b{background:#cfc5b3}.mp-bars__fill.a{background:#1e3a26}
+.mp-bars__tgt{position:absolute;top:-5px;bottom:-5px;width:2px;background:#9e2f5a;border-radius:2px}
+.mp-bars__val{font-family:"Instrument Serif",Georgia,serif;font-size:26px;line-height:1;text-align:right}
+.mp-bars__val.b{color:var(--ink-3)}.mp-bars__val.a{color:#1e3a26}
+.mp-bars__tl{margin:0;padding-left:64px;font-size:13px;color:#9e2f5a}
+@media(min-width:1280px){.mp-bars__row{grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center}}
+@media(max-width:800px){.mp-band{grid-template-columns:minmax(0,1fr)}}
+</style>
+<style id="mp-short-type">
+.snap2__p,.snap2__p--muted,.dec__block p,.cc-result__sum,.cc-note,.cc-ref li,.val p,.cc-grid2>div{font-size:17px!important;line-height:1.55!important}
+.cc-snap__l,.cc-result__l,.dec__block .l,.cc-ref .h{font-size:18.5px!important;line-height:1.25!important;margin-bottom:8px!important}
+.val .h{font-size:18px!important}
+.dec__h{font-size:23px!important;line-height:1.15!important}
+.cc-sec__lead{font-size:clamp(32px,3.4vw,44px)!important;line-height:1.1!important}
+#acc .acc__h{font-size:19.5px!important;line-height:1.25!important}
+#acc .acc__take{font-size:15px!important}
+.cc-find__label{font-size:22px!important}
+.cc-find__card .h{font-size:19.5px!important;line-height:1.25!important}
+@media(max-width:640px){
+.snap2__p,.snap2__p--muted,.dec__block p,.cc-result__sum,.cc-note,.cc-ref li,.val p,.cc-grid2>div{font-size:16px!important}
+.cc-snap__l,.cc-result__l,.dec__block .l,.cc-ref .h{font-size:17.5px!important}
+.val .h{font-size:17px!important}
+body h3.dec__h.dec__h{font-size:22px!important;font-weight:700!important;line-height:1.15!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+body .dec__block p.l.l,body .cc-snap__l.cc-snap__l,body .cc-ref .h.h{font-size:18.5px!important}
+body .dec__block p:not(.l).x,body .dec__block p:not(.l):not(.x){font-size:16px!important}
+body .cc-find .cc-find__card p.h.h{font-size:20px!important;font-weight:700!important;line-height:1.2!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+.cc-find__card p:not(.h){font-size:16px!important}
+body h2.cc-sec__lead.cc-sec__lead{font-size:40px!important;line-height:1.05!important}
+body #acc button .acc__h.acc__h{font-size:20px!important;font-weight:700!important;line-height:1.2!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+}
+</style>
+<style id="cv-sitemap">#s-design figure.cc-figwide{padding:0!important;background:none!important;border:0!important;box-shadow:none!important}#s-design figure.cc-figwide>img,#s-design figure.cc-figwide .cz-zoomable{border-radius:16px!important;padding:0!important;background:none!important;border:0!important;outline:0!important;box-shadow:none!important;display:block}</style>
+<style id="cv-fonts">.dec__h,.acc__h,.cc-find__card .h{font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}.cc-find__card .h{font-weight:700}#s-design .cc-body{margin-top:28px!important}</style>
 </head>
 <body class="cs-page">
 
@@ -641,11 +692,11 @@
 
 <div class="cc-hero cvh">
   <h1 class="cc-hero__title">CeraVe</h1>
-  <p class="cvh__sub">A skincare site kept being redesigned, and kept breaking in the same place. I proved the failure was <span class="mp-kw mp-kw1">structural</span>, then designed a <span class="mp-kw mp-kw2">structural fix</span> that improved <span class="mp-kw mp-kw3">findability</span> in re-testing.</p>
+  <p class="cvh__sub">CeraVe's site was redesigned and still broke in the same place. I showed the problem was <span class="mp-kw mp-kw1">structural</span>, rebuilt the <span class="mp-kw mp-kw2">information architecture</span>, and made the helpful content <span class="mp-kw mp-kw3">findable</span>.</p>
 </div></div>
 
 <section class="cvspine">
-  <p class="cvspine__kicker">The site never stopped moving. <b>So the testing followed it, version by version.</b></p>
+  <p class="cvspine__kicker">The site changed while I was studying it. <b>So I tested each version.</b></p>
   <div class="cvspine__track">
     <div class="cvph">
       <div class="cvph__dot">V1</div>
@@ -669,7 +720,7 @@
       <p class="cvph__methods">Tree test (round 2) · validated</p>
     </div>
   </div>
-  <p class="cvspine__note">Watching the <b>same structural failure survive a full redesign</b> (V1 to V2) is what turned a hunch into evidence, and told me the fix had to be architectural, not another coat of paint.<br/><br/><br/></p>
+  <p class="cvspine__note">The same problems <b>survived a full redesign</b>. That told me a new look wouldn't fix it; the structure had to change.<br/><br/></p>
 </section>
 <div class="cc-facts">
   <div><label>Team</label><p>Solo</p></div>
@@ -678,8 +729,14 @@
   <div><label>My role</label><p>IA redesign · UX Research · Content Strategy</p></div>
 </div>
 
+<section class="mp-band" aria-label="Key results">
+  <div class="mp-band__item"><p class="mp-band__l">Ingredient info found</p><p class="mp-band__v"><span class="mp-band__from">0%</span><span class="mp-band__arr" aria-hidden="true">→</span><span class="mp-band__to">70%</span></p><p class="mp-band__s">of testers found it after the redesign</p></div>
+  <div class="mp-band__item"><p class="mp-band__l">Issues found</p><p class="mp-band__v"><span class="mp-band__to">52</span></p><p class="mp-band__s">usability problems across navigation, labels, and product pages</p></div>
+  <div class="mp-band__item"><p class="mp-band__l">Tasks cleared</p><p class="mp-band__v"><span class="mp-band__to">6/8</span></p><p class="mp-band__s">reached 70%+ success in re-testing</p></div>
+</section>
+
 <div class="cc-skim">
-  <span><b>~6 min read</b></span><span>·</span>
+  <span><b>~3 min read</b></span><span>·</span>
   <span>6 sections</span>
 </div>
 
@@ -719,77 +776,58 @@
   </style>
   <section class="cc-sec" id="s-snapshot">
     <span class="cc-sec__tag">01 · Snapshot</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">An information-architecture redesign that gives browsing, learning, and deciding each a clear path of its own.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">I rebuilt the site's structure so browsing, learning, and deciding each have a clear path.</h2>
     <div class="cc-body">
       <div class="snap2">
         <div class="snap2__main">
           <div class="snap2__row">
             <p class="cc-snap__l">Challenge</p>
-            <p class="snap2__p">CeraVe had the content of a great skincare site; it just wasn't structured like one, and successive redesigns never fixed it. In tree testing, <b>90% missed the cleanser quiz</b> and none located ingredient information.</p>
+            <p class="snap2__p">CeraVe had all the right content, but people couldn't find it. In testing, <b>9 in 10 missed the cleanser quiz</b> and nobody found the ingredient information.</p>
           </div>
           <div class="snap2__row">
             <p class="cc-snap__l">Solution</p>
-            <p class="snap2__p">An IA redesign on three moves: a top-level <b>quiz hub</b>, a <b>predictable structure</b> with four parallel ways to browse, and a <b>scannable product page</b> that surfaces comparison.</p>
+            <p class="snap2__p">I made three changes: <b>one quiz hub</b> at the top level, <b>a structure you can predict</b> with four ways to browse, and <b>a product page you can scan</b> and compare from.</p>
           </div>
           <div class="snap2__row">
             <p class="cc-snap__l">My role</p>
-            <p class="snap2__p snap2__p--muted">Sole UX designer: heuristic evaluation, content inventory, cognitive walkthrough, tree testing, usability testing, and the IA redesign.</p>
+            <p class="snap2__p snap2__p--muted">Solo project over four months. I did the research, ran two rounds of tree testing, and designed the new structure.</p>
           </div>
         </div>
         <div class="snap2__aside">
           <div class="snap2__screen"><img class="lb-trigger" src="assets/cerave-pdp-after.png" alt="Redesigned CeraVe Daily Moisturizing Lotion product page." /></div>
           <p class="snap2__cap">The redesigned product page</p>
-          <div class="snap2__metrics">
-            <div><span class="m">0&rarr;70<small>%</small></span><span class="ml">now find ingredient information (a total failure in V1, resolved in re-testing)</span></div>
-            <div><span class="m">6<small>/8</small></span><span class="ml">tasks reached &ge;70% success on the redesigned sitemap</span></div>
-            <div><span class="m">52</span><span class="ml">usability issues logged (V2 diagnostic)</span></div>
-            <div><span class="m">54.5</span><span class="ml">SUS: the V2 baseline, below the 68 benchmark</span></div>
-          </div>
+          
         </div>
       </div>
 
-      <div class="cc-result" style="margin-top:28px;">
-        <p class="cc-result__l">The validation</p>
-        <p class="cc-result__sum">A second round of tree testing on the redesigned sitemap confirmed the fix: the two breakdowns that defined V1 (the missed cleanser quiz and the unreachable ingredient content) both resolved. Directness is now the gap to close, not findability.</p>
-      </div>
     </div>
   </section>
 
   <!-- 02 PROBLEM -->
   <section class="cc-sec" id="s-problem">
     <span class="cc-sec__tag">02 · Problem</span>
-    <h2 class="cc-sec__lead">CeraVe's product range had outgrown its site structure.</h2>
+    <h2 class="cc-sec__lead">The catalog had outgrown the site.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:36px;">New categories, content, and tools had been layered onto an architecture built for a smaller catalog, and the navigation now competed with itself. Users struggled to predict where products belonged, locate the quizzes, and confidently compare products.</p>
       <div class="cc-bigstat">
         <span class="cc-bigstat__n">90<small>%</small></span>
-        <p class="cc-bigstat__l">of users failed to find the Facial Cleanser quiz in tree testing, and none located ingredient information at all.</p>
+        <p class="cc-bigstat__l">of testers couldn't find the cleanser quiz. None found the ingredient information.</p>
       </div>
       <div class="cc-grid2">
-        <div><span class="n">01</span>Dead ends when a category didn't lead where expected.</div>
-        <div><span class="n">02</span>Quizzes and ingredient guides users couldn't find mid-decision.</div>
+        <div><span class="n">01</span>Categories that led somewhere unexpected.</div>
+        <div><span class="n">02</span>Quizzes and ingredient guides hidden right when people needed them.</div>
         <div><span class="n">03</span>Product pages too dense to scan or compare.</div>
-        <div><span class="n">04</span>The same thing labeled differently across sections.</div>
+        <div><span class="n">04</span>The same thing called different names in different places.</div>
       </div>
-      <p class="cc-note" style="margin-top:36px;font-weight:500;color:var(--ink);">The problem wasn't missing content. It was an information architecture that couldn't keep up as the catalog and its tools grew.</p>
     </div>
   </section>
 
   <!-- 03 RESEARCH -->
   <section class="cc-sec" id="s-research">
     <span class="cc-sec__tag">03 · Research</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">I needed to pin down exactly where the site's structure was breaking, then confirm the fix actually held.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">I wanted to find exactly where the structure broke, then check that my fix held.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:36px;">Each method mapped to a version of the site (see the timeline up top). The <b>content inventory</b> and <b>first tree test</b> captured the original structure (V1); the <b>heuristic evaluation</b>, <b>cognitive walkthrough</b>, and <b>usability test</b> assessed a later interim redesign (V2); and a <b>second tree test</b> validated the proposed sitemap. The same findability problems recurred across both live versions, and the second round confirmed the redesign resolved them.</p>
-
-      <div class="cc-stats">
-        <div><span class="n">6</span><span class="l">methods triangulated</span></div>
-        <div><span class="n">52</span><span class="l">usability issues logged</span></div>
-        <div><span class="n">2</span><span class="l">rounds of tree testing</span></div>
-      </div>
-
       <div class="cc-find__label">The six methods</div>
-      <p class="cc-note" style="margin:0 0 18px;">Five methods diagnosed where the structure broke down; a sixth re-tested the redesign to confirm the fix. Click any one to see what I did and what I found.</p>
+      <p class="cc-note" style="margin:0 0 18px;">Five methods to find the problems, one to test the fix. Tap a method to see what I found.</p>
       <div class="acc" id="acc">
         <div class="acc__row">
           <button class="acc__btn"><span class="acc__n">01</span><span class="acc__main"><p class="acc__h">Content inventory</p><p class="acc__take">Quizzes duplicated, ingredient info <b>buried in the blog</b>, one quiz with two names.</p></span><span class="acc__ic">+</span></button>
@@ -873,27 +911,25 @@
       </div>
 
       <div class="cc-find__label">Key findings</div>
-      <p class="cc-note" style="margin:0 0 20px;">Across two versions of the site, five methods told the same story, and a second tree test confirmed the redesign answered it:</p>
       <div class="cc-find">
-        <div class="cc-find__card"><span class="cc-find__num">01</span><p class="h">Search worked; structure didn't</p><p>Users found known products easily, but discovery, decision-support, and comparison all broke down.</p></div>
-        <div class="cc-find__card"><span class="cc-find__num">02</span><p class="h">The tools meant to help were hardest to find</p><p>Quizzes, ingredient content, and comparison were buried: 90% missed the cleanser quiz, 0% found ingredients.</p></div>
-        <div class="cc-find__card"><span class="cc-find__num">03</span><p class="h">The structure competed with itself</p><p>Duplicate sections and inconsistent labels put the same content in several places under several names.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">01</span><p class="h">A redesign didn't fix it</p><p>The same failures showed up on both the original site and its redesign. New visuals, same structure, same result.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">02</span><p class="h">People shop by concern, not product</p><p>4 of 5 testers gave up on the quiz because they wanted to filter by their skin problem first. The site was organized around products.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">03</span><p class="h">Search hid the problem</p><p>People found products they already knew by name. Anyone still deciding got lost, which is exactly who the quizzes were for.</p></div>
       </div>
-      <p class="cc-note" style="margin-top:36px;font-weight:500;color:var(--ink);">The problem wasn't missing content. It was an information architecture that couldn't keep up as the catalog and its tools grew.</p>
     </div>
   </section>
 
   <!-- 04 DESIGN -->
   <section class="cc-sec" id="s-design">
     <span class="cc-sec__tag">04 · Design</span>
-    <h2 class="cc-sec__lead">Three moves came out of that research.</h2>
+    <h2 class="cc-sec__lead">What I changed, and why.</h2>
 
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:8px;">Most of the redesign is visible in the proposed sitemap: new sections give ingredients and decision-support their own homes, and redundant entries are removed.</p>
+      <p class="cc-note" style="margin-bottom:8px;">Most of the work is in the new sitemap. Ingredients and quizzes get their own sections, and duplicates are gone.</p>
 
       <figure class="cc-figwide" style="margin:26px 0 44px;">
-        <img class="lb-trigger" src="assets/cerave-sitemap-proposed-web.png" alt="Proposed sitemap for CeraVe: Home branching into What's new, Bestsellers, Skincare, Baby, Haircare, Skincare tips, Ingredient glossary, Why CeraVe, and Find your perfect skincare routine, with new (N) and to-be-removed (R) markers." data-cz-double />
-        <figcaption>The full proposed sitemap. Green = top-level sections, yellow = sub-levels, pink = pages; N marks new sections, R marks removed ones. Click to zoom.</figcaption>
+        <img class="lb-trigger" src="assets/cerave-sitemap-proposed-web-noborder.png" alt="Proposed sitemap for CeraVe: Home branching into What's new, Bestsellers, Skincare, Baby, Haircare, Skincare tips, Ingredient glossary, Why CeraVe, and Find your perfect skincare routine, with new (N) and to-be-removed (R) markers." data-cz-double />
+        <figcaption>The new sitemap. Green is top level, yellow is second level, pink is pages. N means new, R means removed. Click to zoom.</figcaption>
       </figure>
 
       <!-- decision 1 -->
@@ -901,10 +937,9 @@
         <div>
           <div class="dec__eye">Decision · 01</div>
           <h3 class="dec__h">Merged the quizzes into one hub</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>The quizzes were buried and split by concern, so finding help meant already knowing what was wrong.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>Merge the separate quizzes into one top-level hub, named for the outcome people actually want.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>Five scattered quizzes collapse into one hub: “Find your perfect skincare routine.”</p></div>
-          <div class="dec__block dec__block--out" style="margin-top:34px;"><p class="l">Outcome</p><p>The tools that help people decide now sit where they look first.</p></div>
+          <div class="dec__block"><p class="l">Insight</p><p>There were five separate quizzes, all hard to find. You had to know what was wrong before you could get help.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Combine them into one hub at the top level, named for what people want: “Find your perfect skincare routine.”</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>The help is now where people look first.</p></div>
         </div>
         <div class="scr scr--flow"><div class="scr__stage" style="min-height:300px;padding:16px;background:#fff;border:1px solid var(--line);"><img class="lb-trigger" src="assets/cerave-decision1-quizhub.png" alt="Proposed sitemap detail: the Find your perfect skincare routine hub with five quizzes (acne, facial cleanser, facial moisturizer, body moisturizer, skincare routine), each marked R for removal as standalone pages." style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;" /></div><p class="scr__cap">The five scattered quizzes collapse into one hub.<br/> <b>R</b> marks pages removed as standalone destinations; <b>N</b> marks newly added sections. Click to zoom.</p></div>
       </article>
@@ -914,10 +949,9 @@
         <div>
           <div class="dec__eye">Decision · 02</div>
           <h3 class="dec__h">Made the structure predictable</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>Duplicate sections and inconsistent labels meant users could never predict where a product lived.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>Cut the overlaps and give each way of browsing one clear place.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>Skincare splits into four parallel facets (product type, concern, skin type, ingredient); duplicate entries were removed, and Baby and What's new got their own front doors.</p></div>
-          <div class="dec__block dec__block--out" style="margin-top:34px;"><p class="l">Outcome</p><p>Users can predict where things live and switch between ways of browsing without collisions.</p></div>
+          <div class="dec__block"><p class="l">Insight</p><p>With duplicate sections and mixed labels, people couldn't guess where a product would be.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Remove the overlaps. Let people browse skincare four ways: product type, concern, skin type, or ingredient. Give Baby its own section.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>People can guess where things are and switch how they browse without getting lost.</p></div>
         </div>
         <div class="scr scr--flow"><div class="scr__stage" style="min-height:300px;padding:16px;background:#fff;border:1px solid var(--line);flex-direction:column;align-items:center;gap:22px;"><img class="lb-trigger" src="assets/cerave-decision2-skincare.png?v=4" alt="Proposed sitemap detail: Skincare split into four parallel facets (by product type, by concern, by skin type, by key ingredient), each leading to product pages." style="max-width:100%;height:auto;display:block;border-radius:8px;" /><img class="lb-trigger" src="assets/cerave-decision2-baby.png?v=4" alt="Proposed sitemap detail: Baby as its own top-level section with Skincare and Haircare sub-branches, all newly added." style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div><p class="scr__cap">Skincare browses four parallel ways (product type, concern, skin type, key ingredient); Baby gets its own front door.<br/> <b>N</b> marks newly added sections; <b>R</b> marks removed ones. Click either to zoom.</p></div>
       </article>
@@ -927,10 +961,9 @@
         <div class="dec__eye">Decision · 03</div>
         <h3 class="dec__h">Simplified the product page</h3>
         <div class="dec__blocks">
-          <div class="dec__block"><p class="l">Insight</p><p>Product pages were dense, with 17 consistency violations flagged, and comparison was hard to find.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>Lead with the decisions users actually make, and surface comparison.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>The product page now opens with what it's for, who it's for, and what's in it, and surfaces comparison instead of burying it.</p></div>
-          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>Users can scan, compare, and decide without wading through dense copy.</p></div>
+          <div class="dec__block"><p class="l">Insight</p><p>Product pages were dense, and 3 of 5 testers never found the Compare button.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Open with what the product does, who it's for, and what's in it. Put comparison where people can see it.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>People can scan, compare, and decide without reading a wall of text.</p></div>
         </div>
 
         <!-- full-width before / after compare + optional guided walkthrough -->
@@ -978,62 +1011,46 @@
         </div>
       </article>
 
-      <p class="cc-note" style="margin-top:40px;font-weight:500;color:var(--ink);">Together, these moves turn a fragmented site into a connected system, where browsing, learning, and deciding reinforce each other instead of competing.</p>
     </div>
   </section>
 
   <!-- 05 IMPACT -->
   <section class="cc-sec" id="s-results">
     <span class="cc-sec__tag">05 · Impact</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">What was a fragmented site is now a connected system, with browsing, learning, and deciding all reinforcing each other.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">The fix held up in re-testing, with one gap left.</h2>
     <div class="cc-body">
       <figure class="cc-figwide" style="margin-top:0;">
         <img src="assets/cerave-tree-test-comparison.png" alt="Before-and-after bar chart comparing round 1 (V1) and round 2 (proposed sitemap) task success rates across the same eight tasks." />
-        <figcaption>Same 8 tasks, tree-tested on V1 (round 1) and the proposed sitemap (round 2), n=10 each.</figcaption>
+        <figcaption>The same eight tasks, tested on the original site and on my sitemap, 10 people each.</figcaption>
       </figure>
-      <p class="cc-microlabel" style="margin-top:64px;">What the redesign changes</p>
-      <div class="cc-grid2">
-        <div><span class="n">01</span>Quizzes and ingredient content sit at the top level, where users look first.</div>
-        <div><span class="n">02</span>No more duplicate sections or mismatched labels, so products are easy to predict.</div>
-        <div><span class="n">03</span>A simpler product page leads with what users need to decide.</div>
-        <div><span class="n">04</span>Comparison is surfaced, not buried.</div>
-      </div>
-      <p class="cc-microlabel" style="margin-top:32px;">What re-testing measured</p>
-      <div class="cc-grid2">
-        <div><span class="n">01</span>Ingredient information went from 0% found to 70%, the biggest single gain.</div>
-        <div><span class="n">02</span>The cleanser quiz rose from ~10% to 40% found; still the weakest task.</div>
-        <div><span class="n">03</span>The skincare quiz is now reached directly (60%), not only by accident.</div>
-        <div><span class="n">04</span>6 of 8 tasks cleared 70% success, with baby-care and sensitive-skin near-perfect.</div>
-      </div>
-      <p class="cc-note" style="margin-top:24px;font-size:15px;color:var(--ink-3);">The remaining gap is directness: several tasks land correctly but by longer routes, pointing to labels that still compete, the focus for the next pass.</p>
+      <p class="cc-note" style="margin-top:24px;font-size:15px;color:var(--ink-3);">People now get to the right place, but some take the long way. That points to labels, not structure, so the next pass is about wording.</p>
     </div>
   </section>
 
   <!-- 06 REFLECTION -->
   <section class="cc-sec" id="s-reflection">
     <span class="cc-sec__tag">06 · Reflection</span>
-    <h2 class="cc-sec__lead">Information architecture is invisible until it breaks; then it shapes every interaction.</h2>
+    <h2 class="cc-sec__lead">Nobody notices structure until it breaks.</h2>
     <div class="cc-body">
-      <p class="cc-note">A second round of tree testing validated the core bet: success rose across nearly every task, and both V1 breakdowns (the missed cleanser quiz and the unreachable ingredient content) resolved. What it also surfaced is that findability and directness are different problems. Several tasks now succeed but by indirect routes, so the next iteration is about sharpening labels, not restructuring.</p>
+      <p class="cc-note">Re-testing showed me that finding something and finding it quickly are different problems. The structure is fixed; the labels still need work.</p>
       <div class="cc-ref">
         <div>
           <p class="h">What I learned</p>
           <ul>
-            <li>Even helpful content becomes difficult to use when navigation feels inconsistent or unpredictable.</li>
-            <li>IA is invisible until it breaks; then it shapes every interaction.</li>
-            <li>Tree testing surfaces structural breakdowns that visual review and heuristic evaluation alone cannot.</li>
+            <li>Good content doesn't help if people can't predict where it is.</li>
+            <li>Tree testing caught problems a visual review never would have.</li>
+            <li>Testing each version of a moving site is what made the case convincing.</li>
           </ul>
         </div>
         <div>
-          <p class="h">My next steps</p>
+          <p class="h">What I'd do next</p>
           <ul>
-            <li>Sharpen the labels behind the low-directness tasks (cleanser quiz, hyaluronic acid) and re-test.</li>
-            <li>Extend the IA system to mobile navigation and search.</li>
-            <li>Complete the product-page hierarchy and comparison flows on top of the new structure.</li>
+            <li>Rewrite the labels on the slow tasks, like the cleanser quiz, and test again.</li>
+            <li>Carry the structure over to mobile navigation and search.</li>
+            <li>Finish the comparison flow on the new product page.</li>
           </ul>
         </div>
       </div>
-      <p class="cc-note" style="margin-top:34px;font-weight:500;color:var(--ink);">The redesign shifted CeraVe from a content-rich but confusing site into a predictable, navigable site that shoppers can trust.</p>
     </div>
   </section>
 

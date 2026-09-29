@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" href="../favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../styles.css" />
 <link rel="stylesheet" href="case-study.css" />
 <link rel="stylesheet" href="case-study-creative.css" />
@@ -288,7 +288,7 @@
 .dec__steps { margin-bottom: 40px; }
 .cc-find__num { background: none !important; color: var(--ink-4) !important; width: auto !important; height: auto !important; border-radius: 0 !important; display: block !important; text-align: left !important; justify-content: flex-start !important; margin-right: auto !important; }
 .cc-find__label, .ba__label, .dec__block .l { color: #9e2f5a; }
-.cc-hero__title, .cc-sec__lead, .dec__h, .acc__h, .cc-find__card .h { font-family: "Archivo", system-ui, sans-serif !important; }
+.dec__h, .acc__h, .cc-find__card .h { font-family: "Inter", system-ui, sans-serif !important; letter-spacing: -0.01em !important; }
 .cc-ref .h { font-family: var(--font-sans) !important; font-size: 14.5px !important; letter-spacing: -0.01em !important; text-transform: none !important; font-weight: 700 !important; color: #9e2f5a !important; }
 .scr__tab.on { background: #9e2f5a !important; border-color: #9e2f5a !important; color: #fff !important; }
 .snap2__metrics .m, .acc__chips b { color: #9e2f5a !important; }
@@ -340,7 +340,7 @@
 #acc .acc__detail{padding:26px clamp(20px,3vw,36px) 32px}
 @keyframes accIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @media(max-width:1100px){#acc.acc{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:640px){#acc.acc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){#acc.acc{grid-template-columns:minmax(0,1fr)}}
 #s-snapshot .snap2__main{display:flex;flex-direction:column;gap:12px}
 #s-snapshot .snap2__row{border:0!important;border-radius:16px;padding:18px 22px!important;margin:0!important}
 #s-snapshot .snap2__row:nth-child(1){background:#f7d3e0}
@@ -356,7 +356,7 @@
 .bhero .cc-hero__title .mp-it{font-style:italic;color:#e7a93b}
 .bhero .cc-hero__sub{max-width:640px!important;font-size:clamp(17px,1.6vw,21px);line-height:1.6}
 .mp-kw{white-space:nowrap;font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:1.28em;line-height:1}
-.bhero .mp-kw1{color:#e7a93b!important}.bhero .mp-kw2{color:#e37fa3!important}.bhero .mp-kw3{color:#f4efe4!important}
+.bhero .mp-kw1{color:#e7a93b!important}.bhero .mp-kw2{color:#e37fa3!important}.bhero .mp-kw3{color:#e7a93b!important}
 .mp-rot{display:block;margin:8px auto 0;width:max-content;height:1.2em;overflow:hidden;font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:1.35em;line-height:1.2em}
 .mp-rot-track{display:flex;flex-direction:column;animation:mprot 7.5s cubic-bezier(.7,0,.3,1) infinite}
 .mp-rot-track span{height:1.2em;display:block;color:#e7a93b!important}
@@ -368,6 +368,68 @@
 #s-design .scr__stage{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}
 #s-design .detail__shot{box-shadow:none!important;border:0!important}
 </style>
+<style id="mp-short-before">
+.mp-before{margin:8px 0 0;padding:16px;border-radius:16px;background:rgba(255,255,255,.6);border:1px dashed var(--line-2,#cfc5b3);display:grid;gap:10px;max-width:300px}
+.mp-before__l{margin:0;font:500 11px var(--b-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.mp-before img{width:100%;max-height:260px;object-fit:contain;border-radius:10px;display:block}
+.mp-before__none{height:120px;border-radius:10px;background:var(--paper-2,#f4efe4);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink-3);text-align:center;padding:10px}
+.mp-before figcaption{font-size:14px;color:var(--ink-3);line-height:1.4}
+</style>
+<style id="mp-short-snap">
+#s-snapshot .snap2{align-items:stretch}
+#s-snapshot .snap2__aside{position:static;height:100%;background:none!important;padding:0!important}
+#s-snapshot .snap2__screen{flex:1;height:auto;min-height:320px;background:none!important;border:0!important;padding:0!important}
+#s-snapshot .snap2__screen img{max-height:560px}
+</style>
+<style id="mp-short-metrics">
+.mp-band{max-width:1040px;margin:clamp(28px,4vw,48px) auto 0;padding:0 clamp(24px,5vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mp-band__item{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px;display:grid;gap:6px;align-content:start}
+.mp-band__l{margin:0;font:500 12px var(--b-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:#9e2f5a}
+.mp-band__v{margin:0;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:"Instrument Serif",Georgia,serif;line-height:1}
+.mp-band__from{font-size:clamp(28px,3vw,38px);color:var(--ink-3);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(122,114,104,.6)}
+.mp-band__arr{font-family:var(--font-sans);font-size:22px;color:var(--ink-3)}
+.mp-band__to{font-size:clamp(52px,6vw,76px);color:#1e3a26}
+.mp-band__s{margin:0;font-size:15px;color:var(--ink-2);line-height:1.4}
+.mp-bars{display:grid;gap:14px;margin-bottom:28px}
+.mp-bars__row{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.mp-bars__m{margin:0 0 4px;font-size:18.5px;font-weight:600;color:var(--ink);line-height:1.25}
+.mp-bars__sub{margin:0;font-size:15px;color:var(--ink-3);line-height:1.45}
+.mp-bars__chart{display:grid;gap:10px}
+.mp-bars__line{display:grid;grid-template-columns:52px minmax(0,1fr) 56px;gap:12px;align-items:center}
+.mp-bars__k{font:500 11px var(--b-mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.mp-bars__track{position:relative;height:14px;border-radius:999px;background:var(--paper-2,#f4efe4)}
+.mp-bars__fill{height:100%;border-radius:999px}
+.mp-bars__fill.b{background:#cfc5b3}.mp-bars__fill.a{background:#1e3a26}
+.mp-bars__tgt{position:absolute;top:-5px;bottom:-5px;width:2px;background:#9e2f5a;border-radius:2px}
+.mp-bars__val{font-family:"Instrument Serif",Georgia,serif;font-size:26px;line-height:1;text-align:right}
+.mp-bars__val.b{color:var(--ink-3)}.mp-bars__val.a{color:#1e3a26}
+.mp-bars__tl{margin:0;padding-left:64px;font-size:13px;color:#9e2f5a}
+@media(min-width:1280px){.mp-bars__row{grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center}}
+@media(max-width:800px){.mp-band{grid-template-columns:minmax(0,1fr)}}
+</style>
+<style id="mp-short-type">
+.snap2__p,.snap2__p--muted,.dec__block p,.cc-result__sum,.cc-note,.cc-ref li,.val p,.cc-grid2>div{font-size:17px!important;line-height:1.55!important}
+.cc-snap__l,.cc-result__l,.dec__block .l,.cc-ref .h{font-size:18.5px!important;line-height:1.25!important;margin-bottom:8px!important}
+.val .h{font-size:18px!important}
+.dec__h{font-size:23px!important;line-height:1.15!important}
+.cc-sec__lead{font-size:clamp(32px,3.4vw,44px)!important;line-height:1.1!important}
+#acc .acc__h{font-size:19.5px!important;line-height:1.25!important}
+#acc .acc__take{font-size:15px!important}
+.cc-find__label{font-size:22px!important}
+.cc-find__card .h{font-size:19.5px!important;line-height:1.25!important}
+@media(max-width:640px){
+.snap2__p,.snap2__p--muted,.dec__block p,.cc-result__sum,.cc-note,.cc-ref li,.val p,.cc-grid2>div{font-size:16px!important}
+.cc-snap__l,.cc-result__l,.dec__block .l,.cc-ref .h{font-size:17.5px!important}
+.val .h{font-size:17px!important}
+body h3.dec__h.dec__h{font-size:22px!important;font-weight:700!important;line-height:1.15!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+body .dec__block p.l.l,body .cc-snap__l.cc-snap__l,body .cc-ref .h.h{font-size:18.5px!important}
+body .dec__block p:not(.l).x,body .dec__block p:not(.l):not(.x){font-size:16px!important}
+body .cc-find .cc-find__card p.h.h{font-size:20px!important;font-weight:700!important;line-height:1.2!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+.cc-find__card p:not(.h){font-size:16px!important}
+body h2.cc-sec__lead.cc-sec__lead{font-size:40px!important;line-height:1.05!important}
+body #acc button .acc__h.acc__h{font-size:20px!important;font-weight:700!important;line-height:1.2!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+}
+</style>
 </head>
 <body class="cs-page">
 
@@ -378,7 +440,7 @@
 <!-- HERO -->
 <div class="cc-hero">
   <h1 class="cc-hero__title">Start <i class="mp-it">Simple</i> with MyPlate</h1>
-  <p class="cc-hero__sub">Designing a <span class="mp-kw mp-kw1">simpler</span>, more <span class="mp-kw mp-kw2">motivating</span> nutrition experience for everyday <span class="mp-kw mp-kw3">habit building</span>.</p>
+  <p class="cc-hero__sub">Making it <span class="mp-kw mp-kw1">easy</span> to log a meal, set a goal that <span class="mp-kw mp-kw2">fits</span>, and actually <span class="mp-kw mp-kw3">see your progress</span>.</p>
 </div>
 <div class="wrap">
   <div class="cc-banner" style="background-image:url(assets/myplate-hero-v3.png);aspect-ratio:3646/2446;"></div>
@@ -391,8 +453,14 @@
   <div><label>My role</label><p>Feature redesign · Research · Prototyping</p></div>
 </div>
 
+<section class="mp-band" aria-label="Key results">
+  <div class="mp-band__item"><p class="mp-band__l">Core-task completion</p><p class="mp-band__v"><span class="mp-band__from">60%</span><span class="mp-band__arr" aria-hidden="true">→</span><span class="mp-band__to">83%</span></p><p class="mp-band__s">of people finished the basics</p></div>
+  <div class="mp-band__item"><p class="mp-band__l">System Usability Scale</p><p class="mp-band__v"><span class="mp-band__from">74.5</span><span class="mp-band__arr" aria-hidden="true">→</span><span class="mp-band__to">77.5</span></p><p class="mp-band__s">from “fair” to “good”</p></div>
+  <div class="mp-band__item"><p class="mp-band__l">Comprehension</p><p class="mp-band__v"><span class="mp-band__to">6/6</span></p><p class="mp-band__s">understood every redesigned screen</p></div>
+</section>
+
 <div class="cc-skim">
-  <span><b>~5 min read</b></span><span>·</span>
+  <span><b>~2 min read</b></span><span>·</span>
   <span>6 sections</span>
 </div>
 
@@ -432,39 +500,30 @@
   </style>
   <section class="cc-sec" id="s-snapshot">
     <span class="cc-sec__tag">01 · Snapshot</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">A research-grounded redesign that makes healthy eating simpler and easier to act on.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">I helped redesign MyPlate so logging a meal and setting a goal actually felt doable.</h2>
     <div class="cc-body">
       <div class="snap2">
         <div class="snap2__main">
           <div class="snap2__row">
             <p class="cc-snap__l">Challenge</p>
-            <p class="snap2__p">The USDA's MyPlate app set out to build healthier eating habits, but usability testing showed its core actions were confusing and hard to complete: two in five people couldn't finish the basics.</p>
+            <p class="snap2__p">MyPlate had solid advice from the USDA, but you couldn't log a meal, the goals were the same for everyone, and there was no real way to see how you were doing. In our first test, 2 of 5 people got stuck on basic tasks.</p>
           </div>
           <div class="snap2__row">
             <p class="cc-snap__l">Solution</p>
-            <p class="snap2__p">A redesign around three research-backed bets: <b>flexible food logging</b>, <b>personalized goals</b>, and a <b>multi-level progress dashboard</b>, making healthy eating simpler, more personal, and easier to act on.</p>
+            <p class="snap2__p">I focused the redesign on what people asked for most: <b>easier food logging</b>, <b>goals that fit the person</b>, and <b>progress you can check</b> by day, week, or month.</p>
           </div>
           <div class="snap2__row">
             <p class="cc-snap__l">My role</p>
-            <p class="snap2__p snap2__p--muted">Led the end-to-end redesign on a team of five: feature design, a 38-person MaxDiff study, prototyping, and the concept test that validated it.</p>
+            <p class="snap2__p snap2__p--muted">I was one of five on the team. I led the feature design, ran a survey with 38 people to rank features, built the prototype, and ran the concept test.</p>
           </div>
         </div>
         <div class="snap2__aside">
           <div class="snap2__screen"><img src="assets/meal-based-logging.png" alt="Redesigned meal logging" /></div>
           <p class="snap2__cap">Redesigned meal logging</p>
-          <div class="snap2__metrics">
-            <div><span class="m">6/6</span><span class="ml">understood every redesigned screen</span></div>
-            <div><span class="m">5.0<small>/7</small></span><span class="ml">avg. perceived ease (SEQ)</span></div>
-            <div><span class="m">77.5</span><span class="ml">SUS: “good,” up from 74.5</span></div>
-            <div><span class="m">2</span><span class="ml">problems to fix next round</span></div>
-          </div>
-        </div>
+                  </div>
       </div>
 
-      <div class="cc-result" style="margin-top:28px;">
-        <p class="cc-result__l">The honest challenge</p>
-        <p class="cc-result__sum">Our testers skewed younger and more tech-fluent than MyPlate's federally-tied user base. The friction we fixed was real, but the numbers only earn full trust after a second round with older, lower-income users.</p>
-      </div>
+      
     </div>
   </section>
 
@@ -473,7 +532,6 @@
     <span class="cc-sec__tag">02 · Problem</span>
     <h2 class="cc-sec__lead">Healthy eating shouldn't feel this complicated.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:28px;">The content was credible, USDA-backed and free, but the experience didn't support everyday behavior change. App-store reviews and our own testing pointed at the same thing: friction showed up everywhere users actually needed to act.</p>
       <div class="cc-bigstat">
         <span class="cc-bigstat__n">40%</span>
         <p class="cc-bigstat__l">of participants failed to complete essential tasks in round-one usability testing, limiting the app’s ability to support consistent habits.</p>
@@ -493,24 +551,17 @@ For a habit-building app, it wasn't helping anyone build habits.</p>
   <!-- 03 RESEARCH -->
   <section class="cc-sec" id="s-research">
     <span class="cc-sec__tag">03 · Research</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">Before redesigning anything, I wanted to know why people specifically kept bouncing off MyPlate.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">We looked at the problem five different ways, and a few things surprised us.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:24px;">We triangulated market expectations, user sentiment, and real behavior so the redesign would follow evidence rather than assumptions. Each method answered its own question; together they converged on the same three gaps.</p>
-      <div class="cc-stats">
-        <div><span class="n">5</span><span class="l">methods triangulated</span></div>
-        <div><span class="n">38</span><span class="l">survey participants</span></div>
-        <div><span class="n">4</span><span class="l">competitors benchmarked</span></div>
-      </div>
-
       <div class="cc-find__label">The five methods</div>
-      <p class="cc-note" style="margin:0 0 18px;">Each method answered its own question. Click any one to see what we did and what we found.</p>
+      <p class="cc-note" style="margin:0 0 18px;">Tap a method to see what we found.</p>
       <div class="acc" id="acc">
         <div class="acc__row">
           <button class="acc__btn">
             <span class="acc__n">01</span>
             <span class="acc__main">
               <p class="acc__h">Competitive analysis</p>
-              <p class="acc__take">Missing logging, personalization, and modern onboarding versus every competitor.</p>
+              <p class="acc__take">Every competitor had logging and personal goals. MyPlate had neither.</p>
             </span>
             <span class="acc__ic">+</span>
           </button>
@@ -528,7 +579,7 @@ Implication: add flexible logging, personalized goals, clear progress feedback.
             <span class="acc__n">02</span>
             <span class="acc__main">
               <p class="acc__h">Sentiment analysis</p>
-              <p class="acc__take"><b>68% of reviews were negative.</b> “Outdated,” “cluttered,” “confusing to navigate.”</p>
+              <p class="acc__take"><b>68% of reviews were negative.</b> People called it outdated, cluttered, and confusing.</p>
             </span>
             <span class="acc__ic">+</span>
           </button>
@@ -555,24 +606,14 @@ Implication: add flexible logging, personalized goals, clear progress feedback.
             <span class="acc__n">03</span>
             <span class="acc__main">
               <p class="acc__h">Usability testing (5 users)</p>
-              <p class="acc__take"><b>SUS 74.5, a “fair” score.</b> Generic goals and unclear navigation broke the flow.</p>
+              <p class="acc__take"><b>SUS 74.5, a “fair” score.</b> People got lost and weren't sure which goal to pick.</p>
             </span>
             <span class="acc__ic">+</span>
           </button>
           <div class="acc__panel"><div class="acc__inner"><div class="acc__detail">
-            We ran moderated sessions with five U.S. participants across three core tasks: understanding current eating habits through a quiz, reviewing progress over time, and setting a protein goal. For each task we tracked completion and time on task, then collected a System Usability Scale (SUS) score for the experience overall.
-            <div class="acc__chips">
-              <span><b>74.5</b><span>SUS, a “fair” score</span></span>
-              <span><b>3/5</b><span>passed the habits quiz</span></span>
-              <span><b>~6.5m</b><span>spent on the quiz task</span></span>
-            </div>
-            <ul style="margin-top:14px;">
-              <li>The habits quiz was the clear weak point: only 3 of 5 interpreted and completed it correctly, and several struggled to navigate the flow.</li>
-              <li>Users could reach progress and goal-setting, but the path there was not always obvious, and some needed help to get there.</li>
-              <li>Goal-setting offered no guidance on which option fit a given person, so participants felt unsure of the choices they made.</li>
-            </ul>
+            We watched five people try three core tasks in the app.
             <p style="margin-top:14px;font-style:italic;color:var(--ink-3);">“It doesn't feel like it accounts for my being vegetarian.”</p>
-            <p style="margin-top:12px;">That SUS of 74.5 set the baseline this redesign is measured against, and the failure points it exposed became the problems the redesign had to solve.</p>
+            
           </div></div></div>
         </div>
 
@@ -580,8 +621,8 @@ Implication: add flexible logging, personalized goals, clear progress feedback.
           <button class="acc__btn">
             <span class="acc__n">04</span>
             <span class="acc__main">
-              <p class="acc__h">MaxDiff survey (38)</p>
-              <p class="acc__take">Logging, personalized goals, and guidance win. <b>Gamification and social lose.</b></p>
+              <p class="acc__h">MaxDiff survey (n=38)</p>
+              <p class="acc__take">People wanted logging, personal goals, and guidance. <b>Streaks and social came last.</b></p>
             </span>
             <span class="acc__ic">+</span>
           </button>
@@ -601,7 +642,7 @@ Implication: add flexible logging, personalized goals, clear progress feedback.
             <span class="acc__n">05</span>
             <span class="acc__main">
               <p class="acc__h">Priority matrix</p>
-              <p class="acc__take">Build first: logging, goals, progress. Skip the social feed and public sharing.</p>
+              <p class="acc__take">We built logging, goals, and progress first, and skipped the social feed.</p>
             </span>
             <span class="acc__ic">+</span>
           </button>
@@ -616,53 +657,31 @@ Implication: add flexible logging, personalized goals, clear progress feedback.
         </div>
       </div>
 
-      <div class="cc-find__label">Key findings</div>
-      <p class="cc-note" style="margin:0 0 20px;">Across all five methods, three findings defined what the redesign had to deliver:</p>
+            <div class="cc-find__label">Key findings</div>
       <div class="cc-find">
-        <div class="cc-find__card"><span class="cc-find__num">01</span><p class="h">Generic goals fell flat</p><p>Users wanted goals that fit their own routines and preferences, not one-size-fits-all targets.</p></div>
-        <div class="cc-find__card"><span class="cc-find__num">02</span><p class="h">No way to log meals</p><p>Users needed a quick, flexible way to track what they ate. The original app had none.</p></div>
-        <div class="cc-find__card"><span class="cc-find__num">03</span><p class="h">Progress was invisible</p><p>Users needed clear feedback to see whether they were staying on track.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">01</span><p class="h">Trust wasn't the problem</p><p>People trusted the USDA advice. 68% of reviews were still negative, and they were about the app, not the content. So we kept the guidance and rebuilt the experience around it.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">02</span><p class="h">Nobody asked for streaks</p><p>Badges, streaks, and social sharing ranked last in our survey. People wanted guidance and control, so we left gamification out.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">03</span><p class="h">“Personal” meant how you eat</p><p>“It doesn't feel like it accounts for my being vegetarian,” one tester told us. Goals had to fit someone's diet, not just their numbers.</p></div>
       </div>
-      <p class="cc-note" style="margin-top:36px;font-weight:500;color:var(--ink);">
-
-These three findings became the three design decisions below.</p>
     </div>
   </section>
 
   <!-- 04 DESIGN -->
   <section class="cc-sec" id="s-design">
     <span class="cc-sec__tag">04 · Design</span>
-    <h2 class="cc-sec__lead">Here's what changed, and the research behind why.</h2>
+    <h2 class="cc-sec__lead">What I changed, and why.</h2>
 
     <div class="cc-body">
-      <div class="ba">
-        <div class="ba__label">Before · where MyPlate started</div>
-        <p class="ba__intro">Three gaps research surfaced. Each one is answered by a decision below.</p>
-        <div class="ba__row">
-          <figure class="ba__cell">
-            <div class="ba__absence"><b>∅</b><span>No logging existed</span></div>
-            <figcaption class="ba__cap">Logging: no way to record a meal at all.</figcaption>
-          </figure>
-          <figure class="ba__cell">
-            <img src="assets/original-goal-setup.png" alt="Original MyPlate goal setup" />
-            <figcaption class="ba__cap">Goals: a generic list, no guidance on what fit you.</figcaption>
-          </figure>
-          <figure class="ba__cell">
-            <img src="assets/original-progress.png" alt="Original MyPlate progress" />
-            <figcaption class="ba__cap">Progress: a weekly summary only.</figcaption>
-          </figure>
-        </div>
-      </div>
-
       <!-- decision 1 -->
       <article class="dec">
         <div>
           <div class="dec__eye">Decision · 01</div>
           <h3 class="dec__h">Flexible food logging</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>Users needed simple ways to log what they actually ate.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>A flexible logging experience that reduces friction at the moment people most often abandon a nutrition app: adding what they just ate.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>Four entry points feed one lightweight logging flow, so any eating pattern has a fast path in: pick a meal, scan a food with the camera, search a database of common items, or add a custom entry for anything off-list. Users start by choosing the meal (breakfast, lunch, dinner, or a snack), then add to it however is quickest.</p></div>
-          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>One flow now supports packaged foods, homemade meals, and culturally diverse diets, removing the friction that kept people from logging at all and meeting users where their habits already are.</p></div>
+          <div class="dec__block"><p class="l">Insight</p><p>People wanted an easy way to log what they actually ate.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Give people four ways to add food: pick the meal, snap a photo, search, or type in something custom.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>It works just as well for a packaged snack as for a home-cooked dinner.</p></div>
+          <figure class="mp-before"><p class="mp-before__l">Before</p><div class="mp-before__none">No way to log a meal</div><figcaption>The original app had no logging at all.</figcaption></figure>
+
         </div>
         <div class="scr scr--flow" data-deck="d1">
           <p class="scr__count">4 ways to log</p>
@@ -682,15 +701,11 @@ These three findings became the three design decisions below.</p>
         <div>
           <div class="dec__eye">Decision · 02</div>
           <h3 class="dec__h">Personalized goals</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>Generic goals don't motivate behavior change.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>A guided, three-step goal flow built around personal motivation rather than a generic list of presets.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>Instead of dropping users onto a list of numeric targets, the setup walks them through three decisions: what they want, where to focus, and how they'd like to track it:</p></div>
-          <ol class="dec__steps">
-            <li><b>Choose a primary goal</b>, based on personal motivation.</li>
-            <li><b>Select food groups</b>, focus on what matters most.</li>
-            <li><b>Choose a tracking method</b>: meals, servings, days, or yes/no.</li>
-          </ol>
-          <div class="dec__block dec__block--out" style="margin-top:16px;"><p class="l">Outcome</p><p>Helps users create more relevant goals and makes it easier to get started.</p></div>
+          <div class="dec__block"><p class="l">Insight</p><p>A generic list of goals didn't motivate anyone.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Walk people through three quick choices: what they want to work on, which food groups to focus on, and how they'd like to track it.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>People ended up with goals that felt like their own, and getting started was easier.</p></div>
+          <figure class="mp-before"><p class="mp-before__l">Before</p><img src="assets/original-goal-setup.png" alt="Original MyPlate goal setup" /><figcaption>A generic list with no guidance on what fit you.</figcaption></figure>
+
         </div>
         <div class="scr scr--flow">
           <p class="scr__count">Prototype walkthrough</p>
@@ -704,10 +719,11 @@ These three findings became the three design decisions below.</p>
         <div>
           <div class="dec__eye">Decision · 03</div>
           <h3 class="dec__h">Progress dashboard</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>Users can't improve what they can't see.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>A multi-level progress system across daily, weekly, and monthly views.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>Three layered views answer different questions: a <b>daily</b> view for immediate course-correction within the same day, a <b>weekly</b> view that surfaces patterns and consistency, and a <b>monthly</b> view that shows cumulative improvement over time, so feedback is available at whatever horizon the user cares about.</p></div>
-          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>Progress became something users could see and act on, not just data they logged, and the app shifted from a passive record into an active feedback loop.</p></div>
+          <div class="dec__block"><p class="l">Insight</p><p>It's hard to improve something you can't see.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Show progress for today, this week, and this month.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>People could glance at the dashboard and know what to do next.</p></div>
+          <figure class="mp-before"><p class="mp-before__l">Before</p><img src="assets/original-progress.png" alt="Original MyPlate progress screen" /><figcaption>Only a weekly summary.</figcaption></figure>
+
         </div>
         <div class="scr" data-deck="d3">
           <p class="scr__count">3 progress views</p>
@@ -726,31 +742,33 @@ These three findings became the three design decisions below.</p>
   <!-- 05 RESULTS (testing + impact merged) -->
   <section class="cc-sec" id="s-results">
     <span class="cc-sec__tag">05 · Results</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">The core bet held up in concept testing, and testing also surfaced two fixes for the next round.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">The main idea held up in testing. Two things still need work.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:22px;">Concept-tested the three flows with 6 participants (first-click, comprehension, SEQ/SUS). Each row pairs the round-one baseline with what the concept test <b>actually achieved</b> and the target still ahead. <b>Targets are the next bar to clear, not results already banked.</b></p>
+      <p class="cc-note" style="margin-bottom:22px;">I tested the new flows with six people. The targets are where I want to get next, not results already hit.</p>
 
-      <div class="tgt">
-        <div class="tgt__row tgt__row--head">
-          <span>Metric</span><span>Baseline (measured)</span><span class="tgt__c--hit">Achieved · concept test (n=6)</span><span>Target</span>
+      <div class="mp-bars">
+        <div class="mp-bars__row">
+          <div class="mp-bars__head"><p class="mp-bars__m">Core-task completion</p><p class="mp-bars__sub">The 40% failure rate is what I set out to fix.</p></div>
+          <div class="mp-bars__chart">
+            <div class="mp-bars__line"><span class="mp-bars__k">Before</span><div class="mp-bars__track"><div class="mp-bars__fill b" style="width:60.0%"></div><i class="mp-bars__tgt" style="left:90.0%"></i></div><span class="mp-bars__val b">60%</span></div>
+            <div class="mp-bars__line"><span class="mp-bars__k">After</span><div class="mp-bars__track"><div class="mp-bars__fill a" style="width:83.0%"></div><i class="mp-bars__tgt" style="left:90.0%"></i></div><span class="mp-bars__val a">83%</span></div>
+            <p class="mp-bars__tl">Target ≥ 90%</p>
+          </div>
         </div>
-        <div class="tgt__row">
-          <div class="tgt__c"><span class="tgt__metric">System Usability Score</span><span class="tgt__sub">68 is the industry average; the redesign reached 77.5, with 80+ as the next target.</span></div>
-          <div class="tgt__c"><span class="tgt__val tgt__val--base">74.5</span><span class="tgt__tag">Above avg.</span></div>
-          <div class="tgt__c tgt__c--hit"><span class="tgt__val tgt__val--hit">77.5</span><span class="tgt__tag tgt__tag--hit">✓ “good”</span></div>
-          <div class="tgt__c"><span class="tgt__val tgt__val--target">≥ 80</span><span class="tgt__tag">Excellent</span></div>
+        <div class="mp-bars__row">
+          <div class="mp-bars__head"><p class="mp-bars__m">System Usability Scale</p><p class="mp-bars__sub">68 is average. 80+ is excellent.</p></div>
+          <div class="mp-bars__chart">
+            <div class="mp-bars__line"><span class="mp-bars__k">Before</span><div class="mp-bars__track"><div class="mp-bars__fill b" style="width:74.5%"></div><i class="mp-bars__tgt" style="left:80.0%"></i></div><span class="mp-bars__val b">74.5</span></div>
+            <div class="mp-bars__line"><span class="mp-bars__k">After</span><div class="mp-bars__track"><div class="mp-bars__fill a" style="width:77.5%"></div><i class="mp-bars__tgt" style="left:80.0%"></i></div><span class="mp-bars__val a">77.5</span></div>
+            <p class="mp-bars__tl">Target ≥ 80</p>
+          </div>
         </div>
-        <div class="tgt__row">
-          <div class="tgt__c"><span class="tgt__metric">Core-task completion</span><span class="tgt__sub">Close the 40% failure rate that defined the problem.</span></div>
-          <div class="tgt__c"><span class="tgt__val tgt__val--base">60%</span><span class="tgt__tag">3 of 5</span></div>
-          <div class="tgt__c tgt__c--hit"><span class="tgt__val tgt__val--hit">83%</span><span class="tgt__tag tgt__tag--hit">✓ 5 of 6 first-click</span></div>
-          <div class="tgt__c"><span class="tgt__val tgt__val--target">≥ 90%</span><span class="tgt__tag">Goal</span></div>
-        </div>
-        <div class="tgt__row">
-          <div class="tgt__c"><span class="tgt__metric">Goal-setup ease</span><span class="tgt__sub">Guided flow replaces a generic list of options.</span></div>
-          <div class="tgt__c"><span class="tgt__val tgt__val--base">Low</span><span class="tgt__tag">Unsure which goal fit</span></div>
-          <div class="tgt__c tgt__c--hit"><span class="tgt__val tgt__val--hit">5.0</span><span class="tgt__tag tgt__tag--hit">~ 1 step to fix</span></div>
-          <div class="tgt__c"><span class="tgt__val tgt__val--target">SEQ ≥ 5.5</span><span class="tgt__tag">/ 7</span></div>
+        <div class="mp-bars__row">
+          <div class="mp-bars__head"><p class="mp-bars__m">Goal-setup ease (SEQ, out of 7)</p><p class="mp-bars__sub">Before, people weren’t sure which goal fit them.</p></div>
+          <div class="mp-bars__chart">
+            <div class="mp-bars__line"><span class="mp-bars__k">After</span><div class="mp-bars__track"><div class="mp-bars__fill a" style="width:71.4%"></div><i class="mp-bars__tgt" style="left:78.6%"></i></div><span class="mp-bars__val a">5.0</span></div>
+            <p class="mp-bars__tl">Target ≥ 5.5</p>
+          </div>
         </div>
       </div>
 
@@ -758,17 +776,17 @@ These three findings became the three design decisions below.</p>
         <div>
           <span class="pill pill--v">Validated</span>
           <p class="h">Entry point found on instinct</p>
-          <p>5 of 6 went straight to the meal selector to record a meal.</p>
+          <p>5 of 6 people went straight to the meal selector.</p>
         </div>
         <div>
           <span class="pill pill--f">Iterate</span>
           <p class="h">Tracking-method step needs work</p>
-          <p>The “how to track” step confused 2 of 6. Next: reorder and relabel; allow multiple goals.</p>
+          <p>The “how to track” step confused 2 of 6 people. I'd reorder and relabel it, and allow more than one goal.</p>
         </div>
         <div>
           <span class="pill pill--v">Validated</span>
           <p class="h">Progress read <em>and</em> acted on</p>
-          <p>Clearest flow (5.3/7); people named a next step. Next: add reference ranges.</p>
+          <p>The clearest flow (5.3/7). People could name their next step. Next I'd add reference ranges.</p>
         </div>
       </div>
     </div>
@@ -779,22 +797,22 @@ These three findings became the three design decisions below.</p>
     <span class="cc-sec__tag">06 · Reflection</span>
     <h2 class="cc-sec__lead">Research is only as honest as its sample.</h2>
     <div class="cc-body">
-      <p class="cc-note">Our sample skewed younger and more tech-fluent than MyPlate's real audience, which spans a far wider range of ages and incomes. The redesign solves the friction we saw, but before calling any flow ready, I'd run a second round that deliberately broadens the sample. Only then is it validated for the whole audience, not just the part we reached.</p>
+      <p class="cc-note">Our testers were younger and more tech-savvy than the people who actually use MyPlate. Before calling any of this finished, I'd test it again with a wider group.</p>
       <div class="cc-ref">
         <div>
           <p class="h">What I learned</p>
           <ul>
-            <li>Motivation has to be designed in, not bolted on.</li>
-            <li>Flexible inputs beat strict ones.</li>
-            <li>A clean method doesn't fix an uneven sample.</li>
+            <li>You have to design for motivation from the start.</li>
+            <li>Flexible inputs work better than strict ones.</li>
+            <li>A careful method can't make up for a narrow sample.</li>
           </ul>
         </div>
         <div>
-          <p class="h">My next steps</p>
+          <p class="h">What I'd do next</p>
           <ul>
-            <li>Re-test with a broader, representative sample.</li>
-            <li>Adaptive goal recommendations.</li>
-            <li>Habit-based notifications at decision moments.</li>
+            <li>Test again with a broader group of people.</li>
+            <li>Suggest goals based on how someone is doing.</li>
+            <li>Send reminders at the moments people usually decide what to eat.</li>
           </ul>
         </div>
       </div>

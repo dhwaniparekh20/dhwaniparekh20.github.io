@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" href="../favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../styles.css" />
 <link rel="stylesheet" href="case-study.css" />
 <link rel="stylesheet" href="case-study-creative.css" />
@@ -546,6 +546,79 @@
 .bhero .cc-hero__title .mp-it{color:#10231a!important}
 .bhero .mp-kw1,.bhero .mp-kw2,.bhero .mp-kw3{color:#1e3a26!important}
 </style>
+<style id="mp-short-snap">
+#s-snapshot .snap2{align-items:stretch}
+#s-snapshot .snap2__aside{position:static;height:100%;background:none!important;padding:0!important}
+#s-snapshot .snap2__screen{flex:1;height:auto;min-height:320px;background:none!important;border:0!important;padding:0!important}
+#s-snapshot .snap2__screen img{max-height:560px}
+</style>
+<style id="mp-short-metrics">
+.mp-band{max-width:1040px;margin:clamp(28px,4vw,48px) auto 0;padding:0 clamp(24px,5vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mp-band__item{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px;display:grid;gap:6px;align-content:start}
+.mp-band__l{margin:0;font:500 12px var(--b-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:#9e2f5a}
+.mp-band__v{margin:0;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:"Instrument Serif",Georgia,serif;line-height:1}
+.mp-band__from{font-size:clamp(28px,3vw,38px);color:var(--ink-3);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(122,114,104,.6)}
+.mp-band__arr{font-family:var(--font-sans);font-size:22px;color:var(--ink-3)}
+.mp-band__to{font-size:clamp(52px,6vw,76px);color:#1e3a26}
+.mp-band__s{margin:0;font-size:15px;color:var(--ink-2);line-height:1.4}
+.mp-bars{display:grid;gap:14px;margin-bottom:28px}
+.mp-bars__row{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.mp-bars__m{margin:0 0 4px;font-size:18.5px;font-weight:600;color:var(--ink);line-height:1.25}
+.mp-bars__sub{margin:0;font-size:15px;color:var(--ink-3);line-height:1.45}
+.mp-bars__chart{display:grid;gap:10px}
+.mp-bars__line{display:grid;grid-template-columns:52px minmax(0,1fr) 56px;gap:12px;align-items:center}
+.mp-bars__k{font:500 11px var(--b-mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.mp-bars__track{position:relative;height:14px;border-radius:999px;background:var(--paper-2,#f4efe4)}
+.mp-bars__fill{height:100%;border-radius:999px}
+.mp-bars__fill.b{background:#cfc5b3}.mp-bars__fill.a{background:#1e3a26}
+.mp-bars__tgt{position:absolute;top:-5px;bottom:-5px;width:2px;background:#9e2f5a;border-radius:2px}
+.mp-bars__val{font-family:"Instrument Serif",Georgia,serif;font-size:26px;line-height:1;text-align:right}
+.mp-bars__val.b{color:var(--ink-3)}.mp-bars__val.a{color:#1e3a26}
+.mp-bars__tl{margin:0;padding-left:64px;font-size:13px;color:#9e2f5a}
+@media(min-width:1280px){.mp-bars__row{grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center}}
+@media(max-width:800px){.mp-band{grid-template-columns:minmax(0,1fr)}}
+</style>
+<style id="mp-short-type">
+.snap2__p,.snap2__p--muted,.dec__block p,.cc-result__sum,.cc-note,.cc-ref li,.val p,.cc-grid2>div{font-size:17px!important;line-height:1.55!important}
+.cc-snap__l,.cc-result__l,.dec__block .l,.cc-ref .h{font-size:18.5px!important;line-height:1.25!important;margin-bottom:8px!important}
+.val .h{font-size:18px!important}
+.dec__h{font-size:23px!important;line-height:1.15!important}
+.cc-sec__lead{font-size:clamp(32px,3.4vw,44px)!important;line-height:1.1!important}
+#acc .acc__h{font-size:19.5px!important;line-height:1.25!important}
+#acc .acc__take{font-size:15px!important}
+.cc-find__label{font-size:22px!important}
+.cc-find__card .h{font-size:19.5px!important;line-height:1.25!important}
+@media(max-width:640px){
+.snap2__p,.snap2__p--muted,.dec__block p,.cc-result__sum,.cc-note,.cc-ref li,.val p,.cc-grid2>div{font-size:16px!important}
+.cc-snap__l,.cc-result__l,.dec__block .l,.cc-ref .h{font-size:17.5px!important}
+.val .h{font-size:17px!important}
+body h3.dec__h.dec__h{font-size:22px!important;font-weight:700!important;line-height:1.15!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+body .dec__block p.l.l,body .cc-snap__l.cc-snap__l,body .cc-ref .h.h{font-size:18.5px!important}
+body .dec__block p:not(.l).x,body .dec__block p:not(.l):not(.x){font-size:16px!important}
+body .cc-find .cc-find__card p.h.h{font-size:20px!important;font-weight:700!important;line-height:1.2!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+.cc-find__card p:not(.h){font-size:16px!important}
+body h2.cc-sec__lead.cc-sec__lead{font-size:40px!important;line-height:1.05!important}
+body #acc button .acc__h.acc__h{font-size:20px!important;font-weight:700!important;line-height:1.2!important;font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}
+}
+</style>
+<style id="ts-quote-css">
+.ts-quote{margin:32px 0 8px;padding:clamp(24px,4vw,40px) clamp(22px,4vw,44px);background:#1e3a26!important;color:#f4efe4!important;border-radius:20px;display:grid;gap:14px}
+.ts-quote blockquote{margin:0;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(28px,3.4vw,42px);line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+.ts-quote figcaption{font:500 12px var(--font-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:#f4d9a0!important}
+.ts-quote blockquote{color:#f4efe4!important}
+.cc-shell .cc-sec figure.ts-quote figcaption{color:#f4efe4!important;opacity:.85}
+@media(max-width:760px){.ts-quote{margin:24px 0 20px}.ts-quote blockquote{font-size:28px}}
+</style>
+<style id="ts-mobile">
+@media(max-width:760px){
+.per__card{grid-row:auto!important;grid-template-rows:none!important;display:block!important}
+.per__card+.per__card{margin-top:18px!important}
+.jcard{position:sticky!important;top:calc(72px + var(--i)*12px)!important;grid-template-columns:minmax(0,1fr)!important;height:auto!important}
+.jcard__media{height:300px!important}
+}
+</style>
+<style id="ts-gap2">.dec__rule+.dec__block--out{margin-top:28px!important}#s-design .cc-body{margin-top:24px!important}#s-design .cc-body>.dec:first-child{margin-top:0!important;padding-top:0!important}</style>
+<style id="ts-fonts">.dec__h,.acc__h,.cc-find__card .h,.per__name{font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}</style>
 </head>
 <body class="cs-page">
 
@@ -556,7 +629,7 @@
 <!-- HERO -->
 <div class="cc-hero">
   <h1 class="cc-hero__title"><i class="mp-it"><span style="font-style: normal;">Tandem</span></i></h1>
-  <p class="cc-hero__sub">An AI copilot that turns a teacher's <span class="mp-kw mp-kw1">observations</span> into <span class="mp-kw mp-kw2">warm</span>, plain-language messages and a plan families <span class="mp-kw mp-kw3">build together</span>.</p>
+  <p class="cc-hero__sub">An AI copilot that helps teachers turn classroom <span class="mp-kw mp-kw1">observations</span> into <span class="mp-kw mp-kw2">warm</span>, clear messages, and a plan parents and teachers <span class="mp-kw mp-kw3">build together</span>.</p>
 </div>
 <div style="max-width:1280px;margin:14px auto 34px;padding:0 clamp(20px,4vw,40px);text-align:center;">
   <img src="assets/tandem-card.png" alt="Tandem: the teacher-and-parent app across observe, communicate, and shared-plan screens" style="width:auto;max-width:100%;max-height:70vh;display:inline-block;border-radius:16px;box-shadow:var(--img-shadow);" />
@@ -568,8 +641,14 @@
   <div><label>My role</label><p>Product Design · Research Synthesis · AI Prototyping · Risk Evaluation</p></div>
 </div>
 
+<section class="mp-band" aria-label="Key numbers">
+  <div class="mp-band__item"><p class="mp-band__l">The starting point</p><p class="mp-band__v"><span class="mp-band__to">40 min</span></p><p class="mp-band__s">of teacher contact per family, in a whole year</p></div>
+  <div class="mp-band__item"><p class="mp-band__l">Per teacher</p><p class="mp-band__v"><span class="mp-band__to">20+</span></p><p class="mp-band__s">families to keep up with at once</p></div>
+  <div class="mp-band__item"><p class="mp-band__l">The research</p><p class="mp-band__v"><span class="mp-band__to">6 studies</span></p><p class="mp-band__s">peer-reviewed, behind every design decision</p></div>
+</section>
+
 <div class="cc-skim">
-  <span><b>~7 min read</b></span><span>·</span>
+  <span><b>~4 min read</b></span><span>·</span>
   <span>7 sections</span>
 </div>
 
@@ -610,39 +689,30 @@
   </style>
   <section class="cc-sec" id="s-snapshot">
     <span class="cc-sec__tag">01 · Snapshot</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">An AI copilot built around one hard rule: translate what a teacher sees, never diagnose it.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">An AI helper with one rule it can't break: explain what the teacher saw, never diagnose it.</h2>
     <div class="cc-body">
       <div class="snap2">
         <div class="snap2__main">
           <div class="snap2__row">
             <p class="cc-snap__l">Challenge</p>
-            <p class="snap2__p">Parents and elementary teachers get about 40 minutes of contact a year. In that gap, brief feedback gets misread, parents feel blindsided, and small concerns harden into anxiety before anyone aligns.</p>
+            <p class="snap2__p">Parents and teachers get about 40 minutes together a year. A short note from school gets misread, parents feel caught off guard, and small worries grow before anyone talks.</p>
           </div>
           <div class="snap2__row">
             <p class="cc-snap__l">Solution</p>
-            <p class="snap2__p">An AI copilot on three bets: a guided <b>observe → communicate → act</b> journey, an AI that <b>translates "teacher-speak"</b> into warm language (never diagnosing), and a <b>shared action plan</b> across home and school. The teacher stays in control; the AI stays a draft.</p>
+            <p class="snap2__p">A step-by-step flow that goes from <b>noticing</b> to <b>talking</b> to <b>acting</b>. The AI turns teacher shorthand into warm, plain language, and both sides end with a <b>shared plan</b>. The teacher always has the final say.</p>
           </div>
           <div class="snap2__row">
             <p class="cc-snap__l">My role</p>
-            <p class="snap2__p snap2__p--muted">On a team of five: synthesized the formative research, prototyped the end-to-end flow, and led the AI heuristic &amp; ethical-risk evaluation.</p>
+            <p class="snap2__p snap2__p--muted">I was one of five on the team. I pulled the research together, prototyped the full flow, and led the review of where the AI could go wrong.</p>
           </div>
         </div>
         <div class="snap2__aside">
           <div class="snap2__screen"><img src="assets/tandem-snapshot-parent-message.png" alt="Message from Teacher: the parent's view" /></div>
           <p class="snap2__cap">Message from Teacher: the parent's view</p>
-          <div class="snap2__metrics">
-            <div><span class="m">40<small> min</small></span><span class="ml">teacher contact per family, a year</span></div>
-            <div><span class="m">20+</span><span class="ml">families a teacher juggles at once</span></div>
-            <div><span class="m">3</span><span class="ml">AI personas stress-tested the concept</span></div>
-            <div><span class="m">6</span><span class="ml">peer-reviewed sources behind it</span></div>
-          </div>
+          
         </div>
       </div>
 
-      <div class="cc-result" style="margin-top:28px;">
-        <p class="cc-result__l">The honest challenge</p>
-        <p class="cc-result__sum">We tested mostly on AI-simulated users. They exposed real edge cases but reacted a shade too neatly, and a reworded prompt could flip them. I read them as hypotheses, not proof; no real classroom has met this yet.</p>
-      </div>
     </div>
   </section>
 
@@ -651,7 +721,6 @@
     <span class="cc-sec__tag">02 · Problem</span>
     <h2 class="cc-sec__lead">Two people who love the same child, speaking two different languages.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:48px;">Teachers observe carefully and parents care deeply; the information exists. What's missing is a shared, low-stakes way to reconcile two views of the same child <em>before</em> a concern becomes a crisis.</p>
       <div class="pgap" aria-label="Two views of one child">
         <div class="pgap__side pgap__side--t">
           <p class="pgap__cx">What the teacher sees</p>
@@ -667,37 +736,23 @@
           <p class="pgap__view">A different world at home (routines, mood, what the day cost), with no window into the classroom.</p>
         </div>
       </div>
-      <p class="pgap__cap"><b><br/>The same child, two contexts, no shared view.</b> The teacher and the parent each hold half the picture, with no low-stakes way to reconcile them.</p>
-      <div class="cc-bigstat">
-        <span class="cc-bigstat__n">40<small>min</small></span>
-        <p class="cc-bigstat__l">of direct teacher contact per family in an entire year; the whole relationship runs on it, so feedback is rationed and deferred.</p>
-      </div>
+      <p class="pgap__cap"><b><br/>Each of them holds half the picture.</b> There's no easy, low-pressure way to put the halves together.</p>
       <div class="cc-grid2">
-        <div><span class="n">01</span>Brief, fragmented feedback parents can't act on.</div>
-        <div><span class="n">02</span>Pedagogical language that reads as alarming out of context.</div>
-        <div><span class="n">03</span>Concerns surface late, at conferences, when they already feel like problems.</div>
-        <div><span class="n">04</span>Parents backfill the gaps with anxiety-driven online searches.</div>
+        <div><span class="n">01</span>Notes are too short for parents to act on.</div>
+        <div><span class="n">02</span>Teacher language sounds alarming out of context.</div>
+        <div><span class="n">03</span>Concerns come up late, at conferences, when they already feel serious.</div>
+        <div><span class="n">04</span>Parents fill the silence with late-night searching.</div>
       </div>
-      <p class="cc-note" style="margin-top:36px;font-weight:500;color:var(--ink);">
-
-The same child ends up living in the gap between two incomplete pictures.</p>
     </div>
   </section>
 
   <!-- 03 RESEARCH -->
   <section class="cc-sec" id="s-research">
     <span class="cc-sec__tag">03 · Research</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">I wanted to know why this gap between parents and teachers persists, not just confirm that it does.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">Everyone agrees the gap exists. I wanted to know why it sticks around.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:24px;">We went wide before proposing anything, pairing AI-assisted synthesis with human judgment: AI summarized and clustered the sources, and I made the interpretation calls by hand.</p>
-      <div class="cc-stats">
-        <div><span class="n">3</span><span class="l">methods triangulated</span></div>
-        <div><span class="n">6</span><span class="l">peer-reviewed sources</span></div>
-        <div><span class="n">2</span><span class="l">frontline interviews</span></div>
-      </div>
-
       <div class="cc-find__label">The three methods</div>
-      <p class="cc-note" style="margin:0 0 18px;">Each method answered its own question. Click any one to see what we did and what we found.</p>
+      <p class="cc-note" style="margin:0 0 18px;">Tap a method to see what we found.</p>
       <div class="acc" id="acc">
         <div class="acc__row">
           <button class="acc__btn">
@@ -709,13 +764,12 @@ The same child ends up living in the gap between two incomplete pictures.</p>
             <span class="acc__ic">+</span>
           </button>
           <div class="acc__panel"><div class="acc__inner"><div class="acc__detail">
-            Reviewed six peer-reviewed sources on parent–teacher communication and child development: AI summarized and compared them, human judgment clustered the themes.
+            We read six studies on parent–teacher communication. AI helped summarize them; I grouped the themes myself.
             <ul>
               <li>Greater parent–teacher perception gaps correlate with lower social and cognitive outcomes; the misalignment itself has measurable consequences (Jensen et al., 2025).</li>
               <li>The early-elementary years (ages 3–10) are a critical, high-impact window for getting alignment right.</li>
               <li>Parents and teachers define "engagement" differently, so each can read the other as not involved enough (Fisher &amp; Baissberg, 2025).</li>
-              <li>Low-stakes, ongoing communication reduces defensiveness more than scheduled conferences (NAEYC).</li>
-            </ul>
+                          </ul>
           </div></div></div>
         </div>
 
@@ -753,48 +807,36 @@ The same child ends up living in the gap between two incomplete pictures.</p>
             <ul>
               <li>Waiting until conferences makes parents feel blindsided; early, low-stakes notes reduce defensiveness.</li>
               <li>"Productive struggle" and routine developmental comments are frequently misread as alarming.</li>
-              <li>Time is the hard constraint: roughly 40 minutes of direct contact per family, per year.</li>
-              <li>Parents have almost no window into the classroom's social landscape.</li>
+                            <li>Parents have almost no window into the classroom's social landscape.</li>
             </ul>
           </div></div></div>
         </div>
       </div>
 
       <div class="cc-find__label">Key findings</div>
-      <p class="cc-note" style="margin:0 0 20px;">Across the literature and both interviews, three insights defined what the design had to do:</p>
+      
       <div class="cc-find">
-        <div class="cc-find__card"><span class="cc-find__num">01</span><p class="h">The gap is structural, not personal</p><p>Both adults care; they observe the child in different contexts with no way to reconcile views. The fix is a shared framework, not more goodwill.</p></div>
-        <div class="cc-find__card"><span class="cc-find__num">02</span><p class="h">Translation is the bottleneck, not information</p><p>Teacher language triggers parent anxiety. The missing piece is a reliable bridge from professional terms to plain, supportive meaning.</p></div>
-        <div class="cc-find__card"><span class="cc-find__num">03</span><p class="h">Reactive timing feels like a verdict</p><p>Saved up for conferences, feedback lands as a high-stakes surprise. Continuous, low-stakes contact lowers the temperature.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">01</span><p class="h">Nobody here is the bad guy</p><p>Both adults care. They just see the child in different places. More goodwill won't fix that; a shared way to compare notes might.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">02</span><p class="h">Parents don't need more updates</p><p>They need the ones they get to make sense. “Productive struggle” means growth to a teacher and trouble to a parent.</p></div>
+        <div class="cc-find__card"><span class="cc-find__num">03</span><p class="h">The parent asked for questions, not answers</p><p>Without prompting, she asked for prompts to bring to conferences. She wanted a way into the conversation, not a report.</p></div>
       </div>
-      <p class="cc-note" style="margin-top:36px;font-weight:500;color:var(--ink);">
-
-These three findings pointed straight at a communication tool: one that translates, paces, and aligns.</p>
     </div>
   </section>
 
   <!-- 04 DESIGN -->
   <section class="cc-sec" id="s-design">
     <span class="cc-sec__tag">04 · Design</span>
-    <h2 class="cc-sec__lead">Three decisions came out of that, each paired with a rule the AI isn't allowed to break.</h2>
+    <h2 class="cc-sec__lead">What I designed, and why.</h2>
 
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:8px;">Research pointed to three barriers: teacher language triggers anxiety, feedback is saved up until it lands as a verdict, and teachers have minutes, not hours. Each became a decision below.</p>
-
       <!-- decision 1 -->
       <article class="dec">
         <div>
           <div class="dec__eye">Decision · 01</div>
-          <h3 class="dec__h">A guided observe → communicate → act journey</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>Communication happens all at once, late, at conferences, so teachers are time-poor and parents feel blindsided.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>Break the exchange into a calm, multi-step journey that mirrors how a concern actually unfolds.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>Nine screens grouped into three acts, each doing a single, low-stakes job:</p></div>
-          <ol class="dec__steps">
-            <li><b>Observe</b>: the teacher logs the concern, frequency, examples, the child's strengths, and what they've tried.</li>
-            <li><b>Communicate</b>: the AI drafts the message; the teacher reviews and approves, then the parent receives it in plain language, with developmental context and a few questions to answer.</li>
-            <li><b>Act</b>: the parent adds their home perspective, and both sides build an editable plan together.</li>
-          </ol>
-          <div class="dec__block dec__block--out" style="margin-top:34px;"><p class="l">Outcome</p><p>The journey mirrors how a concern surfaces (notice, talk, act), so neither side carries the whole conversation at once. Later evaluation bore this out: both the real-teacher walkthrough and the synthetic personas gravitated to the structure.</p></div>
+          <h3 class="dec__h">A calm, three-step journey</h3>
+          <div class="dec__block"><p class="l">Insight</p><p>Everything gets said at once, late, at a conference. Teachers are short on time and parents feel ambushed.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Split it into three small steps: the teacher notes what they saw, the parent gets a clear message, and together they decide what to do.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>Nobody has to carry the whole conversation at once. The teacher we tested with, and all three personas, found the flow easy to follow.</p></div>
         </div>
         <div class="scr scr--flow" data-deck="t1">
           <p class="scr__count">3 acts</p>
@@ -812,17 +854,11 @@ These three findings pointed straight at a communication tool: one that translat
       <article class="dec">
         <div>
           <div class="dec__eye">Decision · 02</div>
-          <h3 class="dec__h">An AI copilot that translates, never diagnoses</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>The core problem is translation. Professional language triggers parent anxiety. And in a child-behavior context, an AI that sounds clinical is dangerous.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>Make the AI a copilot that turns structured teacher notes into warm, plain-language messages, with the teacher always in the loop and hard limits on diagnostic language.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>The copilot is the primary pattern; two supporting patterns make it trustworthy:</p></div>
-          <ol class="dec__steps">
-            <li><b>Explainability</b>: a "How this message was created" panel surfaces the observations and patterns behind the draft, so the reasoning is visible, not hidden.</li>
-            <li><b>Controllability</b>: tone control and regenerate; the model proposes, the teacher decides.</li>
-            <li><b>Human-in-the-loop</b>: nothing sends unreviewed; every draft is edited and approved first.</li>
-          </ol>
-          <div class="dec__rule"><p><b>The hard rule:</b> Tandem never diagnoses, labels, or names conditions. It translates into strength-based, developmentally grounded language and points to professionals when a concern is serious.</p></div>
-          <div class="dec__block dec__block--out" style="margin-top:34px;"><p class="l">Outcome</p><p>This is where the biggest risk lived: an AI that sounds clinical. So the copilot leads with the transparency panel and a bias-aware language safeguard, and the fix was never a smarter model, it was keeping the human in front of it. Our later evaluation put exactly this to the test.</p></div>
+          <h3 class="dec__h">An AI that translates, never diagnoses</h3>
+          <div class="dec__block"><p class="l">Insight</p><p>The real problem was wording. And when the topic is a child's behavior, an AI that sounds clinical can do real harm.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Let the AI draft a warm, plain-language message from the teacher's notes. It shows how it got there, the teacher can change the tone, and nothing sends until the teacher approves it.</p></div>
+          <div class="dec__rule"><p><b>The hard rule:</b> Tandem never diagnoses or names a condition. It starts with the child's strengths, and points families to a professional when something is serious.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>The fix was never a smarter model. It was keeping the teacher in front of it.</p></div>
         </div>
         <div class="scr scr--flow">
           <p class="scr__count">The copilot</p>
@@ -833,15 +869,15 @@ These three findings pointed straight at a communication tool: one that translat
 
       <div class="detail">
         <p class="detail__label">Detail · where the safeguards live</p>
-        <p class="detail__lead">The responsible-AI story isn't in the copy: it's in two screens.</p>
+        <p class="detail__lead">Two screens do most of the work of keeping the AI honest.</p>
         <div class="detail__grid">
           <figure class="detail__fig">
             <img class="detail__shot" src="assets/tandem-detail-translate-new-even.png" alt="Neutral Language Suggested: the AI rewrites the teacher's raw note, with Accept or Keep Original buttons" />
-            <p class="detail__cap"><b>Translate, don't dictate.</b> The AI rewrites the teacher's raw note into neutral language, but Accept / Keep Original leaves the final call with the teacher.</p>
+            <p class="detail__cap"><b>Suggest, don't decide.</b> The AI offers a softer rewrite. The teacher can accept it or keep their own words.</p>
           </figure>
           <figure class="detail__fig">
             <img class="detail__shot" src="assets/tandem-detail-transparency-new-even.png" alt="How AI generated this: cited source and confidence, above a Not a diagnosis limitation banner" />
-            <p class="detail__cap"><b>Show the work, name the limit.</b> Every AI suggestion cites its source and confidence, and a standing “Not a diagnosis” banner draws the hard line.</p>
+            <p class="detail__cap"><b>Show the work.</b> Every suggestion lists its source and how sure it is, under a standing “Not a diagnosis” banner.</p>
           </figure>
         </div>
       </div>
@@ -850,16 +886,10 @@ These three findings pointed straight at a communication tool: one that translat
       <article class="dec">
         <div>
           <div class="dec__eye">Decision · 03</div>
-          <h3 class="dec__h">Turn one-way feedback into a shared plan</h3>
-          <div class="dec__block"><p class="l">Insight</p><p>Parents and teachers see the child in different worlds and define involvement differently, yet feedback today flows in only one direction.</p></div>
-          <div class="dec__block"><p class="l">Decision</p><p>Give parents a structured way to add their home perspective, then co-create an editable action plan split across school and home.</p></div>
-          <div class="dec__block"><p class="l">Solution</p><p>The final act makes the exchange two-way and ends in something concrete:</p></div>
-          <ol class="dec__steps">
-            <li><b>Two-way</b>: parents add what they see at home through focused prompts, enough to balance the picture without becoming a form.</li>
-            <li><b>Aligned action</b>: an editable plan split into school-side and home-side steps, so responsibility is shared.</li>
-            <li><b>Follow-through</b>: lightweight reminders and check-ins keep the plan alive past the first conversation.</li>
-          </ol>
-          <div class="dec__block dec__block--out" style="margin-top:34px;"><p class="l">Outcome</p><p>The exchange becomes collaborative instead of one-directional. In our later evaluation, the teacher called the shared action plan the most valuable part: "it focuses on solutions together instead of only pointing out problems."</p></div>
+          <h3 class="dec__h">A plan both sides make</h3>
+          <div class="dec__block"><p class="l">Insight</p><p>Feedback only ever went one way, from school to home.</p></div>
+          <div class="dec__block"><p class="l">Decision</p><p>Let parents add what they see at home, then build a plan together with steps for school and steps for home.</p></div>
+          <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>The teacher we tested with called the plan the most useful part: “it focuses on solutions together instead of only pointing out problems.”</p></div>
         </div>
         <div class="scr scr--flow">
           <p class="scr__count">Two-way</p>
@@ -868,54 +898,44 @@ These three findings pointed straight at a communication tool: one that translat
         </div>
       </article>
 
-      <p class="cc-note" style="margin-top:40px;font-weight:500;color:var(--ink);">
-
-Together, the three moves turn a twice-a-year verdict into a continuous, low-stakes loop (observe, translate, align), with the child, not the tool, at the center.</p>
     </div>
   </section>
 
   <!-- 05 EVALUATION -->
   <section class="cc-sec" id="s-results">
     <span class="cc-sec__tag">05 · Evaluation</span>
-    <h2 class="cc-sec__lead cc-sec__lead--wide">I stress-tested the concept against three synthetic personas, and each one surfaced a real fix.</h2>
+    <h2 class="cc-sec__lead cc-sec__lead--wide">Three simulated users, three real fixes.</h2>
     <div class="cc-body">
-      <p class="cc-note" style="margin-bottom:8px;">Tandem didn't ship. We evaluated it with three research-grounded synthetic personas (built from our interviews, run as AI-simulated users), an AI-assisted heuristic &amp; risk review, and a think-aloud with one real teacher. <b>These are design-validation signals, not measured outcomes.</b></p>
+      <p class="cc-note" style="margin-bottom:8px;">Tandem didn't ship. I tested it with three AI-simulated users based on our interviews, plus a think-aloud with one real teacher. <b>Treat these as early signals, not results.</b></p>
 
+      <figure class="ts-quote"><blockquote>“It focuses on solutions together instead of only pointing out problems.”</blockquote><figcaption>Elementary teacher, think-aloud walkthrough</figcaption></figure>
       <div class="per">
         <div class="per__card">
           <p class="per__name">Sarah</p>
           <p class="per__tag">The overwhelmed novice teacher</p>
           <p class="per__l">Surfaced</p>
-          <p class="t">Caught the AI defaulting to clinical terms like "executive function": language she'd never send a parent.</p>
+          <p class="t">Caught the AI using terms like “executive function” that she'd never send a parent.</p>
           <p class="per__l">Drove</p>
-          <p class="t per__drove">A bias-aware language safeguard and a mandatory teacher review before anything sends.</p>
+          <p class="t per__drove">A language check, and a required teacher review before anything sends.</p>
         </div>
         <div class="per__card">
           <p class="per__name">David</p>
           <p class="per__tag">The impulsive, search-reliant parent</p>
           <p class="per__l">Surfaced</p>
-          <p class="t">The default "Neutral, factual" phrasing read as cold to an anxious parent; without softening, a routine note risked sending him straight to late-night Googling.</p>
+          <p class="t">The default wording felt cold. A routine note could send him straight to Google at midnight.</p>
           <p class="per__l">Drove</p>
-          <p class="t per__drove">A tone selector (Neutral / Warm / Direct) and leading with the child's strengths, so the message lands as support, not a verdict.</p>
+          <p class="t per__drove">A tone picker (Neutral, Warm, Direct), and messages that open with the child's strengths.</p>
         </div>
         <div class="per__card">
           <p class="per__name">Elena</p>
           <p class="per__tag">The skeptical, strategic parent</p>
           <p class="per__l">Surfaced</p>
-          <p class="t">Liked the collaborative tone but wanted to see how the AI reached its conclusions.</p>
+          <p class="t">Liked the tone, but wanted to know how the AI reached its conclusions.</p>
           <p class="per__l">Drove</p>
-          <p class="t per__drove">Reinforced the case for visible reasoning: the transparency panel.</p>
+          <p class="t per__drove">The “How this was created” panel.</p>
         </div>
       </div>
 
-      <p class="cc-microlabel">If it shipped: the outcomes the design targets</p>
-      <div class="cc-grid2">
-        <div><span class="n">01</span>Fewer blindsided, defensive parents.</div>
-        <div><span class="n">02</span>Less teacher time lost to managing misinterpretation.</div>
-        <div><span class="n">03</span>Earlier, calmer intervention before concerns escalate.</div>
-        <div><span class="n">04</span>Parents positioned as partners, not obstacles.</div>
-      </div>
-      <p class="cc-note" style="margin-top:18px;font-size:15px;color:var(--ink-3);">Intended outcomes the design targets, useful for surfacing edge cases, but no substitute for real classrooms.</p>
     </div>
   </section>
 
@@ -924,27 +944,27 @@ Together, the three moves turn a twice-a-year verdict into a continuous, low-sta
     <span class="cc-sec__tag">06 · Reflection</span>
     <h2 class="cc-sec__lead">In a tool about someone's child, the riskiest thing the AI can do is sound certain.</h2>
     <div class="cc-body">
-      <p class="cc-note">Our evaluation leaned heavily on AI-simulated users. The synthetic personas surfaced real edge cases, but their reactions came out tidy and a little theatrical; prompt wording alone could swing them from glowing to harsh. I treated their output as hypotheses, not findings, and grounded them against a real teacher walkthrough. The concept itself is unvalidated in a real classroom.</p>
+      <p class="cc-note">Most of our testing used AI-simulated users. They found real edge cases, but their reactions were a bit too neat, and changing the prompt could flip them. I treated what they said as ideas to check, not proof. Tandem still needs a real classroom.</p>
       <div class="cc-ref">
         <div>
           <p class="h">What I learned</p>
           <ul>
-            <li>The hard part wasn't the AI's capability; it was its tone. The copilot had to translate without ever sounding like a diagnosis.</li>
-            <li>Transparency and a visible human-in-the-loop did more for trust than raw accuracy.</li>
-            <li>During the AI-assisted heuristic and risk review, the AI said to strip the teacher's input fields to save time; I pushed back, since those fields were the source of the message's accuracy.</li>
+            <li>The hard part wasn't what the AI could do. It was how it sounded.</li>
+            <li>Showing the reasoning built more trust than being more accurate.</li>
+            <li>When an AI review told me to cut the teacher's input fields to save time, I pushed back. Those fields are what make the message accurate.</li>
           </ul>
         </div>
         <div>
-          <p class="h">My next steps</p>
+          <p class="h">What I'd do next</p>
           <ul>
-            <li>Define evaluation prompts and a testing framework up front, so synthetic responses are comparable.</li>
-            <li>Bring real teachers and parents in early, not just at the end.</li>
-            <li>Build the bias-aware language safeguard as a real system rule, not a guideline.</li>
+            <li>Set the test prompts up front so simulated answers can be compared.</li>
+            <li>Bring in real teachers and parents early.</li>
+            <li>Build the language check into the system, not just the guidelines.</li>
           </ul>
         </div>
       </div>
-      <p class="cc-note" style="margin-top:34px;font-weight:500;color:var(--ink);">Tandem didn't ship, but it changed how I design with AI: the model earns trust by staying a draft, not an authority.</p>
-      <a class="flowcue" href="#s-journey"><span>Walk the full six-step flow</span><span class="flowcue__arr" aria-hidden="true">↓</span></a>
+      <p class="cc-note" style="margin-top:34px;font-weight:500;color:var(--ink);">Tandem didn't ship, but it changed how I design with AI. It earns trust by staying a draft.</p>
+      <a class="flowcue" href="#s-journey"><span>See the full six-step flow</span><span class="flowcue__arr" aria-hidden="true">↓</span></a>
     </div>
   </section>
 
@@ -954,8 +974,8 @@ Together, the three moves turn a twice-a-year verdict into a continuous, low-sta
 <section class="journey" id="s-journey" data-screen-label="The full journey">
   <div class="journey__head">
     <span class="cc-sec__tag">The full journey</span>
-    <h2 class="journey__lead">All six steps, one continuous loop: observe, translate, align.</h2>
-    <p class="journey__note">The whole experience, end to end: the teacher logs once, the AI translates and shows its work, the parent adds their view, and both approve a shared plan.</p>
+    <h2 class="journey__lead">The whole thing, start to finish.</h2>
+    <p class="journey__note">The teacher writes one note. The AI explains it, the parent adds what they see at home, and both sign off on a plan.</p>
   </div>
   <div class="jstack">
     <article class="jcard" style="--i:0;--c:#f4efe4">
