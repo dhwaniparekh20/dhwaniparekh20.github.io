@@ -653,6 +653,7 @@ body #acc button .acc__h.acc__h{font-size:20px!important;font-weight:700!importa
 </style>
 <style id="cv-sitemap">#s-design figure.cc-figwide{padding:0!important;background:none!important;border:0!important;box-shadow:none!important}#s-design figure.cc-figwide>img,#s-design figure.cc-figwide .cz-zoomable{border-radius:16px!important;padding:0!important;background:none!important;border:0!important;outline:0!important;box-shadow:none!important;display:block}</style>
 <style id="cv-fonts">.dec__h,.acc__h,.cc-find__card .h{font-family:"Inter",system-ui,sans-serif!important;letter-spacing:-.01em!important}.cc-find__card .h{font-weight:700}#s-design .cc-body{margin-top:28px!important}</style>
+<style id="pdpm-css">.pdpm{display:grid;gap:clamp(28px,4vw,44px);margin-top:28px}.pdpm__fig{margin:0;display:grid;gap:12px}.pdpm__lab{margin:0!important;display:flex;align-items:center;gap:10px;font-size:15px!important;color:#55504a!important}.pdpm__k{font:500 11px/1 "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:99px;background:#ece5d6;color:#55504a}.pdpm__k--a{background:#1e3a26;color:#f4efe4}.pdpm__fig>img{width:100%;display:block;border-radius:14px;box-shadow:0 18px 36px -22px rgba(20,18,15,.45);background:#fff}</style>
 </head>
 <body class="cs-page">
 
@@ -966,48 +967,10 @@ body #acc button .acc__h.acc__h{font-size:20px!important;font-weight:700!importa
           <div class="dec__block dec__block--out"><p class="l">Outcome</p><p>People can scan, compare, and decide without reading a wall of text.</p></div>
         </div>
 
-        <!-- full-width before / after compare + optional guided walkthrough -->
-        <div class="pdp" id="pdp">
-          <div class="pdp__bar">
-            <button class="pdp__btn" id="pdpStart">&#9654;&nbsp; Guided walkthrough</button>
-            <button class="pdp__btn pdp__btn--ghost" id="pdpExit" style="display:none;">Exit tour</button>
-            <span class="pdp__hint" id="pdpHint">8 changes &middot; browse freely, or take the tour</span>
-          </div>
-          <div class="pdp__cmp">
-            <div class="pdp__col pdp__col--b">
-              <div class="pdp__lab"><span class="pdp__k">Before</span><span class="pdp__note">Original page</span></div>
-              <div class="pdp__frame" id="pdpFrameB">
-                <img src="assets/cerave-pdp-before.png" alt="Original CeraVe Daily Moisturizing Lotion product page, before redesign." />
-                <div class="pdp__hl" id="pdpHlB"><span class="pdp__hln" id="pdpHlBn">1</span></div>
-                <div class="pdp__veil" id="pdpVeilB"><span id="pdpVeilBtxt">Added in the redesign</span></div>
-              </div>
-            </div>
-            <div class="pdp__col pdp__col--a">
-              <div class="pdp__lab"><span class="pdp__k">After</span><span class="pdp__note">Redesign &middot; click to zoom</span></div>
-              <div class="pdp__frame" id="pdpFrameA">
-                <img src="assets/cerave-pdp-after.png" alt="Redesigned CeraVe Daily Moisturizing Lotion product page, after redesign." data-cz-zoom />
-                <div class="pdp__hl" id="pdpHlA"><span class="pdp__hln" id="pdpHlAn">1</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="pdp__cap" id="pdpCap">
-            <div>
-              <div class="pdp__hero"><p class="pdp__herok">After &mdash; this element</p><div class="pdp__crop" id="pdpCrop"></div></div>
-              <p class="pdp__count" id="pdpCount">Change 1 of 8</p>
-              <h4 class="pdp__t" id="pdpTitle"></h4>
-              <p class="pdp__r" id="pdpR"></p>
-            </div>
-            <div class="pdp__nav">
-              <button id="pdpNavExit" class="pdp__navexit">&times; Exit tour</button>
-              <button id="pdpPrev">&larr; Prev</button>
-              <button id="pdpNext">Next &rarr;</button>
-              <div class="pdp__dots" id="pdpDots"></div>
-            </div>
-          </div>
-          <div class="pdp__legend">
-            <p class="pdp__legendlead">The 8 changes &mdash; click any to focus it</p>
-            <div class="pdp__lgrid" id="pdpLegend"></div>
-          </div>
+        <!-- before image + after movie -->
+        <div class="pdpm">
+          <figure class="pdpm__fig"><p class="pdpm__lab"><span class="pdpm__k">Before</span>The original product page</p><img class="lb-trigger" src="assets/cerave-pdp-before.png" alt="Original CeraVe Daily Moisturizing Lotion product page, before redesign." /></figure>
+          <figure class="pdpm__fig"><p class="pdpm__lab"><span class="pdpm__k pdpm__k--a">After</span>The redesign, change by change</p><div data-pdp-movie data-src="assets/cerave-pdp-after.png" role="img" aria-label="The redesigned product page, zooming in on each of the eight changes: descriptor chips, one-line benefit, price beside the rating, a one-sentence description, outcome checkmarks, a clearer Add to Cart with delivery info, a benefit icon row, and social proof on the image."></div></figure>
         </div>
       </article>
 
@@ -1341,5 +1304,6 @@ document.querySelectorAll('.bcopy').forEach(function(b){b.addEventListener('clic
   })();
 </script>
 <script src="../brand-nav.js"></script>
+<script src="pdp-movie.js" defer></script>
 </body>
 </html>

@@ -155,6 +155,7 @@ html{scroll-padding-top:88px}
 .tnote small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
 .tnote.raw{color:var(--ink-2)}
 .tnote.warm{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.tandem-thread{position:absolute;inset:0}
 .tandem{height:100%;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(18px,2.4vw,30px)}
 .tandem .arrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);text-align:center}
 @media(max-width:860px){.wc,.wc.rev{grid-template-columns:1fr}.wc.rev .wc-media{order:0}.wc-media{min-height:300px}}
@@ -323,11 +324,7 @@ body .rc h3,body .research h3,body article h3{font-size:22px!important;line-heig
       </a>
 
       <a href="case-studies/tandem.html" class="wc rev">
-        <div class="wc-media"><div class="tex" style="background:var(--rose)"></div><div class="frame" style="background:var(--ivory)"><div class="tandem">
-          <div class="tnote raw"><small>Teacher's raw note</small>“Liam can't sit still during reading. Possible attention issues. May need evaluation.”</div>
-          <div class="arrow">↓ Tandem translates</div>
-          <div class="tnote warm"><small>What the parent receives</small>“Liam brings a lot of energy to group reading. Here's what we're noticing, and a couple of things we can try together.”</div>
-        </div></div></div>
+        <div class="wc-media"><div class="tex" style="background:var(--rose)"></div><div class="frame" style="background:var(--ivory)"><div class="tandem-thread" role="img" aria-label="The scribbled word confusion is pulled through a Tandem box and comes out as one clean line that writes clarity"></div></div></div>
         <div class="wc-body">
           <span class="wc-idx">02 · AI Product</span>
           <h3><i>Tandem</i>: keeping parents and teachers in sync</h3>
@@ -403,5 +400,6 @@ window.addEventListener('scroll',spy,{passive:true});spy();})();
 </script>
 
 <script src="brand-nav.js"></script>
+<script src="brand/tandem-thread.js" defer></script>
 </body>
 </html>
