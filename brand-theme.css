@@ -3,7 +3,7 @@
   --bg:#faf7f0;--bg-elev:#ffffff;--ink:#1c1a16;--ink-2:#55504a;--ink-3:#7a7268;--line:#ddd5c6;--line-2:#cfc5b3;
   --accent:#1e3a26;--cta-accent:#9e2f5a;--metric:#1e3a26;
   --paper:#faf7f0;--paper-2:#f4efe4;--paper-3:#ece5d6;--line-strong:#cfc5b3;--ink-4:#8a8278;--ink-5:#b3aa9c;
-  --font-sans:"Inter",system-ui,sans-serif;--font-display:"Instrument Serif",Georgia,serif;
+  --font-sans:"Inter",system-ui,sans-serif;--font-display:"Newsreader",Georgia,serif;
   --b-green:#1e3a26;--b-green-2:#2c5236;--b-ivory:#f4efe4;--b-sun:#e7a93b;--b-rose:#e37fa3;--b-rose-ink:#9e2f5a;--b-mono:"JetBrains Mono",ui-monospace,monospace;
 }
 body{background:var(--bg);color:var(--ink);font-family:var(--font-sans)}
@@ -96,9 +96,9 @@ header.bnav nav a::after,header.nav nav a::after{display:none}
 header.bnav nav a[aria-current="page"],header.nav nav a.is-active{color:var(--b-rose)!important}
 }
 
-.bfoot h2 a,.bfoot h2 a:visited{font-family:"Instrument Serif",Georgia,serif!important;font-style:italic!important;font-weight:400!important;letter-spacing:inherit!important;color:#e7a93b!important;text-decoration:none!important}
+.bfoot h2 a,.bfoot h2 a:visited{font-family:"Newsreader",Georgia,serif!important;font-style:italic!important;font-weight:400!important;letter-spacing:inherit!important;color:#e7a93b!important;text-decoration:none!important}
 .bfoot h2 a:hover{color:#e37fa3!important}
-.bfoot h2{font-family:"Instrument Serif",Georgia,serif!important;font-weight:400!important;letter-spacing:-.005em!important}
+.bfoot h2{font-family:"Newsreader",Georgia,serif!important;font-weight:400!important;letter-spacing:-.005em!important}
 
 /* unified mobile type scale */
 @media(max-width:640px){
@@ -112,7 +112,7 @@ body .ra-finding p,body .morecs__desc,body .scr__cap,body .detail__cap,body .rc 
 body .mp-kw{font-size:1.2em!important}
 }
 @media(max-width:640px){
-body h3.dec__h,body .acc__h,body .ra-finding h3,body .cc-find__card .h{font-family:"Instrument Serif",Georgia,serif!important;font-weight:400!important;letter-spacing:0!important}
+body h3.dec__h,body .acc__h,body .ra-finding h3,body .cc-find__card .h{font-family:"Newsreader",Georgia,serif!important;font-weight:400!important;letter-spacing:0!important}
 body .acc__h{font-size:20px!important;line-height:1.2!important}
 body .rc h3,body .research h3,body article h3{font-size:22px!important;line-height:1.15!important}
 }
